@@ -1,0 +1,2 @@
+# StarPerf_Simulator
+``Newspace'' mega-constellations, such as StarLink and OneWeb are gaining tremendous popularity, with the promising potential to provide high-capacity and low-latency communication globally. However, very little is know about the architecture and performance of such emerging systems, the workload they have to face, as well as the impact of topological options on the attainable network performance.
