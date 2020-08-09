@@ -47,7 +47,7 @@ Once this step is finished, constellation information like the position (latitud
 
 Also, finally in the STK tool you can find the constellation specified by your configuration file. Some thing like this.
 
-![image](https://github.com/SpaceNetLab/StarPerf_Simulator/blob/master/emulator/doc/stalink.jpeg)
+![image](https://github.com/SpaceNetLab/StarPerf_Simulator/blob/master/doc/stalink.jpeg)
 
 Finally, run StarPerf to conduct evaluation on the simulated satellite network. This can be done by calling `starperf.py`.
 
