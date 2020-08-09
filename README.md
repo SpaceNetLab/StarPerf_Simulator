@@ -1,7 +1,7 @@
 
 # StarPerf: A Network Performance Simulator for Emerging Mega-Constellations
 
-``Newspace'' mega-constellations, such as StarLink and OneWeb are gaining tremendous popularity, with the promising potential to provide high-capacity and low-latency communication globally. However, very little is know about the architecture and performance of such emerging systems, the workload they have to face, as well as the impact of topological options on the attainable network performance.
+``Newspace'' mega-constellations, such as StarLink and OneWeb are gaining tremendous popularity, with the promising potential to provide high-capacity and low-latency communication globally. However, very little is known about the architecture and performance of such emerging systems, the workload they have to face, as well as the impact of topological options on the attainable network performance.
 
 Therefore, we have developed and implemented StarPerf, a mega-constellation performance simulation platform that enables constellation manufacturers and content providers to estimate and understand the achievable performance under a variety of constellation options. The proposed platform integrates two key techniques: (1) performance simulation for mega-constellation, which captures the impact of the inherent high mobility in satellite networks and profiles the area-to-area attainable network performance; (2) constellation scaling, which synthesizes various topological options by scaling the space resource (e.g. number of satellite, link availability and capacity), and enables exploration on multiple operating conditions that can not be easily reproduced. 
 
