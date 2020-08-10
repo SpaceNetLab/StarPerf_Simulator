@@ -11,14 +11,14 @@ Happy benchmarking your constellation!
 
 # Prerequisites
 
-StarPerf is built upon Python, AGI Systems Tool Kit (STK) and Matlab. Before running the tool, please make sure you have already installed those dependencies on your machine. 
+StarPerf is mainly built upon Python. In addition, StarPerf also leverages third-party orbit analysis/computation tool to help the computation for the trajectory of satellites (e.g. [AGI Systems Tool Kit (STK)](https://www.agi.com/products/stk) or [GMAT](https://opensource.gsfc.nasa.gov/projects/GMAT/index.php) is recommended). The current implementation uses STK. Before running the tool, please make sure you have already installed those dependencies on your machine. 
 
 - Python2.7 or above.
 - Matlab 2013b or above.
 - STK version 11 or above.
-- STK Integration license.
+- STK Integration license, or the [free trial version](https://licensing.agi.com/stk/) with matlab connector module.
 
-For more details of the setup on STK and matlab, please check [here](https://help.agi.com/stk/11.0.1/Content/install/MATLABsetup.htm). We have tested our tool with Matlab2013b + STK11 installed, on both MacOS and Win10.
+For more details of the setup on STK and matlab, please check [here](https://help.agi.com/stk/11.0.1/Content/install/MATLABsetup.htm). We have tested our tool with Python3 + Matlab2013b + STK11 installed, on Windows 10.
 
 # Configuring your constellations
 
@@ -39,7 +39,7 @@ The configuration file looks like this:
 | # of orbit   | 24 |
 | satellites per orbit  | 66 |
 
-Second, run the matlab part of StarPerf to build a simulated satellite network based on STK tools. In this step, open the STK tool and Matlab. and run `matlab_code/build_constellation.m`.
+Second, run the matlab part of StarPerf to build a simulated satellite network based on STK tools. In this step, open the STK tool and Matlab. and run `matlab_code/build_constellation.m`. This step has to run on Windows, as the current version of STK works on Windows only.
 
 This step may take several minutes depending the capability of your machine. Have a break.
 
@@ -49,7 +49,7 @@ Also, finally in the STK tool you can find the constellation specified by your c
 
 ![image](https://github.com/SpaceNetLab/StarPerf_Simulator/blob/master/doc/stalink.jpeg)
 
-Finally, run StarPerf to conduct evaluation on the simulated satellite network. This can be done by calling `starperf.py`.
+Finally, run StarPerf to conduct evaluation on the simulated satellite network. This step can be done by calling `starperf.py`. 
 
 ```python starperf.py```
 
