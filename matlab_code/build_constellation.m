@@ -4,7 +4,7 @@ dT = 1.0;
 tStart = 0;
 dtr = pi/180;
 rtd = 180/pi;
-
+No_fac = 0;
 remMachine = stkDefaultHost;
 delete(get(0,'children'));
 conid=stkOpen(remMachine);
@@ -30,16 +30,16 @@ rtn = stkConnect(conid,'Animate','Scenario/Matlab_Basic',cmd1);
 rtn = stkConnect(conid,'Animate','Scenario/Matlab_Basic','Reset');
 disp('Set up the propagator and nodes for the satellites');
 Create_LEO(conid,'parameter.xlsx');
-Create_Fac(conid);
+% Create_Fac(conid);
 
 disp('save position info');
 [position, position_cbf]=Create_location(dT);
 filename = [constellation '\position.mat'];
 save(filename,'position_cbf','position');
-disp('save delay info');
-for t = 1:cycle
-    [delay] = Create_delay(position_cbf,t);
-end
+% disp('save delay info');
+% for t = 1:cycle
+%     [delay] = Create_delay(position_cbf,t);
+% end
 stkExec( conid, 'Animate Scenario/Matlab_Basic  Reset' );
 stkExec( conid, 'Animate Scenario/Matlab_Basic  Start' );
 
