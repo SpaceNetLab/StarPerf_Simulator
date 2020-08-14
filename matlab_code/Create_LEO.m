@@ -16,9 +16,10 @@ function Create_LEO(conid,path)
         raan=[0:180/leo_plane:180/leo_plane*(leo_plane-1)];
     else
         raan=[0:360/leo_plane:360/leo_plane*(leo_plane-1)];
-    meanAnomaly1=[0:360/no:360/no*(no-1)];
-    raan=raan.*dtr;
-    No_leo=leo_plane*no;
+    end
+    meanAnomaly1 = [0:360/no:360/no*(no-1)];
+    raan = raan.*dtr;
+    No_leo = leo_plane*no;
     disp('LEO:');
     disp(No_leo);
     for i =1:leo_plane
@@ -29,7 +30,7 @@ function Create_LEO(conid,path)
             sat_no = strcat('Sat',num2str(num));
             stkNewObj('*/','Satellite',sat_no);
             sat_no = strcat('*/Satellite/',sat_no);
-            stkSetPropClassical(sat_no,'J4Perturbation','J2000',0.0,tStop,dT,0,6731000 + Altitude,0.0,inc,0.0,ra,ma);
+            stkSetPropClassical(sat_no,'J4Perturbation','J2000',0.0,tStop,dT,0,6731000 + Altitude * 10^3,0.0,inc,0.0,ra,ma);
             num_leo(num) = num;
         end
     end
