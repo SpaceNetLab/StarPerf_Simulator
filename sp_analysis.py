@@ -5,6 +5,10 @@ import sp_cal_dij_delay
 
 
 def get_parameters(path):
+    """Get the parameters of mega-constellations
+    :param path: str, configuration file path of mega-constellations
+    :return parameter: two-dimensional list about parameter of constellations
+    """
     f = open(path, "r")
     line = f.readline()
     line = line.strip('\n')
