@@ -16,9 +16,26 @@ StarPerf is mainly built upon Python. In addition, StarPerf also leverages third
 - Python2.7 or above.
 - Matlab 2013b or above.
 - STK version 11 or above.
-- STK Integration license, or the [free trial version](https://licensing.agi.com/stk/) with matlab connector module.
+- STK Integration license, or the [free trial version](https://licensing.agi.com/stk/) with the matlab connector module installed.
 
 For more details of the setup on STK and matlab, please check [here](https://help.agi.com/stk/11.0.1/Content/install/MATLABsetup.htm). We have tested our tool with Python3 + Matlab2013b + STK11 installed, on Windows 10.
+
+# StarPerf overview and processing flow
+
+![image](https://github.com/SpaceNetLab/StarPerf_Simulator/blob/master/doc/process_flow.jpeg)
+
+Summarily, the implementation of StarPerf integrates two parts: (i) generating a satellite network topology by the specific constellation configuration (e.g., how many satellites and how many orbits ...); (ii) evaluating the network performance of the generated satellite network.
+
+The first step is done by codes in `matlab_code/*.m`, which are based on third-party orbit computation tools (e.g. STK). The constellation configuration files are located in `etc/` folder.
+`parameter.xlsx` that describes the orbital design will be loaded to construct a simulated network.
+
+For your convenience, we have prepared several configuration preset for three state-of-the-art constellations in `etc/`. You can use the preset by rename the file, e.g. remove the suffix of `parameter-StarLink.xlsx`. 
+
+Once step 1 finished, temporary files describing the satellite network will be generated at `matlab_code/YOUR_CONSTELLATION_NAME`.
+
+In addition, since generating the network topology may take too much time on some machines, we also prepare the pre-computed file for Starlink, OneWeb and TeleSat constellation respectively by a [Dropbox shared link.](https://www.dropbox.com/sh/ncxf84a1m9uznm2/AABwrzHdKX6ZXsEb6FV6L3foa?dl=0) For simplicity, you can just download these files and skip the topology generation step by placing the uncompressed files in the `matlab_code/` folder.
+
+The second step, is executed by the python codes in the root folder. This step evaluate the network performance (e.g. latency, throughput ...) of the generated network.
 
 # Configuring your constellations
 

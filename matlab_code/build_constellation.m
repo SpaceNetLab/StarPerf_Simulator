@@ -28,7 +28,7 @@ cmd1 = [cmd1 ' 0.1'];
 rtn = stkConnect(conid,'Animate','Scenario/Matlab_Basic',cmd1);
 rtn = stkConnect(conid,'Animate','Scenario/Matlab_Basic','Reset');
 disp('Set up the propagator and nodes for the satellites');
-Create_LEO(conid,'parameter.xlsx');
+Create_LEO(conid,'..\etc\parameter.xlsx');
 Create_Fac(conid);
 
 disp('save position info');

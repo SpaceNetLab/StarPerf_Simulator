@@ -18,7 +18,7 @@ def bandwidth(constellation_name, satellite_num, cycle, bound, elevation, depres
         print(time)
         G = nx.Graph()
         edge = []
-        path = constellation_name + '\\delay\\' + str(time) + '.mat'
+        path = 'matlab_code\\' + constellation_name + '\\delay\\' + str(time) + '.mat'
         data = scio.loadmat(path)
         delay = data['delay']
         G.add_nodes_from(range(satellite_num + city_num))
