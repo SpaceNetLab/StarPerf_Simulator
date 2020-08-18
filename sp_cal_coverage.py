@@ -6,6 +6,9 @@ import xlrd
 
 
 def coverage(parameter):
+    """Analysis the coverage capacity of each constellation
+    :param parameter: two-dimensional list about parameter of constellations
+    """
     constellation_num = len(parameter[0])
     constellation_name = parameter[0]
     satellite_num = [int(x) for x in parameter[1]]
