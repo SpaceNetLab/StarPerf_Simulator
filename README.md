@@ -22,7 +22,7 @@ For more details of the setup on STK and matlab, please check [here](https://hel
 
 # StarPerf overview and processing flow
 
-![image](https://github.com/SpaceNetLab/StarPerf_Simulator/blob/master/doc/process_flow.jpeg=250x)
+![image](https://github.com/SpaceNetLab/StarPerf_Simulator/blob/master/doc/process_flow.jpeg)
 
 Summarily, the implementation of StarPerf integrates two parts: (i) generating a satellite network topology by the specific constellation configuration (e.g., how many satellites and how many orbits ...); (ii) evaluating the network performance of the generated satellite network.
 
