@@ -3,6 +3,9 @@ import scipy.io as scio
 
 
 def betweenness(parameter):
+    """Calculate the betweenness of mega-constellations
+    :param parameter: two-dimensional list about parameter of constellations
+    """
     constellation_num = len(parameter[0])
     for constellation_index in range(constellation_num):
         constellation_name = parameter[0][constellation_index]
