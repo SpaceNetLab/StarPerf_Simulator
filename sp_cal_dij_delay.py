@@ -5,6 +5,11 @@ import scipy.io as scio
 
 
 def dij_delay(parameter,error_rate, dT):
+    """calculate the area-to-area latency
+    :param parameter: two-dimensional list about parameter of constellations
+    :param error_rate: float, probability of satellite failure
+    :param dT: int, accuracy of the results
+    """
     constellation_num = len(parameter[0])
     for constellation_index in range(constellation_num):
         constellation_name = parameter[0][constellation_index]
