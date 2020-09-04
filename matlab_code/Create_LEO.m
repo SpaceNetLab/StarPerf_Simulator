@@ -1,4 +1,9 @@
-function Create_LEO(conid,path)
+function [parameter] = Create_LEO(conid,path)
+% Create LEOs in STK
+% input:
+%   conid: used to connect to STK
+%   path: configuration file path of mega-constellations
+
     global No_leo cycle No_snap tStop constellation dT;
     parameter = readtable(path);
     parameter = parameter.Value;
@@ -30,7 +35,7 @@ function Create_LEO(conid,path)
             sat_no = strcat('Sat',num2str(num));
             stkNewObj('*/','Satellite',sat_no);
             sat_no = strcat('*/Satellite/',sat_no);
-            stkSetPropClassical(sat_no,'J4Perturbation','J2000',0.0,tStop,dT,0,6731000 + Altitude * 10^3,0.0,inc,0.0,ra,ma);
+            stkSetPropClassical(sat_no,'J4Perturbation','J2000',0.0,tStop,dT,0,6371000 + Altitude * 10^3,0.0,inc,0.0,ra,ma);
             num_leo(num) = num;
         end
     end
