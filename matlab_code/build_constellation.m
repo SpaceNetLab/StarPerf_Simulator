@@ -27,14 +27,15 @@ cmd1 = ['SetValues "1 Dec 2019 0:00:00.0" ' mat2str(dT)];
 cmd1 = [cmd1 ' 0.1'];
 rtn = stkConnect(conid,'Animate','Scenario/Matlab_Basic',cmd1);
 rtn = stkConnect(conid,'Animate','Scenario/Matlab_Basic','Reset');
-[parameter] = Create_LEO(conid,'parameter-StarLink.xlsx');
+disp('Set up the propagator and nodes for the satellites');
+[parameter] = Create_LEO(conid,'../etc/parameter-StarLink.xlsx');
 Create_Fac(conid);
 inc = str2num(parameter{4,1})*dtr;
 
 disp('save position info');
 [position, position_cbf]=Create_location(dT);
 filename = [constellation '\position.mat'];
-save(filename,'position_cbf','position');
+save(filename,'position','position_cbf');
 disp('save delay info');
 for t = 1:cycle
     [delay] = Create_delay(position_cbf,t,inc);
