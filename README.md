@@ -98,7 +98,8 @@ Currently this project has not be ''thoroughly''' tested. You are more than welc
 
 The StarPerf project is under [BSD-2-Clause](https://opensource.org/licenses/BSD-2-Clause) license.
 
-
+# BeamScheduling
+If you want to simulate beam scheduling, you can run 'BeamScheduling.py'. You can change global parameters which are in the program with notes. The preprocess is the same as mentioned above(first, run MATLAB...), and make sure 'h3==4.0.0b2' has been installed. We now have gateways of Starlinks, so the infomation of gateways are in the folder 'starlink_gateway'.
 
 
 
