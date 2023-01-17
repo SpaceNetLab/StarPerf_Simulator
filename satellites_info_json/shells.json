@@ -1,0 +1,142 @@
+[
+  {
+  	"shellid": 1,
+	"gen": 1,
+	"shellname": "G1 53.0",
+	"inclination": 53.0,
+	"planes": 72,
+	"satsperplane": 22,
+	"slotspacing": 20,
+	"altitude": 550
+  },
+  {
+  	"shellid": 2,
+	"gen": 1,
+	"shellname": "G2 70.0",
+	"inclination": 70.0,
+	"planes": 36,
+	"satsperplane": 20,
+	"slotspacing": 26,
+	"altitude": 570
+  },
+  {
+  	"shellid": 3,
+	"gen": 1,
+	"shellname": "G3 97.6",
+	"inclination": 97.6,
+	"planes": 6,
+	"satsperplane": 58,
+	"slotspacing": 10,
+	"altitude": 560
+  },
+  {
+  	"shellid": 4,
+	"gen": 1,
+	"shellname": "G4 53.2",
+	"inclination": 53.2,
+	"planes": 72,
+	"satsperplane": 22,
+	"slotspacing": 20,
+	"altitude": 540
+  },
+  {
+  	"shellid": 5,
+	"gen": 1,
+	"shellname": "G5 97.6",
+	"inclination": 97.6,
+	"planes": 4,
+	"satsperplane": 43,
+	"slotspacing": 10,
+	"altitude": 560
+  },
+  {
+  	"shellid": 6,
+	"gen": 2,
+	"shellname": "G1 53.0",
+	"inclination": 53.0,
+	"planes": 48,
+	"satsperplane": 110,
+	"slotspacing": 20,
+	"altitude": 340
+  },
+  {
+  	"shellid": 7,
+	"gen": 2,
+	"shellname": "G2 46.0",
+	"inclination": 46.0,
+	"planes": 48,
+	"satsperplane": 110,
+	"slotspacing": 20,
+	"altitude": 345
+  },
+  {
+  	"shellid": 8,
+	"gen": 2,
+	"shellname": "G3 38.0",
+	"inclination": 38.0,
+	"planes": 48,
+	"satsperplane": 110,
+	"slotspacing": 20,
+	"altitude": 350
+  },
+  {
+  	"shellid": 9,
+	"gen": 2,
+	"shellname": "G4 96.9",
+	"inclination": 96.9,
+	"planes": 30,
+	"satsperplane": 120,
+	"slotspacing": 20,
+	"altitude": 360
+  },
+  {
+  	"shellid": 10,
+	"gen": 2,
+	"shellname": "G5 53.0",
+	"inclination": 53.0,
+	"planes": 28,
+	"satsperplane": 120,
+	"slotspacing": 20,
+	"altitude": 525
+  },
+  {
+  	"shellid": 11,
+	"gen": 2,
+	"shellname": "G6 43.0",
+	"inclination": 43.0,
+	"planes": 28,
+	"satsperplane": 120,
+	"slotspacing": 20,
+	"altitude": 530
+  },
+  {
+  	"shellid": 12,
+	"gen": 2,
+	"shellname": "G7 33.0",
+	"inclination": 33.0,
+	"planes": 28,
+	"satsperplane": 120,
+	"slotspacing": 20,
+	"altitude": 535
+  },
+  {
+  	"shellid": 13,
+	"gen": 2,
+	"shellname": "G8 148.0",
+	"inclination": 148.0,
+	"planes": 12,
+	"satsperplane": 12,
+	"slotspacing": 20,
+	"altitude": 604
+  },
+  {
+  	"shellid": 14,
+	"gen": 2,
+	"shellname": "G9 115.7",
+	"inclination": 115.7,
+	"planes": 18,
+	"satsperplane": 18,
+	"slotspacing": 20,
+	"altitude": 614
+  }
+]

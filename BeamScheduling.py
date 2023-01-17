@@ -7,8 +7,11 @@ import h3
 import json
 import pandas as pd
 import time
+import os
+from get_SatPos_from_TLE import *
 from geographiclib.geodesic import Geodesic
 #The global parameters users can set
+TLE=False#whether to use TLE data
 IGNOREGSO=True#Whether to ignore GSO impact
 provisionedRate=2#provision
 SIMSPREAD=0#Number of beam tilts
@@ -19,14 +22,14 @@ GSOPROTECTION=10#GSO Protection‘parameter
 GWMULTIPLIER=2#gateway's antenna multiplier
 MINGWCAPACITY=25#The minimum gateway's capacity,unit is 'Gbps'
 MAXGWCAPACITY=32#The maximum gateway's capacity
-COUNTRY_LIST=['Ukraine']#Countries users want to sim
-SIMMAXPOPULATION=5000#User-defined cell maximum population number in simulation
+COUNTRY_LIST=['China']#Countries users want to sim
+SIMMAXPOPULATION=20000#User-defined cell maximum population number in simulation
 SIMMINPOPULATION=0#User-defined cell minimum population number in simulation
 MAXBEAMCAPACITY=700#The maximum capacity of each beam, default 700Mbps
 SIMTDM=1#time division multiplexing:1,0.75,0.5,0.25
 SIMBEAMSPERCELL=1#The maximum beams assigned to each cell
 MPDLSPOTBEASMS=0#After adding time division multiplexing, how many beams does each satellite have on the surface, in fact, a satellite has a maximum of 48 beams
-SIMMODE='prio_slant'#Simulation modes:'prio_slant'(from outside to inside) ,'prio_nadir'(from inside to outside)
+SIMMODE='prio_nadir'#Simulation modes:'prio_slant'(from outside to inside) ,'prio_nadir'(from inside to outside)
 #sat_station=[]
 orbit_num=72#The number of constellation's orbit
 sat_per_orbit=22#The number of satelltes on each orbit
@@ -43,12 +46,24 @@ MAXPOPULATION=0#Actual minimum population in simcells
 MINPOPULATION=10000000#Actual maximum population in simcells,tha maximum is 10000000
 BEAMCAPACITY=0#
 MAXCELLCAPACITY=0
-
+_MS_IN_A_DAY = 86400000
+TIMESTAMP=1668235691621
+RAANchangePerSec = -0.0000519575
 node_num = orbit_num*sat_per_orbit
 cycle=5731#satellite orbit period
 R=6371#Earth radius(km)
+#TLE=False
 GRAPH_ISL=nx.Graph()#ISL graph
+#TLE=True
+ISL={}
+ISLChains={}
+isllinks={}
+crossPlaneISL={}
 
+sat=[]
+Satellites={}
+launch= {}
+satelliteNames=set()
 active_cells_info=[]#information from "[country].json"
 simH3=set()#All h3ids in countries with resolution 5
 simcells={}#The cells that need to be allocated beams are screened out according to the custom population range, and the h3id is obtained from '[country].json'，{'h3id':item['properties']['h3id'],'capacity':0,'uts':0,'simcell_num':count,'beamid':None,'beamcount':0,'serving_sats':None}
@@ -65,6 +80,7 @@ ISLsats=set()#The sats'no.(from 0-node_num-1) that cannot be directly landed in 
 simCelllocation_cbf={}#cells'location
 simActiveCells=[]#Filtered cells that can be served
 
+totalISLSats=0
 #Pre work:load data
 def load_country_json():
     for item in COUNTRY_LIST:
@@ -73,6 +89,16 @@ def load_country_json():
             json_data=json.load(fp)
             global active_cells_info
             active_cells_info=copy.deepcopy(json_data['features'])
+def load_launch_json():
+    launch_path=".\\satellites_info_json\\launch.json"
+    with open(launch_path,'r') as fp:
+        json_data=json.load(fp)
+        global launch
+        for item in json_data:
+            launch[item['launch']]=item
+            #print(type(item['launch']))
+
+#def load_station():
 
 def load_hexIntersect():
     addcell=False
@@ -147,13 +173,55 @@ pos_cbf=data['position_cbf']
 #load delay to construct ISLs
 Delay=None
 cycle=5760#can change
+tle_satname=[]
+tle_lat=[]
+tle_lng=[]
+tle_alt=[]
+stations={}
+shellOrientation={}
+shellStats={}
+shells={}
+orbitalChartData={}
+orbitalBarData={}
 def load_delay(time_in):
     global Delay
     f_delay = scio.loadmat('.\\matlab_code\\StarLink\\delay\\' + str(time_in+1) + '.mat')
     data = f_delay['delay']
     Delay=data
+def get_epochTimeStamp(tle1):
+    components=tle1.split(' ')
+    epochYear=int(components[3][0:2])
+    epochDay=float(components[3][2:14])
+    return dayOfYearToTimeStamp(epochDay,epochYear)
+def dayOfYearToTimeStamp(epochDay,epochYear):
+    yearStart=datetime.strptime("20"+str(epochYear)+ "-01-01 0:0:0", "%Y-%m-%d %H:%M:%S")
+    yearStartMS=yearStart.timestamp()
+    ts=math.floor(yearStartMS+(epochDay-1)*_MS_IN_A_DAY)
+    return ts
+def get_semiMagorAxis(motion):
+    a=pow(398600441800000,1/3)/pow(2*math.pi*motion/86400,2/3)
+    sMA=a/1000-6378.137
+    return sMA
+def loadShells():
+    global shellOrientation,shellStats,orbitalBarData,orbitalChartData,shells
+    shell_path='.\\satellites_info_json\\shells.json'
+    with open(shell_path,'r') as f:
+        json_data=json.load(f)
+        for item in json_data:
+            shellid=int(item['shellid'])
+            shells[shellid]=item
+            shellOrientation[shellid]={}
+            shellStats[shellid]={}
+            orbitalChartData[shellid]=[]
+            orbitalBarData[shellid]=[]
+        shell_len=len(shells)+1
+        for i in range(1,shell_len):
+            for j in range(0,361):
+                shellOrientation[i][j]=[]
+                shellStats[i][j]=[]
 
-#-------------------------------------------------Tool functions-------------------------------------------------------#
+
+#------------------------------------------------Tool functions-------------------------------------------------------#
 def to_cbf(lat_long,length):
     cbf=[]
     radius=6371
@@ -333,6 +401,10 @@ def getDistance(lat1,lng1,lat2,lng2):
     return s
 COUNT=0
 def isCellCovered(h3id,sid):
+    if TLE==False:
+        sid=sid
+    else:
+        sid=stations[sid]['index']
     lat1=sat[sid]['lat']
     lng1=sat[sid]['lng']
     lat2=simCelllocation_cbf[h3id]['lat']
@@ -438,17 +510,334 @@ def generateSpotbeam(lat,lng,angle,beamwidth,alt=550,beam_azimuth=0,eccentricity
     return coords
 
 #----------------------------------------------------core functions-----------------------------------------------------#
+def get_stations(t_s):#[lat,lon,height,lat,lon,height......]
+    tle_path='.\\TLE\\satellites_TLE.txt'
+    global satelliteNames,stations,shellStats,shellOrientation,shells
+    with open(tle_path,'r') as fp:
+        tle_line1=None
+        tle_line2=None
+        tmp=[]
+        name=None
+        for line in fp:
+            if line[0:8]=='STARLINK':
+                line=line.replace(' ','')
+                line = line.replace('\n', '')
+                satelliteNames.add(line)
+                tmp=line.split('-')
+                stations[tmp[1]]={}
+                name=line
+                #print(tmp)
+                #continue
+            #elif line[0] == '1':
+                line=fp.readline()
+                '''line=line.replace('   ',' ')
+                line=line.replace('\n','')
+                line=line.replace('  ',' ')'''
+                tle_line1 = line
+                #continue
+            #elif line[0] == '2':
+                line=fp.readline()
+                '''line = line.replace('   ', ' ')
+                line = line.replace('\n', '')
+                line = line.replace('  ', ' ')'''
+                tle_line2 = line
+            else:
+                tle_line1 = None
+                tle_line2 = None
+                tmp = []
+                name = None
+                continue
+            sid = tmp[1]
+            Satellite = EarthSatellite(tle_line1, tle_line2)#, 'ISS (ZARYA)')
+            geocentric = Satellite.at(t_s)
+            lat, lng = wgs84.latlon_of(geocentric)
+            lat = lat.degrees
+            lng = lng.degrees
+            #print(type(lat), lng)
+            alt = wgs84.height_of(geocentric).km
+            if np.isnan(lat) or np.isnan(lng) or alt<0:
+                continue
+            stations[sid]['tle1'] = tle_line1
+            stations[sid]['tle2'] = tle_line2
+            tle_line1 = tle_line1.replace('   ', ' ')
+            tle_line1 = tle_line1.replace('\n', '')
+            tle_line1 = tle_line1.replace('  ', ' ')
+            tle_line2 = tle_line2.replace('   ', ' ')
+            tle_line2 = tle_line2.replace('\n', '')
+            tle_line2 = tle_line2.replace('  ', ' ')
+
+            line1=tle_line1.split(' ')
+            launchID=line1[2][0:5]
+
+            inclination=53.2
+            satVersion='v1.5'
+            satShell=0
+            satGen=1
+            #print(type(launch.keys()))
+            if launchID in launch.keys():
+                inclination=launch[launchID]['inclination']
+                satVersion=launch[launchID]['version']
+                satShell=launch[launchID]['shell']
+                satGen=launch[launchID]['gen']
+
+            hasFailed=False
+            if satShell==0:
+                continue#这里有个satShell=0的情况，下面别忘了判断
+
+            stations[sid]['satnum'] = sid  # 字符串
+
+            deltaShell=10000
+            satType='normal'
+            status='OPERATIONAL'
+            if not hasFailed:
+                components=tle_line2.split(' ')
+                longitudeAscendingNode=float(components[3])
+                argumentOfPerigee=float(components[5])
+                anomaly=float(components[6])
+                motion=float(components[7])
+                semiMajorAxis=get_semiMagorAxis(motion)
+                deltaShell=round(launch[launchID]['altitude']-semiMajorAxis,1)
+                eccentricity=round(float('0.'+components[4])*10000,2)
+                degPerSec=360*motion/86400
+                epochTimeStamp=get_epochTimeStamp(tle_line1)
+                secondsInPast=math.floor((TIMESTAMP-epochTimeStamp)/1000)
+                cAPAN=(argumentOfPerigee+anomaly+degPerSec*secondsInPast+360)%360
+                cLOAN=(longitudeAscendingNode+RAANchangePerSec*secondsInPast+360)%360
+                cAPANr=math.floor(cAPAN)
+                cLOANr=round(cLOAN)
+                #这里可以有fakemode
+                if deltaShell>15:
+                    satType='off'
+                    status='OUT OF ALTITUDE'
+                elif abs(deltaShell)<=15 and abs(deltaShell)>4:
+                    satType='off'
+                    status='POSITIONING'
+                orbitalEntry={'no':int(tmp[1][0:4]),'sat':name,'sid':sid,'cAPANr':cAPANr,'cAPAN':cAPAN,'alt':round(alt),'sMA':semiMajorAxis,'version':satVersion,'shell':satShell,'gen':satGen,'deltaShell':deltaShell,'ecc':eccentricity,'status':status,'type':satType}
+                if cLOANr>=0 and satShell>0:
+                    shellOrientation[satShell][cLOANr].append(orbitalEntry)
+                    shellStats[satShell][cLOANr].append(cAPANr)
+            else:
+                satType='off'
+                status='FAILED'
+            if satVersion=='v1.5' or satVersion=='v2.0':
+                global totalISLSats
+                totalISLSats+=1
+            if status=='OPERATIONAL':
+                coverage=getCoverage(alt,STEERING_ANGLE)
+                h3id=h3.latlng_to_cell(lat,lng,1)
+                satMaker={'name':name,'satid':stations[sid]['satnum'],'lat':lat,'lng':lng,'altitude':alt,'coverage':coverage,'type':satType,'serving':'NO GATEWAY LINK','gatewayuuid':None,'gwslant':0,'utcoverage':False,'utslant':0,'utaz':0,'utel':0,'servingpt':None,'shell':satShell,'failed':hasFailed,'status':status,'loan':'N/A','apan':'N/A','geometry':None,'inclination':inclination,'version':satVersion,'launchid':launchID,'isl':0,'islchain':None,'islvia':None,'updated':ts,'visible':True,'active':False,'h3id':h3id,'h3cells':None,'capacity':0,'beams':0,'startring':None,'endring':None}
+                stations[sid]=satMaker
+            else:
+                coverage=0
+                h3id=h3.latlng_to_cell(lat,lng,1)
+                satMaker={'name':name,'satid':stations[sid]['satnum'],'lat':lat,'lng':lng,'altitude':alt,'coverage':coverage,'type':satType,'serving':'NO GATEWAY LINK','gatewayuuid':None,'gwslant':0,'utcoverage':False,'utslant':0,'utaz':0,'utel':0,'servingpt':None,'shell':satShell,'failed':hasFailed,'status':status,'loan':'N/A','apan':'N/A','geometry':None,'inclination':inclination,'version':satVersion,'launchid':launchID,'isl':0,'islchain':None,'islvia':None,'updated':ts,'visible':True,'active':False,'h3id':h3id,'h3cells':None,'capacity':0,'beams':0,'startring':None,'endring':None}
+                stations[sid]=satMaker
+def generatePlaneStats():
+    global orbitalChartData,stations,orbitalBarData
+    length=len(shells)
+    for ic in range(1,length):
+        foundPos=0
+        foundVal=0
+        minVal=0
+        filledPlanes=[]
+        planeSlots=[]
+        planeData=[]
+        slotSpacing=shells[ic]['slotspacing']
+        shellAlt=shells[ic]['altitude']
+        maxsMA=shellAlt+4
+        maxPos=shellAlt+15
+        #get list of all planes with at least one satellite in
+        for j in range(361):
+            if len(shellStats[ic][j])>0:
+                filledPlanes.append(j)
+        for i in range(len(filledPlanes)-2):#这里有改了一下下标范围
+            if (filledPlanes[i+2]-filledPlanes[i+1]==5) and (filledPlanes[i+1]-filledPlanes[i]==5):
+                foundPos=i
+                foundVal=filledPlanes[i]
+                break
+        for i2 in range(foundVal,0,-5):
+            minVal=i2
+        #generate slots
+        for i3 in range(minVal,361,5):
+            planeSlots.append(i3)
+        for j1 in range(0,361):
+            if len(shellStats[ic][j1])>0:
+                oS=0
+                oA=0
+                OK=0
+                PS=0
+                shellStats[ic][j1].sort()
+                #work out the standard deviation
+                foundPos=0
+                foundVal=0
+                minVal=0
+                orbitalSlots=[]
+                count=len(shellStats[ic][j1])-1
+                for i in range(count):
+                    if shellStats[ic][j1][i+1]-shellStats[ic][j1][i]==slotSpacing:
+                        foundPos=i
+                        foundVal=shellStats[ic][j1][i]
+                        break
+                #find starting slot
+                for i4 in range(foundVal,0,-slotSpacing):
+                    minVal=i4
+                #generate orbital slots for this plane
+                for i5 in range(minVal,361,slotSpacing):
+                    orbitalSlots.append(i5)
+                #fakemode 不管
+                for item in shellOrientation[ic][j1]:
+                    operational='YES'
+                    status='OUT OF SLOT'
+                    #status='OPERATIONAL'
+                    diff=0
+                    if item['status']=='POSITIONING':
+                        status='POSITIONING'
+                    if item['status']=='OUT OF ALTITUDE':
+                        status='OUT OF ALTITUDE'
+                    if item['status']=='OPERATIONAL':
+                        status='OPERATIONAL'
+                        '''for slot in orbitalSlots:
+                            diff=abs(item['cAPAN']-slot)
+                            if diff<=2:
+                                status='OPERATIONAL'
+                                return False'''
+                    status='OPERATIONAL'
+                    entry={'x':j1,'y':item['cAPANr'],'value':1,'sat':item['sat'],'sid':item['sid'],'alt':item['alt'],'op':operational,'status':status}
+                    orbitalChartData[ic].append(entry)
+                    if item['sid'] in stations:#stations的键值是字符串
+                        stations[item['sid']]['type']='normal'
+                        stations[item['sid']]['status']=status
+                        stations[item['sid']]['loan']=j1
+                        stations[item['sid']]['apan']=item['cAPANr']
+                    if status=='OUT OF SLOT':
+                        oS+=1
+                    if status=='OUT OF ALTITUDE':
+                        oA+=1
+                    if status=='OPERATIONAL':
+                        OK+=1
+                    if status=='POSITIONING':
+                        PS+=1
+                orbitalBarData[ic].append({'plane':j1,'ok':OK,'oa':oA,'os':oS,'ps':PS,'none':0})
+        #print(len(orbitalChartData[ic]))
+def generateISL():
+    global orbitalChartData, stations, orbitalBarData,ISL,ISLChains,stations,ISLsats,isllinks,crossPlaneISL
+    length = len(shells)
+    for ic in range(1, length):
+        idx=None
+        for i1 in range(len(orbitalChartData[ic])):
+            if orbitalChartData[ic][i1]['status']=='OPERATIONAL' or orbitalChartData[ic][i1]['status']=='OUT OF SLOT':
+                idx=str(ic)+'_'+str(orbitalChartData[ic][i1]['x'])
+                if idx not in ISL:
+                    ISL[idx]=[]
+                ISL[idx].append({'plane':orbitalChartData[ic][i1]['x'],'slot':orbitalChartData[ic][i1]['y'],'sid':orbitalChartData[ic][i1]['sid']})
+                #print(orbitalChartData[ic][i1]['sid'],stations[ISL[ic][i1]['sid']]['version'])
+
+        cc=0
+        #update ISL links
+        for key,value in ISL.items():
+            arr=key.split('_')
+            p=ISL[key]
+            shell=int(arr[0])
+            loan=int(arr[1])
+            if shell!=ic:
+                continue
+            idx = str(ic) + '_' + str(cc)
+            ISLChains[idx] = []
+            plane=p
+            plane.sort(key=lambda x:(x['slot']))
+            len_plane=len(plane)
+            #print(plane)
+            for i in range(len_plane-1):#0 to 360
+                #if i+1 in range(0,361):
+                if plane[i+1]['slot']-plane[i]['slot']<=21:
+                    if plane[i]['sid'] in stations and plane[i+1]['sid'] in stations:
+                        if stations[plane[i]['sid']]['version']!='v1.0' and stations[plane[i+1]['sid']]['version']!='v1.0':
+                            stations[plane[i]['sid']]['isl']=1
+                            stations[plane[i+1]['sid']]['isl']=1
+                            stations[plane[i]['sid']]['islchain']=idx
+                            stations[plane[i+1]['sid']]['islchain']=idx
+                            if plane[i]['sid'] not in ISLChains[idx]:
+                                ISLChains[idx].append(plane[i]['sid'])
+                            if plane[i+1]['sid'] not in ISLChains[idx]:
+                                ISLChains[idx].append(plane[i+1]['sid'])
+                            ISLsats.add(plane[i]['sid'])
+                            ISLsats.add(plane[i+1]['sid'])
+                            #Establish ISL link
+                            sid=plane[i]['sid']+'_ip_'+plane[i+1]['sid']
+                            islLink={'type':'isl_link','mode':'ip','name':sid,'loan':loan,'slot':plane[i]['slot'],'sata':plane[i]['sid'],'satb':plane[i+1]['sid'],'active':0,'planeid':idx}
+                            isllinks[sid]=islLink
+            #360 to 0
+            i=len_plane-1
+            if 360-plane[i]['slot']+plane[0]['slot']<=21:
+                if plane[i]['sid'] in stations and plane[0]['sid'] in stations:
+                    if stations[plane[i]['sid']]['version'] != 'v1.0' and stations[plane[0]['sid']]['version'] != 'v1.0':
+                        stations[plane[i]['sid']]['isl']=1
+                        stations[plane[0]['sid']]['isl']=1
+                        if plane[i]['sid'] not in ISLChains[idx]:
+                            ISLChains[idx].append(plane[i]['sid'])
+                        if plane[0]['sid'] not in ISLChains[idx]:
+                            ISLChains[idx].append(plane[0]['sid'])
+                        ISLsats.add(plane[i]['sid'])
+                        ISLsats.add(plane[0]['sid'])
+                        sid=plane[i]['sid']+'_ip_'+plane[0]['sid']
+                        islLink = {'type': 'isl_link', 'mode':'ip','name': sid, 'loan': loan, 'slot': plane[i]['slot'],
+                                   'sata': plane[i]['sid'], 'satb': plane[0]['sid'], 'active': 0, 'planeid': idx}
+                        isllinks[sid]=islLink
+            cc+=1
+        for key in list(ISLChains):
+            if len(ISLChains[key])==0:
+                del ISLChains[key]
+        #check which chains can cross-plane
+        for keyA,value in ISLChains.items():
+            arr=keyA.split('_')
+            shell=arr[0]
+            k=int(arr[1])
+            keyB=shell+'_'+str(k+1)
+            if keyB in ISLChains:
+                loanA=stations[ISLChains[keyA][0]]['loan']
+                loanB=stations[ISLChains[keyB][0]]['loan']
+                if loanB-loanA<6:
+                    foundLink=False
+                    satA=None
+                    satB=None
+                    for a in range(len(ISLChains[keyA])):
+                        for b in range(len(ISLChains[keyB])):
+                            apanA=stations[ISLChains[keyA][a]]['apan']
+                            apanB=stations[ISLChains[keyB][b]]['apan']
+                            if apanB>apanA and apanB-apanA<15:
+                                satA=ISLChains[keyA][a]
+                                satB=ISLChains[keyB][b]
+                                foundLink=True
+                                break
+                        if foundLink:
+                            break
+                    if foundLink:
+                        stations[satA]['isl']=1
+                        stations[satB]['isl']=1
+                        if satA not in ISLChains[keyA]:
+                            ISLChains[keyA].append(satA)
+                        if satB not in ISLChains[keyA]:
+                            ISLChains[keyA].append(satB)
+                        ISLsats.add(satA)
+                        ISLsats.add(satB)
+                        #establish ISL link
+                        sid=satA+'_cp_'+satB
+                        islLink = {'type': 'isl_link', 'mode':'cp','name': sid, 'loan': -1, 'slot': -1,
+                                   'sata': satA, 'satb': satB, 'active': 0, 'planeid': idx}
+                        isllinks[sid]=islLink
+                        crossPlaneISL[keyA]=keyB
+
 def cal_gw_candidate(gw_cbf,gw_length,time_in,gw_pos):
     sat_candidate={}
     R=6371
     a=math.radians(25)
     b=math.radians(56.5)
-    for i in range(0,node_num):
+    for i in range(0,len(sat)):
         tmp={}
         for j in range(0,gw_length):
             lat1=sat[i]['lat']
-            lng1=gateway[j]['lat']
-            lat2=sat[i]['lng']
+            lat2=gateway[j]['lat']
+            lng1=sat[i]['lng']
             lng2=gateway[j]['lng']
             #dist=math.sqrt(np.square(x1-x2)+np.square(y1-y2)+np.square(z1-z2))
             dist=getDistance(lat1,lng1,lat2,lng2)
@@ -457,14 +846,14 @@ def cal_gw_candidate(gw_cbf,gw_length,time_in,gw_pos):
                     continue
                 gwlat = float(gateway[j]['lat'])
                 gwlng = float(gateway[j]['lng'])
-                satlat = pos_all[i][0][0][time_in]
-                satlon = pos_all[i][0][1][time_in]
-                satalt = pos_all[i][0][2][time_in]
+                satlat = lat1#pos_all[i][0][0][time_in]
+                satlon = lng1#pos_all[i][0][1][time_in]
+                satalt = sat[i]['alt']#pos_all[i][0][2][time_in]
                 la = cal_lookAnglesNGSO(satlat, satlon, gwlat, gwlng, satalt)
                 az = la['az']
                 el = la['el']
                 if el >= gateway[j]['minElevation']:
-                    ci=clarkInterference(gwlat,gwlng,az,el,GSOPROTECTION,satlat,satlon)#这里后续补充
+                    ci=clarkInterference(gwlat,gwlng,az,el,GSOPROTECTION,satlat,satlon)
                     if not ci['blocked']:
                         tmp[j]={'gwDistance':dist,'az':az,'el':el}
                 #tmp[j]['gw_sat_dis']=dist
@@ -472,21 +861,63 @@ def cal_gw_candidate(gw_cbf,gw_length,time_in,gw_pos):
             tmp=sorted(tmp.items(),key=lambda x:x[1]['gwDistance'])
         sat_candidate[i]=tmp
     return sat_candidate
+
 def init_sat(time_in):
-    global STEERING_ANGLE
-    sat=[]
-    for i in range(node_num):
-        tmp={'satid':i,'lat':pos_all[i][0][0][time_in],'lng':pos_all[i][0][1][time_in],'alt':pos_all[i][0][2][time_in]/1000,'coverage':0.0,'serving':'NO GATEWAY LINK','gatewayuuid':None,'gw_num':-1,'capacity':0,'beams':0,'h3id':None,'h3cells':[],'islvia':False}
-        tmp['h3id']=h3.latlng_to_cell(tmp['lat'],tmp['lng'],1)
-        tmp['coverage']=getCoverage(tmp['alt'],STEERING_ANGLE)
-        #get H3 cells around satellite
-        cells=h3.grid_disk(tmp['h3id'],1)
-        tmp['h3cells'].extend({tmp['h3id']})
-        cells.remove(tmp['h3id'])#保证顺序是从内到外
-        h3cells=cells
-        tmp['h3cells'].extend(h3cells)
-        sat.append(tmp)
-    return sat
+    global STEERING_ANGLE,sat
+    #sat=[]
+    if TLE==False:
+        for i in range(node_num):
+            tmp={'satid':i,'satname':i,'lat':pos_all[i][0][0][time_in],'lng':pos_all[i][0][1][time_in],'alt':pos_all[i][0][2][time_in]/1000,'coverage':0.0,'serving':'NO GATEWAY LINK','gatewayuuid':None,'gw_num':-1,'capacity':0,'beams':0,'h3id':None,'h3cells':[],'islvia':False}
+            tmp['h3id']=h3.latlng_to_cell(tmp['lat'],tmp['lng'],1)
+            tmp['coverage']=getCoverage(tmp['alt'],STEERING_ANGLE)
+            #get H3 cells around satellite
+            cells=h3.grid_disk(tmp['h3id'],1)
+            tmp['h3cells'].extend({tmp['h3id']})
+            cells.remove(tmp['h3id'])#保证顺序是从内到外
+            h3cells=cells
+            tmp['h3cells'].extend(h3cells)
+            sat.append(tmp)
+    else:
+        global stations
+        load_launch_json()
+        loadShells()
+        get_stations(t_s)
+        #print(stations)
+        index=0
+        for key,satrec in stations.items():
+            if satrec!={}:
+                #print(satrec)
+                tmp={'satid':satrec['satid'],'satname':satrec['name'],'lat':satrec['lat'],'lng':satrec['lng'],'alt':satrec['altitude'],'coverage':0.0,'serving':'NO GATEWAY LINK','gatewayuuid':None,'gw_num':-1,'capacity':0,'beams':0,'h3id':None,'h3cells':[],'islvia':False}
+                tmp['h3id'] = h3.latlng_to_cell(tmp['lat'], tmp['lng'], 1)
+                tmp['coverage'] = getCoverage(tmp['alt'], STEERING_ANGLE)
+                cells = h3.grid_disk(tmp['h3id'], 1)
+                tmp['h3cells'].extend({tmp['h3id']})
+                cells.remove(tmp['h3id'])  # 保证顺序是从内到外
+                h3cells = cells
+                tmp['h3cells'].extend(h3cells)
+                sat.append(tmp)
+                satrec['index']=index#stations对应sat中的下标
+                index+=1
+        '''#load_tle(time_in)
+        no=0
+        count=0
+        name_exist=set()
+        for satrec in tle_satname:
+            if satrec not in name_exist:
+                name_exist.add(satrec)
+                tmp={'satid':no,'satname':satrec[0:13],'lat':tle_lat[count],'lng':tle_lng[count],'alt':tle_alt[count],'coverage':0.0,'serving':'NO GATEWAY LINK','gatewayuuid':None,'gw_num':-1,'capacity':0,'beams':0,'h3id':None,'h3cells':[],'islvia':False}
+                tmp['h3id'] = h3.latlng_to_cell(tmp['lat'], tmp['lng'], 1)
+                tmp['coverage'] = getCoverage(tmp['alt'], STEERING_ANGLE)
+                # get H3 cells around satellite
+                cells = h3.grid_disk(tmp['h3id'], 1)
+                tmp['h3cells'].extend({tmp['h3id']})
+                cells.remove(tmp['h3id'])  # 保证顺序是从内到外
+                h3cells = cells
+                tmp['h3cells'].extend(h3cells)
+                sat.append(tmp)
+                no+=1
+            count+=1'''
+    #return sat
 def init_gateways():
     gw_len=len(gateway)
     global MINGWCAPACITY,MAXGWCAPACITY
@@ -502,13 +933,11 @@ def init_gateways():
 
 def updateGateways(satCandidate):
     global haveGatewaysSats
-    for i in range(node_num):
+    for i in range(len(sat)):
         gatewayUUID=None
         for j in range(len(satCandidate[i])):
-
             candidate=satCandidate[i][j][0]
             elevation=satCandidate[i][j][1]['el']
-
             gw=gateway[candidate]
             if LIMITLINKS:
                 if gw['links']<gw['numAntennas']*GWMULTIPLIER/2:
@@ -535,49 +964,105 @@ def updateGateways(satCandidate):
 
 def serving_sats():
     global hexUpdates,simSats
-    for i in range(node_num):
+    for i in range(len(sat)):
         h3cells=sat[i]['h3cells']
         for item in h3cells:
             if item in hexIntersect:
-                hexUpdates.add(i)
+                hexUpdates.add(sat[i]['satid'])
                 '''tmp={'satid':i,'used':0,'beams':{}}
                 simSats[i]=tmp'''
-
 def init_ISL(byhop=False):
-    global GRAPH_ISL
-    edge=[]
-    GRAPH_ISL.add_nodes_from(range(node_num))
-    for i in range(node_num):
-        for j in range(i+1,node_num):
-            if Delay[i][j]>0:
-                if byhop:
-                    Delay[i][j]=1
-                edge.append((i,j,Delay[i][j]))
-    GRAPH_ISL.add_weighted_edges_from(edge)
+    if TLE==False:
+        global GRAPH_ISL
+        edge=[]
+        GRAPH_ISL.add_nodes_from(range(node_num))
+        for i in range(node_num):
+            for j in range(i+1,node_num):
+                if Delay[i][j]>0:
+                    if byhop:
+                        Delay[i][j]=1
+                    edge.append((i,j,Delay[i][j]))
+        GRAPH_ISL.add_weighted_edges_from(edge)
+    else:
+        global ISL
+        length=len(shells)
+        #for ic in range(1,length):
+        generatePlaneStats()
+        generateISL()
 def updateISLGw():
     global ISLsats
-    for sid in hexUpdates:
-        if sat[sid]['gatewayuuid']==None:
-            ISLsats.add(sid)
-    for sid in ISLsats:
-        satno=-1
-        distance = 1000000
-        for lid in haveGatewaysSats:
-            if nx.has_path(GRAPH_ISL,source=sid,target=lid):
-                dis=nx.dijkstra_path_length(GRAPH_ISL,source=sid,target=lid)
-                if dis<distance:
-                    distance=dis
-                    satno=lid
-        if satno!=-1:
-            sat[sid]['gatewayuuid']=sat[satno]['gatewayuuid']
-            sat[sid]['gw_num']=sat[satno]['gw_num']
-            sat[sid]['islvia']=True
-            sat[sid]['serving']=sat[satno]['serving']+"(ISL)"
-            if LIMITISLSATCAPACITY:
-                sat[sid]['capacity']=sat[satno]['capacity']/10#这里硬编码
-            else:
-                sat[sid]['capacity']=sat[satno]['capacity']
+    if TLE==False:
+        #havegwsats = []
+        for sid in hexUpdates:
+            if sat[sid]['gatewayuuid']==None:
+                ISLsats.add(sid)
+            '''else:
+                havegwsats.append(sid)'''
+        for sid in ISLsats:
+            #print(sid)
+            satno=-1
+            distance = 1000000
+            for lid in haveGatewaysSats:
+                if nx.has_path(GRAPH_ISL,source=sid,target=lid):
+                    dis=nx.dijkstra_path_length(GRAPH_ISL,source=sid,target=lid)
+                    if dis<distance:
+                        distance=dis
+                        satno=lid
+            if satno!=-1:
+                sat[sid]['gatewayuuid']=sat[satno]['gatewayuuid']
+                sat[sid]['gw_num']=sat[satno]['gw_num']
+                sat[sid]['islvia']=True
+                sat[sid]['serving']=sat[satno]['serving']+"(ISL)"
+                if LIMITISLSATCAPACITY:
+                    sat[sid]['capacity']=sat[satno]['capacity']/10#这里硬编码
+                else:
+                    sat[sid]['capacity']=sat[satno]['capacity']
+    else:
+        doneSats=set()
+        doneChains=[]
+        for sid in hexUpdates:
+            aSat = stations[sid]
+            gatewayuuid = sat[aSat['index']]['gatewayuuid']
+            if gatewayuuid!=None:
+                if sid not in doneSats:
+                    doneSats.add(sid)
+                    islUpdates=[]
+                    chain=None
+                    chainID=None
+                    if aSat['islchain']!=None:
+                        chainID=aSat['islchain']
+                        chain=ISLChains[chainID]
+                        for k in range(len(chain)):
+                            if chain[k] not in doneSats:
+                                if sat[stations[chain[k]]['index']]['gatewayuuid']==None:
+                                    islUpdates.append(chain[k])
+                                doneSats.add(chain[k])
+                        cpKeys=crossPlaneISL.keys()
+                        if chainID in cpKeys and chainID not in doneChains:
+                            doneChains.append(chainID)
+                            while chainID in cpKeys:
+                                chainID=crossPlaneISL[chainID]
+                                if chainID not in doneChains:
+                                    doneChains.append(chainID)
+                                    cpChain=ISLChains[chainID]
+                                    for k in range(len(cpChain)):
+                                        if cpChain[k] not in doneSats:
+                                            if sat[stations[cpChain[k]]['index']]['gatewayuuid']==None:
+                                                islUpdates.append(cpChain[k])
+                                            doneSats.add(cpChain[k])
+                        for n in range(len(islUpdates)):
+                            lid=islUpdates[n]
+                            sata=sat[stations[lid]['index']]
+                            satb=sat[stations[sid]['index']]
 
+                            sata['serving']=satb['serving']+'(ISL)'
+                            sata['gatewayuuid']=satb['gatewayuuid']
+                            sata['gw_num']=satb['gw_num']
+                            sata['islvia']=sid
+                            if LIMITISLSATCAPACITY:
+                                sata['capacity']=satb['capacity']/10
+                            else:
+                                sata['capacity'] = satb['capacity']
 
 def CapSim():
     global ACTMAXCELLCAPACITY,ACTMINCELLCAPACITY,simActiveCells,SIMACTIVECELLCOUNT,simSats,BEAMCAPACITY,MAXBEAMCAPACITY,MAXCELLCAPACITY,SIMBEAMSPERCELL,SIMTDM,MPDLSPOTBEASMS
@@ -598,27 +1083,34 @@ def CapSim():
     isfull=0
     #act_count=0
     for sid in hexUpdates:
-        lat=sat[sid]['lat']
-        lng=sat[sid]['lng']
-        alt=sat[sid]['alt']
-        coverage=sat[sid]['coverage']
+        if TLE==False:
+            lat=sat[sid]['lat']
+            lng=sat[sid]['lng']
+            alt=sat[sid]['alt']
+            coverage=sat[sid]['coverage']
+            parents = sat[sid]['h3cells']
+            capacity=sat[sid]['capacity']
+        else:
+            lat = sat[stations[sid]['index']]['lat']
+            lng = sat[stations[sid]['index']]['lng']
+            alt = sat[stations[sid]['index']]['alt']
+            coverage = sat[stations[sid]['index']]['coverage']
+            parents = sat[stations[sid]['index']]['h3cells']
+            capacity=sat[stations[sid]['index']]['capacity']
         simSats[sid]={}
         simSats[sid]['sid']=sid
         simSats[sid]['used']=0
-        simSats[sid]['position']=[sat[sid]['lat'],sat[sid]['lng']]
-        simSats[sid]['capacity']=sat[sid]['capacity']
+        simSats[sid]['position']=[lat,lng]
+        simSats[sid]['capacity']=capacity
         simSats[sid]['beams']={}
         MPDLSPOTBEASMS=48*SIMTDM#硬编码了波束个数
         beamID=0
         actStartRing=None
         actEndRings=None
-        coverage=sat[sid]['coverage']
+        #coverage=sat[sid]['coverage']
         centerCell=h3.latlng_to_cell(lat,lng,5)
         cells=[]
         candidates=[]
-        parents=sat[sid]['h3cells']
-        #skipped0=0
-        #skipped1=0
         if SIMMODE=='prio_slant':
             tmp=parents[1:]
             for r in tmp:#range(1,7):
@@ -628,9 +1120,6 @@ def CapSim():
             candidates.extend(children)
         if SIMMODE=='prio_nadir':
             for r in parents:
-                #if not h3.is_pentagon(parents[r]):
-                    #print(parents[r])
-                    #continue
                 children=h3.cell_to_children(r,5)
                 candidates.extend(children)
         if len(candidates)==0:
@@ -713,7 +1202,10 @@ def CapSim():
         if simSats[sid]['used']>0:
             servingSats+=1
             usedSatBeams=(48 if simSats[sid]['used']>48 else simSats[sid]['used'])
-            sat[sid]['beams']=usedSatBeams
+            if TLE==False:
+                sat[sid]['beams']=usedSatBeams
+            else:
+                sat[stations[sid]['index']]['beams']=usedSatBeams
             usedBeams+=usedSatBeams
             totalSatCapacity+=simSats[sid]['capacity']
             #Assign bandwidth to each cell we caught
@@ -774,7 +1266,7 @@ load_country_json()
 load_hexIntersect()
 load_delay(time_in)
 init_ISL(True)
-sat=init_sat(time_in)
+init_sat(time_in)
 init_gateways()
 gw_cbf=to_cbf(gw_pos,gw_length)
 sat_candidate=cal_gw_candidate(gw_cbf,gw_length,0,gw_pos)
@@ -783,3 +1275,21 @@ serving_sats()
 updateISLGw()
 cal_simcellslocation_cbf()
 CapSim()
+
+
+'''print("SIM COUNTRIES: ",COUNTRY_LIST)
+load_country_json()
+load_hexIntersect()
+init_sat(time_in)
+init_ISL()
+init_gateways()
+gw_cbf=to_cbf(gw_pos,gw_length)
+sat_candidate=cal_gw_candidate(gw_cbf,gw_length,0,gw_pos)
+updateGateways(sat_candidate)
+serving_sats()
+updateISLGw()
+cal_simcellslocation_cbf()
+CapSim()
+print(len(isllinks),isllinks)'''
+
+
