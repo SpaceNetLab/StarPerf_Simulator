@@ -70,6 +70,25 @@ Finally, run StarPerf to conduct evaluation on the simulated satellite network. 
 
 ```python starperf.py```
 
+Note that `starperf.py` relies on a configuration file to calculate the results, which looks like this:
+
+|  | StarLink1   | OneWeb  |  polar_Telesat | inclined_Telesat|
+| :---- | :----  | :----  | :----  | :----  |
+|# of satellites |1584|720|72|50|
+|cycle(s)|5731|6557|6298|6557|
+|Maximum depression(°)|56.5|28.8596|54.3122|52.2558|
+|Minimum elevation(°)|25|55|20|20|
+|Maximum propagation delay(ms)|3.74|4.71|7.07|8.19|
+
+The meaning of the parameters in the above table in the actual constellation is shown in the figure below.
+![image](https://github.com/SpaceNetLab/StarPerf_Simulator/blob/master/doc/parameter.png)
+
+Generally, the `cycle` can be deduced from the orbital altitude. The `minimum elevation`($\alpha$) is usually available on the public FCC documents. According to this, we can calculate the `maximum elevation`($\beta$) and the `maximum propagation delay` using the following formula (assuming the signal travels at the speed of light).
+```math
+r=\frac{R(\sin 90°-\alpha-\beta)}{\sin \frac{90°+\alpha+\beta}{2}} =\frac{h\sin\beta}{\sin\frac{90°+\alpha-\beta}{2}}
+```
+
+
 Results like coverage, latency can be obtained in `*.csv` format once the calculation is done.
 
 
