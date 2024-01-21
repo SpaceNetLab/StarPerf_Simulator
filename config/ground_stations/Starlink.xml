@@ -1,0 +1,2351 @@
+<GSs>
+  <GS1>
+    <Latitude>-12.74832</Latitude>
+    <Longitude>-38.28305</Longitude>
+    <Description>Camaçari, BR</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS1>
+  <GS2>
+    <Latitude>-20.5578</Latitude>
+    <Longitude>-40.40863</Longitude>
+    <Description>Guarapari, BR</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS2>
+  <GS3>
+    <Latitude>-22.69668</Latitude>
+    <Longitude>-42.87279</Longitude>
+    <Description>Itaboraí, BR</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS3>
+  <GS4>
+    <Latitude>-5.54612</Latitude>
+    <Longitude>-35.81701</Longitude>
+    <Description>João Câmara, BR</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS4>
+  <GS5>
+    <Latitude>-19.80334</Latitude>
+    <Longitude>-45.68113</Longitude>
+    <Description>Luz, BR</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS5>
+  <GS6>
+    <Latitude>-16.68367</Latitude>
+    <Longitude>-43.83329</Longitude>
+    <Description>Montes Carlos, BR</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS6>
+  <GS7>
+    <Latitude>-5.15695</Latitude>
+    <Longitude>-37.35373</Longitude>
+    <Description>Mossoró, BR</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS7>
+  <GS8>
+    <Latitude>-22.34929</Latitude>
+    <Longitude>-44.94544</Longitude>
+    <Description>Passa Quatro, BR</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS8>
+  <GS9>
+    <Latitude>-29.9842</Latitude>
+    <Longitude>-51.12088</Longitude>
+    <Description>Porto Alegre, BR</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS9>
+  <GS10>
+    <Latitude>-22.1461</Latitude>
+    <Longitude>-51.47411</Longitude>
+    <Description>Presidente Prudente, BR</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS10>
+  <GS11>
+    <Latitude>-26.08857</Latitude>
+    <Longitude>-49.79286</Longitude>
+    <Description>Rio Negro, BR</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS11>
+  <GS12>
+    <Latitude>-23.45641</Latitude>
+    <Longitude>-46.94226</Longitude>
+    <Description>Santana de Parnaíba, BR</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS12>
+  <GS13>
+    <Latitude>-3.67468</Latitude>
+    <Longitude>-39.10287</Longitude>
+    <Description>São Gonçalo do Amarante, BR</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS13>
+  <GS14>
+    <Latitude>-7.85393</Latitude>
+    <Longitude>-35.78008</Longitude>
+    <Description>Surubim, BR</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS14>
+  <GS15>
+    <Latitude>-29.76549</Latitude>
+    <Longitude>-56.52698</Longitude>
+    <Description>Uruguaiana, BR</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS15>
+  <GS16>
+    <Latitude>-2.92674</Latitude>
+    <Longitude>-59.99778</Longitude>
+    <Description>Manaus, BR</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS16>
+  <GS17>
+    <Latitude>-31.52249</Latitude>
+    <Longitude>-64.461</Longitude>
+    <Description>Falda del Carmen, AR</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS17>
+  <GS18>
+    <Latitude>-41.48657</Latitude>
+    <Longitude>-73.02337</Longitude>
+    <Description>Puerto Montt, CL</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS18>
+  <GS19>
+    <Latitude>-38.81476</Latitude>
+    <Longitude>-73.39724</Longitude>
+    <Description>Puerto Saavedra, CL</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS19>
+  <GS20>
+    <Latitude>-35.55593</Latitude>
+    <Longitude>-71.3569</Longitude>
+    <Description>San Clemente, CL</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS20>
+  <GS21>
+    <Latitude>-29.99974</Latitude>
+    <Longitude>-71.2582</Longitude>
+    <Description>Santa Elena, CL</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS21>
+  <GS22>
+    <Latitude>-27.02</Latitude>
+    <Longitude>-70.78797</Longitude>
+    <Description>Caldera, CL</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS22>
+  <GS23>
+    <Latitude>-33.39272</Latitude>
+    <Longitude>-70.88325</Longitude>
+    <Description>Noviciado, CL</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS23>
+  <GS24>
+    <Latitude>-52.93974</Latitude>
+    <Longitude>-70.85045</Longitude>
+    <Description>Punta Arenas, CL</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS24>
+  <GS25>
+    <Latitude>12.097686</Latitude>
+    <Longitude>-68.908109</Longitude>
+    <Description>Willemstad, CW</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS25>
+  <GS26>
+    <Latitude>18.0178033</Latitude>
+    <Longitude>-76.907975</Longitude>
+    <Description>Possible site: Central Village, JM</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS26>
+  <GS27>
+    <Latitude>6.44952617548687</Latitude>
+    <Longitude>3.58773389218747</Longitude>
+    <Description>Lekki, NG</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS27>
+  <GS28>
+    <Latitude>7.3875</Latitude>
+    <Longitude>4.2124</Longitude>
+    <Description>Ikire, NG</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS28>
+  <GS29>
+    <Latitude>34.7893055555555</Latitude>
+    <Longitude>-95.8765</Longitude>
+    <Description>Savanna, OK | Mega</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>40</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS29>
+  <GS30>
+    <Latitude>34.7893055555555</Latitude>
+    <Longitude>-95.8765</Longitude>
+    <Description>Savanna, OK | Mega</Description>
+    <Frequency>E</Frequency>
+    <Antenna_Count>32</Antenna_Count>
+    <Uplink_Ghz>5</Uplink_Ghz>
+    <Downlink_Ghz>5</Downlink_Ghz>
+  </GS30>
+  <GS31>
+    <Latitude>35.1595</Latitude>
+    <Longitude>-88.0613055555555</Longitude>
+    <Description>Savannah, TN | Mega</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>40</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS31>
+  <GS32>
+    <Latitude>35.1595</Latitude>
+    <Longitude>-88.0613055555555</Longitude>
+    <Description>Savannah, TN | Mega</Description>
+    <Frequency>E</Frequency>
+    <Antenna_Count>32</Antenna_Count>
+    <Uplink_Ghz>5</Uplink_Ghz>
+    <Downlink_Ghz>5</Downlink_Ghz>
+  </GS32>
+  <GS33>
+    <Latitude>39.9691111111111</Latitude>
+    <Longitude>-76.7230277777777</Longitude>
+    <Description>York, PA | Mega</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>40</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS33>
+  <GS34>
+    <Latitude>39.9691111111111</Latitude>
+    <Longitude>-76.7230277777777</Longitude>
+    <Description>York, PA | Mega</Description>
+    <Frequency>E</Frequency>
+    <Antenna_Count>32</Antenna_Count>
+    <Uplink_Ghz>5</Uplink_Ghz>
+    <Downlink_Ghz>5</Downlink_Ghz>
+  </GS34>
+  <GS35>
+    <Latitude>39.28885</Latitude>
+    <Longitude>-108.20501</Longitude>
+    <Description>Debeque, CO | Mega</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>40</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS35>
+  <GS36>
+    <Latitude>39.28885</Latitude>
+    <Longitude>-108.20501</Longitude>
+    <Description>Debeque, CO | Mega</Description>
+    <Frequency>E</Frequency>
+    <Antenna_Count>32</Antenna_Count>
+    <Uplink_Ghz>5</Uplink_Ghz>
+    <Downlink_Ghz>5</Downlink_Ghz>
+  </GS36>
+  <GS37>
+    <Latitude>31.6821666666666</Latitude>
+    <Longitude>-82.2689722222222</Longitude>
+    <Description>Baxley, GA / Surrency, GA | Mega</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>40</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS37>
+  <GS38>
+    <Latitude>31.6821666666666</Latitude>
+    <Longitude>-82.2689722222222</Longitude>
+    <Description>Baxley, GA / Surrency, GA | Mega</Description>
+    <Frequency>E</Frequency>
+    <Antenna_Count>32</Antenna_Count>
+    <Uplink_Ghz>5</Uplink_Ghz>
+    <Downlink_Ghz>5</Downlink_Ghz>
+  </GS38>
+  <GS39>
+    <Latitude>32.0044722222222</Latitude>
+    <Longitude>-97.06325</Longitude>
+    <Description>Hillsboro, TX | Mega</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>40</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS39>
+  <GS40>
+    <Latitude>32.0044722222222</Latitude>
+    <Longitude>-97.06325</Longitude>
+    <Description>Hillsboro, TX | Mega</Description>
+    <Frequency>E</Frequency>
+    <Antenna_Count>32</Antenna_Count>
+    <Uplink_Ghz>5</Uplink_Ghz>
+    <Downlink_Ghz>5</Downlink_Ghz>
+  </GS40>
+  <GS41>
+    <Latitude>32.53225</Latitude>
+    <Longitude>-94.4303055555555</Longitude>
+    <Description>Marshall, TX | Mega</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>40</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS41>
+  <GS42>
+    <Latitude>32.53225</Latitude>
+    <Longitude>-94.4303055555555</Longitude>
+    <Description>Marshall, TX | Mega</Description>
+    <Frequency>E</Frequency>
+    <Antenna_Count>32</Antenna_Count>
+    <Uplink_Ghz>5</Uplink_Ghz>
+    <Downlink_Ghz>5</Downlink_Ghz>
+  </GS42>
+  <GS43>
+    <Latitude>46.1268611111111</Latitude>
+    <Longitude>-119.684</Longitude>
+    <Description>Prosser, WA | Mega</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>40</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS43>
+  <GS44>
+    <Latitude>46.1268611111111</Latitude>
+    <Longitude>-119.684</Longitude>
+    <Description>Prosser, WA | Mega</Description>
+    <Frequency>E</Frequency>
+    <Antenna_Count>32</Antenna_Count>
+    <Uplink_Ghz>5</Uplink_Ghz>
+    <Downlink_Ghz>5</Downlink_Ghz>
+  </GS44>
+  <GS45>
+    <Latitude>47.6962777777777</Latitude>
+    <Longitude>-122.035305555555</Longitude>
+    <Description>Redmond, WA | Mega</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>40</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS45>
+  <GS46>
+    <Latitude>47.6962777777777</Latitude>
+    <Longitude>-122.035305555555</Longitude>
+    <Description>Redmond, WA | Mega</Description>
+    <Frequency>E</Frequency>
+    <Antenna_Count>32</Antenna_Count>
+    <Uplink_Ghz>5</Uplink_Ghz>
+    <Downlink_Ghz>5</Downlink_Ghz>
+  </GS46>
+  <GS47>
+    <Latitude>45.6255277777777</Latitude>
+    <Longitude>-120.174777777777</Longitude>
+    <Description>Arlington, OR | Mega</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>40</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS47>
+  <GS48>
+    <Latitude>45.6255277777777</Latitude>
+    <Longitude>-120.174777777777</Longitude>
+    <Description>Arlington, OR | Mega</Description>
+    <Frequency>E</Frequency>
+    <Antenna_Count>32</Antenna_Count>
+    <Uplink_Ghz>5</Uplink_Ghz>
+    <Downlink_Ghz>5</Downlink_Ghz>
+  </GS48>
+  <GS49>
+    <Latitude>34.0984444444444</Latitude>
+    <Longitude>-86.5785277777777</Longitude>
+    <Description>Blountsville, AL | Mega</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>40</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS49>
+  <GS50>
+    <Latitude>34.0984444444444</Latitude>
+    <Longitude>-86.5785277777777</Longitude>
+    <Description>Blountsville, AL | Mega</Description>
+    <Frequency>E</Frequency>
+    <Antenna_Count>32</Antenna_Count>
+    <Uplink_Ghz>5</Uplink_Ghz>
+    <Downlink_Ghz>5</Downlink_Ghz>
+  </GS50>
+  <GS51>
+    <Latitude>41.6355277777777</Latitude>
+    <Longitude>-84.974</Longitude>
+    <Description>Angola, IN | Mega</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>40</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS51>
+  <GS52>
+    <Latitude>41.6355277777777</Latitude>
+    <Longitude>-84.974</Longitude>
+    <Description>Angola, IN | Mega</Description>
+    <Frequency>E</Frequency>
+    <Antenna_Count>32</Antenna_Count>
+    <Uplink_Ghz>5</Uplink_Ghz>
+    <Downlink_Ghz>5</Downlink_Ghz>
+  </GS52>
+  <GS53>
+    <Latitude>36.69751</Latitude>
+    <Longitude>-103.79202</Longitude>
+    <Description>Des Moines, NM | Mega</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>40</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS53>
+  <GS54>
+    <Latitude>36.69751</Latitude>
+    <Longitude>-103.79202</Longitude>
+    <Description>Des Moines, NM | Mega</Description>
+    <Frequency>E</Frequency>
+    <Antenna_Count>32</Antenna_Count>
+    <Uplink_Ghz>5</Uplink_Ghz>
+    <Downlink_Ghz>5</Downlink_Ghz>
+  </GS54>
+  <GS55>
+    <Latitude>43.8960833333333</Latitude>
+    <Longitude>-69.9234444444444</Longitude>
+    <Description>Brunswick, ME | Mega</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>40</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS55>
+  <GS56>
+    <Latitude>43.8960833333333</Latitude>
+    <Longitude>-69.9234444444444</Longitude>
+    <Description>Brunswick, ME | Mega</Description>
+    <Frequency>E</Frequency>
+    <Antenna_Count>32</Antenna_Count>
+    <Uplink_Ghz>5</Uplink_Ghz>
+    <Downlink_Ghz>5</Downlink_Ghz>
+  </GS56>
+  <GS57>
+    <Latitude>42.7881111111111</Latitude>
+    <Longitude>-76.8633055555555</Longitude>
+    <Description>Romulus, NY | Mega</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>40</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS57>
+  <GS58>
+    <Latitude>42.7881111111111</Latitude>
+    <Longitude>-76.8633055555555</Longitude>
+    <Description>Romulus, NY | Mega</Description>
+    <Frequency>E</Frequency>
+    <Antenna_Count>32</Antenna_Count>
+    <Uplink_Ghz>5</Uplink_Ghz>
+    <Downlink_Ghz>5</Downlink_Ghz>
+  </GS58>
+  <GS59>
+    <Latitude>44.9410277777777</Latitude>
+    <Longitude>-92.5160277777777</Longitude>
+    <Description>Roberts, WI | Mega</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>40</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS59>
+  <GS60>
+    <Latitude>44.9410277777777</Latitude>
+    <Longitude>-92.5160277777777</Longitude>
+    <Description>Roberts, WI | Mega</Description>
+    <Frequency>E</Frequency>
+    <Antenna_Count>32</Antenna_Count>
+    <Uplink_Ghz>5</Uplink_Ghz>
+    <Downlink_Ghz>5</Downlink_Ghz>
+  </GS60>
+  <GS61>
+    <Latitude>40.9264444444444</Latitude>
+    <Longitude>-87.2953611111111</Longitude>
+    <Description>Mt Ayr, IN | Mega</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>40</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS61>
+  <GS62>
+    <Latitude>40.9264444444444</Latitude>
+    <Longitude>-87.2953611111111</Longitude>
+    <Description>Mt Ayr, IN | Mega</Description>
+    <Frequency>E</Frequency>
+    <Antenna_Count>32</Antenna_Count>
+    <Uplink_Ghz>5</Uplink_Ghz>
+    <Downlink_Ghz>5</Downlink_Ghz>
+  </GS62>
+  <GS63>
+    <Latitude>38.229</Latitude>
+    <Longitude>-97.9219722222222</Longitude>
+    <Description>Inman, KS | Mega</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS63>
+  <GS64>
+    <Latitude>38.229</Latitude>
+    <Longitude>-97.9219722222222</Longitude>
+    <Description>Inman, KS | Mega</Description>
+    <Frequency>E</Frequency>
+    <Antenna_Count>32</Antenna_Count>
+    <Uplink_Ghz>5</Uplink_Ghz>
+    <Downlink_Ghz>5</Downlink_Ghz>
+  </GS64>
+  <GS65>
+    <Latitude>27.8760055555555</Latitude>
+    <Longitude>-81.0304861111111</Longitude>
+    <Description>Kenansville, FL | Mega</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>40</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS65>
+  <GS66>
+    <Latitude>27.8760055555555</Latitude>
+    <Longitude>-81.0304861111111</Longitude>
+    <Description>Kenansville, FL | Mega</Description>
+    <Frequency>E</Frequency>
+    <Antenna_Count>40</Antenna_Count>
+    <Uplink_Ghz>5</Uplink_Ghz>
+    <Downlink_Ghz>5</Downlink_Ghz>
+  </GS66>
+  <GS67>
+    <Latitude>35.1620555555555</Latitude>
+    <Longitude>-118.878361111111</Longitude>
+    <Description>Arvin, CA | Mega</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>40</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS67>
+  <GS68>
+    <Latitude>35.1620555555555</Latitude>
+    <Longitude>-118.878361111111</Longitude>
+    <Description>Arvin, CA | Mega</Description>
+    <Frequency>E</Frequency>
+    <Antenna_Count>32</Antenna_Count>
+    <Uplink_Ghz>5</Uplink_Ghz>
+    <Downlink_Ghz>5</Downlink_Ghz>
+  </GS68>
+  <GS69>
+    <Latitude>39.6308745</Latitude>
+    <Longitude>-75.9096542</Longitude>
+    <Description>Elkton, MD | Mega</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>40</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS69>
+  <GS70>
+    <Latitude>39.6308745</Latitude>
+    <Longitude>-75.9096542</Longitude>
+    <Description>Elkton, MD | Mega</Description>
+    <Frequency>E</Frequency>
+    <Antenna_Count>32</Antenna_Count>
+    <Uplink_Ghz>5</Uplink_Ghz>
+    <Downlink_Ghz>5</Downlink_Ghz>
+  </GS70>
+  <GS71>
+    <Latitude>34.4446944444444</Latitude>
+    <Longitude>-82.6708333333333</Longitude>
+    <Description>Anderson, SC | Mega</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>40</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS71>
+  <GS72>
+    <Latitude>34.4446944444444</Latitude>
+    <Longitude>-82.6708333333333</Longitude>
+    <Description>Anderson, SC | Mega</Description>
+    <Frequency>E</Frequency>
+    <Antenna_Count>32</Antenna_Count>
+    <Uplink_Ghz>5</Uplink_Ghz>
+    <Downlink_Ghz>5</Downlink_Ghz>
+  </GS72>
+  <GS73>
+    <Latitude>40.8061944444444</Latitude>
+    <Longitude>-77.9959444444444</Longitude>
+    <Description>Port Matilda, PA | Mega</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>40</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS73>
+  <GS74>
+    <Latitude>40.8061944444444</Latitude>
+    <Longitude>-77.9959444444444</Longitude>
+    <Description>Port Matilda, PA | Mega</Description>
+    <Frequency>E</Frequency>
+    <Antenna_Count>32</Antenna_Count>
+    <Uplink_Ghz>5</Uplink_Ghz>
+    <Downlink_Ghz>5</Downlink_Ghz>
+  </GS74>
+  <GS75>
+    <Latitude>41.3612222222222</Latitude>
+    <Longitude>-89.7433055555555</Longitude>
+    <Description>Sheffield, IL | Mega</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>40</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS75>
+  <GS76>
+    <Latitude>41.3612222222222</Latitude>
+    <Longitude>-89.7433055555555</Longitude>
+    <Description>Sheffield, IL | Mega</Description>
+    <Frequency>E</Frequency>
+    <Antenna_Count>32</Antenna_Count>
+    <Uplink_Ghz>5</Uplink_Ghz>
+    <Downlink_Ghz>5</Downlink_Ghz>
+  </GS76>
+  <GS77>
+    <Latitude>40.1764722222222</Latitude>
+    <Longitude>-88.8736666666666</Longitude>
+    <Description>Clinton, IL | Mega</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>40</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS77>
+  <GS78>
+    <Latitude>40.1764722222222</Latitude>
+    <Longitude>-88.8736666666666</Longitude>
+    <Description>Clinton, IL | Mega</Description>
+    <Frequency>E</Frequency>
+    <Antenna_Count>32</Antenna_Count>
+    <Uplink_Ghz>5</Uplink_Ghz>
+    <Downlink_Ghz>5</Downlink_Ghz>
+  </GS78>
+  <GS79>
+    <Latitude>43.2477104876074</Latitude>
+    <Longitude>-124.383988095715</Longitude>
+    <Description>Charleston, OR / Bandon, OR | Mega</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>40</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS79>
+  <GS80>
+    <Latitude>43.2477104876074</Latitude>
+    <Longitude>-124.383988095715</Longitude>
+    <Description>Charleston, OR / Bandon, OR | Mega</Description>
+    <Frequency>E</Frequency>
+    <Antenna_Count>40</Antenna_Count>
+    <Uplink_Ghz>5</Uplink_Ghz>
+    <Downlink_Ghz>5</Downlink_Ghz>
+  </GS80>
+  <GS81>
+    <Latitude>29.7840555555555</Latitude>
+    <Longitude>-98.0507777777777</Longitude>
+    <Description>New Braunfels, TX | Mega</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>32</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS81>
+  <GS82>
+    <Latitude>29.7840555555555</Latitude>
+    <Longitude>-98.0507777777777</Longitude>
+    <Description>New Braunfels, TX | Mega</Description>
+    <Frequency>E</Frequency>
+    <Antenna_Count>32</Antenna_Count>
+    <Uplink_Ghz>5</Uplink_Ghz>
+    <Downlink_Ghz>5</Downlink_Ghz>
+  </GS82>
+  <GS83>
+    <Latitude>41.644</Latitude>
+    <Longitude>-121.329972222222</Longitude>
+    <Description>Tionesta, CA / Tulake, CA</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>40</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS83>
+  <GS84>
+    <Latitude>41.644</Latitude>
+    <Longitude>-121.329972222222</Longitude>
+    <Description>Tionesta, CA / Tulake, CA</Description>
+    <Frequency>E</Frequency>
+    <Antenna_Count>40</Antenna_Count>
+    <Uplink_Ghz>5</Uplink_Ghz>
+    <Downlink_Ghz>5</Downlink_Ghz>
+  </GS84>
+  <GS85>
+    <Latitude>33.73775</Latitude>
+    <Longitude>-84.974</Longitude>
+    <Description>Atlanta, GA | E-band</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>40</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS85>
+  <GS86>
+    <Latitude>33.73775</Latitude>
+    <Longitude>-84.974</Longitude>
+    <Description>Atlanta, GA | E-band</Description>
+    <Frequency>E</Frequency>
+    <Antenna_Count>32</Antenna_Count>
+    <Uplink_Ghz>5</Uplink_Ghz>
+    <Downlink_Ghz>5</Downlink_Ghz>
+  </GS86>
+  <GS87>
+    <Latitude>40.1049444444444</Latitude>
+    <Longitude>-101.51025</Longitude>
+    <Description>Benkelman, NE | Mega</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>40</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS87>
+  <GS88>
+    <Latitude>40.1049444444444</Latitude>
+    <Longitude>-101.51025</Longitude>
+    <Description>Benkelman, NE | Mega</Description>
+    <Frequency>E</Frequency>
+    <Antenna_Count>32</Antenna_Count>
+    <Uplink_Ghz>5</Uplink_Ghz>
+    <Downlink_Ghz>5</Downlink_Ghz>
+  </GS88>
+  <GS89>
+    <Latitude>33.4485415</Latitude>
+    <Longitude>-97.7767442</Longitude>
+    <Description>Sunset, TX | E-Band</Description>
+    <Frequency>E</Frequency>
+    <Antenna_Count>32</Antenna_Count>
+    <Uplink_Ghz>5</Uplink_Ghz>
+    <Downlink_Ghz>5</Downlink_Ghz>
+  </GS89>
+  <GS90>
+    <Latitude>33.6851385</Latitude>
+    <Longitude>-112.0973229</Longitude>
+    <Description>Phoenix, AZ | E-Band</Description>
+    <Frequency>E</Frequency>
+    <Antenna_Count>32</Antenna_Count>
+    <Uplink_Ghz>5</Uplink_Ghz>
+    <Downlink_Ghz>5</Downlink_Ghz>
+  </GS90>
+  <GS91>
+    <Latitude>27.7931087</Latitude>
+    <Longitude>-97.4519272</Longitude>
+    <Description>Corpus Christi, TX | Mega</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>40</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS91>
+  <GS92>
+    <Latitude>27.7931087</Latitude>
+    <Longitude>-97.4519272</Longitude>
+    <Description>Corpus Christi, TX | Mega</Description>
+    <Frequency>E</Frequency>
+    <Antenna_Count>32</Antenna_Count>
+    <Uplink_Ghz>5</Uplink_Ghz>
+    <Downlink_Ghz>5</Downlink_Ghz>
+  </GS92>
+  <GS93>
+    <Latitude>44.9452748</Latitude>
+    <Longitude>-122.8885664</Longitude>
+    <Description>Salem, OR | E-Band</Description>
+    <Frequency>E</Frequency>
+    <Antenna_Count>32</Antenna_Count>
+    <Uplink_Ghz>5</Uplink_Ghz>
+    <Downlink_Ghz>5</Downlink_Ghz>
+  </GS93>
+  <GS94>
+    <Latitude>39.2919558</Latitude>
+    <Longitude>-104.5052118</Longitude>
+    <Description>Kiowa, CO | E-Band</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>40</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS94>
+  <GS95>
+    <Latitude>39.2919558</Latitude>
+    <Longitude>-104.5052118</Longitude>
+    <Description>Kiowa, CO | E-Band</Description>
+    <Frequency>E</Frequency>
+    <Antenna_Count>32</Antenna_Count>
+    <Uplink_Ghz>5</Uplink_Ghz>
+    <Downlink_Ghz>5</Downlink_Ghz>
+  </GS95>
+  <GS96>
+    <Latitude>40.54335</Latitude>
+    <Longitude>-74.49797</Longitude>
+    <Description>Piscataway, NJ | E-Band</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>40</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS96>
+  <GS97>
+    <Latitude>40.54335</Latitude>
+    <Longitude>-74.49797</Longitude>
+    <Description>Piscataway, NJ | E-Band</Description>
+    <Frequency>E</Frequency>
+    <Antenna_Count>32</Antenna_Count>
+    <Uplink_Ghz>5</Uplink_Ghz>
+    <Downlink_Ghz>5</Downlink_Ghz>
+  </GS97>
+  <GS98>
+    <Latitude>32.70139</Latitude>
+    <Longitude>-116.36509</Longitude>
+    <Description>Pine Valley, CA | E-Band</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>40</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS98>
+  <GS99>
+    <Latitude>32.70139</Latitude>
+    <Longitude>-116.36509</Longitude>
+    <Description>Pine Valley, CA | E-Band</Description>
+    <Frequency>E</Frequency>
+    <Antenna_Count>32</Antenna_Count>
+    <Uplink_Ghz>5</Uplink_Ghz>
+    <Downlink_Ghz>5</Downlink_Ghz>
+  </GS99>
+  <GS100>
+    <Latitude>39.77536</Latitude>
+    <Longitude>-121.91987</Longitude>
+    <Description>Chico, CA | Mega</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>40</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS100>
+  <GS101>
+    <Latitude>39.77536</Latitude>
+    <Longitude>-121.91987</Longitude>
+    <Description>Chico, CA | Mega</Description>
+    <Frequency>E</Frequency>
+    <Antenna_Count>32</Antenna_Count>
+    <Uplink_Ghz>5</Uplink_Ghz>
+    <Downlink_Ghz>5</Downlink_Ghz>
+  </GS101>
+  <GS102>
+    <Latitude>33.2204867</Latitude>
+    <Longitude>-115.4668146</Longitude>
+    <Description>Niland, CA | Mega</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>32</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS102>
+  <GS103>
+    <Latitude>33.2204867</Latitude>
+    <Longitude>-115.4668146</Longitude>
+    <Description>Niland, CA | Mega</Description>
+    <Frequency>E</Frequency>
+    <Antenna_Count>32</Antenna_Count>
+    <Uplink_Ghz>5</Uplink_Ghz>
+    <Downlink_Ghz>5</Downlink_Ghz>
+  </GS103>
+  <GS104>
+    <Latitude>35.2988613</Latitude>
+    <Longitude>-114.8746214</Longitude>
+    <Description>Cal-Nev-Air, NV | E-Band</Description>
+    <Frequency>E</Frequency>
+    <Antenna_Count>32</Antenna_Count>
+    <Uplink_Ghz>5</Uplink_Ghz>
+    <Downlink_Ghz>5</Downlink_Ghz>
+  </GS104>
+  <GS105>
+    <Latitude>33.9201458</Latitude>
+    <Longitude>-118.3322165</Longitude>
+    <Description>Hawthorne, CA #2</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>12</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS105>
+  <GS106>
+    <Latitude>46.9155277777777</Latitude>
+    <Longitude>-122.813527777777</Longitude>
+    <Description>Olympia, WA</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>40</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS106>
+  <GS107>
+    <Latitude>46.9155277777777</Latitude>
+    <Longitude>-122.813527777777</Longitude>
+    <Description>Olympia, WA</Description>
+    <Frequency>E</Frequency>
+    <Antenna_Count>32</Antenna_Count>
+    <Uplink_Ghz>5</Uplink_Ghz>
+    <Downlink_Ghz>5</Downlink_Ghz>
+  </GS107>
+  <GS108>
+    <Latitude>32.9654166666666</Latitude>
+    <Longitude>-96.7125555555555</Longitude>
+    <Description>Richardson, TX</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>32</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS108>
+  <GS109>
+    <Latitude>32.9654166666666</Latitude>
+    <Longitude>-96.7125555555555</Longitude>
+    <Description>Richardson, TX</Description>
+    <Frequency>E</Frequency>
+    <Antenna_Count>32</Antenna_Count>
+    <Uplink_Ghz>5</Uplink_Ghz>
+    <Downlink_Ghz>5</Downlink_Ghz>
+  </GS109>
+  <GS110>
+    <Latitude>26.1908611111111</Latitude>
+    <Longitude>-80.1930833333333</Longitude>
+    <Description>Fort Lauderdale, FL</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS110>
+  <GS111>
+    <Latitude>33.9549722222222</Latitude>
+    <Longitude>-84.1979722222222</Longitude>
+    <Description>Norcross, GA</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS111>
+  <GS112>
+    <Latitude>61.1858611111111</Latitude>
+    <Longitude>-149.876888888888</Longitude>
+    <Description>Anchorage, AK</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS112>
+  <GS113>
+    <Latitude>45.6306111111111</Latitude>
+    <Longitude>-121.203666666666</Longitude>
+    <Description>The Dalles, OR</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS113>
+  <GS114>
+    <Latitude>33.0602944444444</Latitude>
+    <Longitude>-80.0382305555555</Longitude>
+    <Description>Charleston, SC</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS114>
+  <GS115>
+    <Latitude>40.061</Latitude>
+    <Longitude>-82.7607777777777</Longitude>
+    <Description>Columbus, OH</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS115>
+  <GS116>
+    <Latitude>13.5028055555555</Latitude>
+    <Longitude>144.805194444444</Longitude>
+    <Description>Tumon, GU</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS116>
+  <GS117>
+    <Latitude>21.1093333333333</Latitude>
+    <Longitude>-157.063944444444</Longitude>
+    <Description>Molokai, HI</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS117>
+  <GS118>
+    <Latitude>39.0569999999999</Latitude>
+    <Longitude>-122.06</Longitude>
+    <Description>Arbuckle, CA</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS118>
+  <GS119>
+    <Latitude>34.2684999999999</Latitude>
+    <Longitude>-97.2131666666666</Longitude>
+    <Description>Springer, OK</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS119>
+  <GS120>
+    <Latitude>30.567</Latitude>
+    <Longitude>-87.646</Longitude>
+    <Description>Robertsdale, AL</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS120>
+  <GS121>
+    <Latitude>35.19725</Latitude>
+    <Longitude>-85.666</Longitude>
+    <Description>Tracy City, TN</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS121>
+  <GS122>
+    <Latitude>34.9853055555555</Latitude>
+    <Longitude>-81.7330833333333</Longitude>
+    <Description>Gaffney, SC</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS122>
+  <GS123>
+    <Latitude>47.4823888888888</Latitude>
+    <Longitude>-121.762333333333</Longitude>
+    <Description>North Bend, WA</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS123>
+  <GS124>
+    <Latitude>41.5413055555555</Latitude>
+    <Longitude>-93.8258055555555</Longitude>
+    <Description>Des Moines, IA</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS124>
+  <GS125>
+    <Latitude>41.1270833333333</Latitude>
+    <Longitude>-104.902416666666</Longitude>
+    <Description>Cheyenne, WY</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS125>
+  <GS126>
+    <Latitude>47.2378055555555</Latitude>
+    <Longitude>-119.889138888888</Longitude>
+    <Description>Quincy, WA</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS126>
+  <GS127>
+    <Latitude>29.4115555555555</Latitude>
+    <Longitude>-98.8072777777777</Longitude>
+    <Description>San Antonio, TX</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS127>
+  <GS128>
+    <Latitude>19.25892</Latitude>
+    <Longitude>-99.58115</Longitude>
+    <Description>Llano Grande, MX</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS128>
+  <GS129>
+    <Latitude>14.7862</Latitude>
+    <Longitude>-92.36717</Longitude>
+    <Description>Tapachula, MX</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS129>
+  <GS130>
+    <Latitude>21.00722</Latitude>
+    <Longitude>-89.64396</Longitude>
+    <Description>Merida, MX</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS130>
+  <GS131>
+    <Latitude>21.73139</Latitude>
+    <Longitude>-102.27531</Longitude>
+    <Description>Peñuelas, MX</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS131>
+  <GS132>
+    <Latitude>22.91283</Latitude>
+    <Longitude>-109.92577</Longitude>
+    <Description>Cabo San Lucas, MX</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS132>
+  <GS133>
+    <Latitude>23.22612</Latitude>
+    <Longitude>-100.97915</Longitude>
+    <Description>Charcas, MX</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS133>
+  <GS134>
+    <Latitude>20.76082</Latitude>
+    <Longitude>-100.33556</Longitude>
+    <Description>El Marques, MX</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS134>
+  <GS135>
+    <Latitude>25.77016</Latitude>
+    <Longitude>-100.30188</Longitude>
+    <Description>Monterey, MX</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS135>
+  <GS136>
+    <Latitude>16.60965</Latitude>
+    <Longitude>-94.96423</Longitude>
+    <Description>Mazahua, MX</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS136>
+  <GS137>
+    <Latitude>18.04083</Latitude>
+    <Longitude>-92.93282</Longitude>
+    <Description>Villahermosa, MX</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS137>
+  <GS138>
+    <Latitude>43.1665555555555</Latitude>
+    <Longitude>-78.7551111111111</Longitude>
+    <Description>Lockport, NY</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS138>
+  <GS139>
+    <Latitude>70.3176666666666</Latitude>
+    <Longitude>-148.941194444444</Longitude>
+    <Description>Kuparuk, AK</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS139>
+  <GS140>
+    <Latitude>18.0619777777777</Latitude>
+    <Longitude>-66.5478361111111</Longitude>
+    <Description>Ponce, PR</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS140>
+  <GS141>
+    <Latitude>33.9175</Latitude>
+    <Longitude>-118.328111111111</Longitude>
+    <Description>Hawthorne, CA</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS141>
+  <GS142>
+    <Latitude>31.4049166666666</Latitude>
+    <Longitude>-97.4381388888888</Longitude>
+    <Description>McGregor, TX</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS142>
+  <GS143>
+    <Latitude>25.9906944444444</Latitude>
+    <Longitude>-97.18275</Longitude>
+    <Description>Boca Chica, TX</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS143>
+  <GS144>
+    <Latitude>64.8051666666666</Latitude>
+    <Longitude>-147.500222222222</Longitude>
+    <Description>Fairbanks, AK</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS144>
+  <GS145>
+    <Latitude>48.774</Latitude>
+    <Longitude>-122.448583333333</Longitude>
+    <Description>Bellingham, WA</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS145>
+  <GS146>
+    <Latitude>41.4335555555555</Latitude>
+    <Longitude>-80.3332222222222</Longitude>
+    <Description>Greenville, PA</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS146>
+  <GS147>
+    <Latitude>44.4063333333333</Latitude>
+    <Longitude>-90.8142777777777</Longitude>
+    <Description>Merrillan, WI</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS147>
+  <GS148>
+    <Latitude>48.2033055555555</Latitude>
+    <Longitude>-111.945277777777</Longitude>
+    <Description>Conrad, MT</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS148>
+  <GS149>
+    <Latitude>45.9240555555555</Latitude>
+    <Longitude>-112.513194444444</Longitude>
+    <Description>Butte, MT</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS149>
+  <GS150>
+    <Latitude>32.8155</Latitude>
+    <Longitude>-113.798055555555</Longitude>
+    <Description>Roll, AZ</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS150>
+  <GS151>
+    <Latitude>48.34525</Latitude>
+    <Longitude>-116.439333333333</Longitude>
+    <Description>Colburn, ID</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS151>
+  <GS152>
+    <Latitude>41.5450277777777</Latitude>
+    <Longitude>-73.3540277777777</Longitude>
+    <Description>Litchfield CT</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS152>
+  <GS153>
+    <Latitude>41.0925</Latitude>
+    <Longitude>-110.842611111111</Longitude>
+    <Description>Evanston, WY</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS153>
+  <GS154>
+    <Latitude>19.48096</Latitude>
+    <Longitude>-70.72656</Longitude>
+    <Description>Santiago de los Caballeros, DO</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS154>
+  <GS155>
+    <Latitude>39.0138888888888</Latitude>
+    <Longitude>-95.1493888888889</Longitude>
+    <Description>Lawrence, KS</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS155>
+  <GS156>
+    <Latitude>46.9149166666666</Latitude>
+    <Longitude>-67.9195277777777</Longitude>
+    <Description>Loring, ME</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS156>
+  <GS157>
+    <Latitude>46.0389722222222</Latitude>
+    <Longitude>-122.808222222222</Longitude>
+    <Description>Kalama, WA</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS157>
+  <GS158>
+    <Latitude>44.7899722222222</Latitude>
+    <Longitude>-73.48</Longitude>
+    <Description>Beekmantown, NY</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS158>
+  <GS159>
+    <Latitude>37.7836388888888</Latitude>
+    <Longitude>-114.692694444444</Longitude>
+    <Description>Panaca, NV</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS159>
+  <GS160>
+    <Latitude>38.6351666666666</Latitude>
+    <Longitude>-91.1160277777777</Longitude>
+    <Description>Warren, MO</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS160>
+  <GS161>
+    <Latitude>40.3336666666666</Latitude>
+    <Longitude>-95.8152777777777</Longitude>
+    <Description>Nemaha, NE</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS161>
+  <GS162>
+    <Latitude>45.9086111111111</Latitude>
+    <Longitude>-86.4835833333333</Longitude>
+    <Description>Manistique, MI</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS162>
+  <GS163>
+    <Latitude>46.4083888888888</Latitude>
+    <Longitude>-103.114583333333</Longitude>
+    <Description>Slope County, ND</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS163>
+  <GS164>
+    <Latitude>47.1516944444444</Latitude>
+    <Longitude>-97.4088888888889</Longitude>
+    <Description>Cass County, ND</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS164>
+  <GS165>
+    <Latitude>30.194</Latitude>
+    <Longitude>-102.89</Longitude>
+    <Description>Sanderson TX</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS165>
+  <GS166>
+    <Latitude>46.9789166666666</Latitude>
+    <Longitude>-96.2580277777777</Longitude>
+    <Description>Hitterdal, MN</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS166>
+  <GS167>
+    <Latitude>40.0762222222222</Latitude>
+    <Longitude>-112.354722222222</Longitude>
+    <Description>Vernon, UT</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS167>
+  <GS168>
+    <Latitude>27.0196666666666</Latitude>
+    <Longitude>-81.7620277777777</Longitude>
+    <Description>Punta Gorda, FL</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS168>
+  <GS169>
+    <Latitude>35.8079722222222</Latitude>
+    <Longitude>-102.031861111111</Longitude>
+    <Description>Dumas, TX</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS169>
+  <GS170>
+    <Latitude>35.895778</Latitude>
+    <Longitude>-79.226722</Longitude>
+    <Description>Mandale, NC</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>40</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS170>
+  <GS171>
+    <Latitude>38.875</Latitude>
+    <Longitude>-121.707055555555</Longitude>
+    <Description>Robbins, CA</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS171>
+  <GS172>
+    <Latitude>36.4706388888888</Latitude>
+    <Longitude>-78.1733888888889</Longitude>
+    <Description>Wise, NC</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS172>
+  <GS173>
+    <Latitude>29.8598611111111</Latitude>
+    <Longitude>-94.3123333333333</Longitude>
+    <Description>Hamshire, TX</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS173>
+  <GS174>
+    <Latitude>47.5931666666666</Latitude>
+    <Longitude>-93.6925277777777</Longitude>
+    <Description>Marcell, MN</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS174>
+  <GS175>
+    <Latitude>45.07325</Latitude>
+    <Longitude>-83.9004166666666</Longitude>
+    <Description>Hillman, MI</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS175>
+  <GS176>
+    <Latitude>41.8548888888888</Latitude>
+    <Longitude>-87.8588888888888</Longitude>
+    <Description>Broadview, IL</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS176>
+  <GS177>
+    <Latitude>44.4120277777777</Latitude>
+    <Longitude>-71.7318333333333</Longitude>
+    <Description>Lunenberg, VT</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS177>
+  <GS178>
+    <Latitude>44.5309722222222</Latitude>
+    <Longitude>-68.224</Longitude>
+    <Description>Sullivan, Maine</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS178>
+  <GS179>
+    <Latitude>48.6603611111111</Latitude>
+    <Longitude>-99.8105277777777</Longitude>
+    <Description>Rolette, ND</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS179>
+  <GS180>
+    <Latitude>55.3737</Latitude>
+    <Longitude>-131.718988888888</Longitude>
+    <Description>Ketchikan, AK</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS180>
+  <GS181>
+    <Latitude>64.5035</Latitude>
+    <Longitude>-165.428305555555</Longitude>
+    <Description>Nome, AK</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS181>
+  <GS182>
+    <Latitude>39.292528</Latitude>
+    <Longitude>-104.50475</Longitude>
+    <Description>Elbert, CO</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS182>
+  <GS183>
+    <Latitude>39.3969722222222</Latitude>
+    <Longitude>-77.4366388888889</Longitude>
+    <Description>Frederick, MD</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS183>
+  <GS184>
+    <Latitude>33.5321666666666</Latitude>
+    <Longitude>-117.179638888888</Longitude>
+    <Description>Murrieta, CA</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS184>
+  <GS185>
+    <Latitude>36.6941944444444</Latitude>
+    <Longitude>-78.3757222222222</Longitude>
+    <Description>Boydton, VA</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS185>
+  <GS186>
+    <Latitude>33.85225</Latitude>
+    <Longitude>-98.6041111111111</Longitude>
+    <Description>Wichita Falls, TX</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>40</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS186>
+  <GS187>
+    <Latitude>18.45398</Latitude>
+    <Longitude>-69.66174</Longitude>
+    <Description>Caleta, DO</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS187>
+  <GS188>
+    <Latitude>48.7253692</Latitude>
+    <Longitude>-86.3745279</Longitude>
+    <Description>Marathon, ON, CA</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS188>
+  <GS189>
+    <Latitude>48.3136647</Latitude>
+    <Longitude>-70.9088518</Longitude>
+    <Description>Saguenay, QC, CA</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS189>
+  <GS190>
+    <Latitude>44.4645332</Latitude>
+    <Longitude>-63.6131209</Longitude>
+    <Description>Sambro Creek, NS, CA</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS190>
+  <GS191>
+    <Latitude>18.4310555555555</Latitude>
+    <Longitude>-66.1920861111111</Longitude>
+    <Description>Toa Baja, PR</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS191>
+  <GS192>
+    <Latitude>34.6023888888888</Latitude>
+    <Longitude>-117.454555555555</Longitude>
+    <Description>Adelanto, CA | E-band</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS192>
+  <GS193>
+    <Latitude>47.560921</Latitude>
+    <Longitude>-52.7754993</Longitude>
+    <Description>St Johns, NL, CA</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>5</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS193>
+  <GS194>
+    <Latitude>48.1486111111111</Latitude>
+    <Longitude>-119.701138888888</Longitude>
+    <Description>Brewster, WA - TT&amp;C (BR1)</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>2</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS194>
+  <GS195>
+    <Latitude>40.6196667</Latitude>
+    <Longitude>-111.9860556</Longitude>
+    <Description>West Jordan, UT</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS195>
+  <GS196>
+    <Latitude>53.8602778</Latitude>
+    <Longitude>-166.5048611</Longitude>
+    <Description>Unalaska, AK - Community Gateway</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>4</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS196>
+  <GS197>
+    <Latitude>30.061583</Latitude>
+    <Longitude>-83.580528</Longitude>
+    <Description>Perry, FL</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>40</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS197>
+  <GS198>
+    <Latitude>30.061583</Latitude>
+    <Longitude>-83.580528</Longitude>
+    <Description>Perry, FL</Description>
+    <Frequency>E</Frequency>
+    <Antenna_Count>32</Antenna_Count>
+    <Uplink_Ghz>5</Uplink_Ghz>
+    <Downlink_Ghz>5</Downlink_Ghz>
+  </GS198>
+  <GS199>
+    <Latitude>42.444611</Latitude>
+    <Longitude>-90.6785</Longitude>
+    <Description>Dubuque, IA</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>40</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS199>
+  <GS200>
+    <Latitude>51.64498</Latitude>
+    <Longitude>-8.58805</Longitude>
+    <Description>Ballinspittle, IE</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS200>
+  <GS201>
+    <Latitude>51.9532</Latitude>
+    <Longitude>-8.17416</Longitude>
+    <Description>Elfordstown, IE</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>4</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS201>
+  <GS202>
+    <Latitude>54.13909</Latitude>
+    <Longitude>-4.49728</Longitude>
+    <Description>Isle of Man, UK</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS202>
+  <GS203>
+    <Latitude>50.04964</Latitude>
+    <Longitude>-5.18143</Longitude>
+    <Description>Goonhilly, UK</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS203>
+  <GS204>
+    <Latitude>51.61549</Latitude>
+    <Longitude>-0.57577</Longitude>
+    <Description>Chalfont Grove, UK</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS204>
+  <GS205>
+    <Latitude>52.019224</Latitude>
+    <Longitude>1.14354</Longitude>
+    <Description>Wherstead, UK</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>32</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS205>
+  <GS206>
+    <Latitude>51.419024</Latitude>
+    <Longitude>0.573512</Longitude>
+    <Description>Hoo, UK</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS206>
+  <GS207>
+    <Latitude>52.404967</Latitude>
+    <Longitude>-0.219117</Longitude>
+    <Description>Woodwalton, UK</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS207>
+  <GS208>
+    <Latitude>51.060168</Latitude>
+    <Longitude>-1.263883</Longitude>
+    <Description>Morn Hill, UK</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS208>
+  <GS209>
+    <Latitude>50.823297</Latitude>
+    <Longitude>-1.337705</Longitude>
+    <Description>Fawley, UK</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS209>
+  <GS210>
+    <Latitude>44.78096</Latitude>
+    <Longitude>-0.53738</Longitude>
+    <Description>Villenave d’Ornon, FR</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS210>
+  <GS211>
+    <Latitude>38.86851</Latitude>
+    <Longitude>-9.28217</Longitude>
+    <Description>Alfouvar de Cima, PT</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS211>
+  <GS212>
+    <Latitude>37.255557</Latitude>
+    <Longitude>-7.236135</Longitude>
+    <Description>Lepe, ES</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS212>
+  <GS213>
+    <Latitude>40.16758</Latitude>
+    <Longitude>-3.2869</Longitude>
+    <Description>Villarejo de Salvanes, ES</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS213>
+  <GS214>
+    <Latitude>38.60842</Latitude>
+    <Longitude>-0.6007</Longitude>
+    <Description>Ibi, ES</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS214>
+  <GS215>
+    <Latitude>37.794324</Latitude>
+    <Longitude>12.493115</Longitude>
+    <Description>Marsala, IT</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS215>
+  <GS216>
+    <Latitude>41.50823</Latitude>
+    <Longitude>15.58648</Longitude>
+    <Description>Foggia, IT</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS216>
+  <GS217>
+    <Latitude>45.318522</Latitude>
+    <Longitude>9.187329</Longitude>
+    <Description>Milano, IT</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS217>
+  <GS218>
+    <Latitude>50.3298</Latitude>
+    <Longitude>8.47082</Longitude>
+    <Description>Frankfurt, DE</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS218>
+  <GS219>
+    <Latitude>52.060989</Latitude>
+    <Longitude>9.328231</Longitude>
+    <Description>Aerzen, DE</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS219>
+  <GS220>
+    <Latitude>51.86417</Latitude>
+    <Longitude>20.92105</Longitude>
+    <Description>Wola Krobowska, PL</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS220>
+  <GS221>
+    <Latitude>54.87947</Latitude>
+    <Longitude>23.84173</Longitude>
+    <Description>Kaunas, LT</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS221>
+  <GS222>
+    <Latitude>40.78875</Latitude>
+    <Longitude>29.50939</Longitude>
+    <Description>Muallim, TR</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS222>
+  <GS223>
+    <Latitude>40.265294</Latitude>
+    <Longitude>-7.478251</Longitude>
+    <Description>Coviha, PT</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS223>
+  <GS224>
+    <Latitude>69.661961</Latitude>
+    <Longitude>18.941619</Longitude>
+    <Description>Tromsø, NO - TT&amp;C (TR1)</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>2</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS224>
+  <GS225>
+    <Latitude>39.63828</Latitude>
+    <Longitude>140.06466</Longitude>
+    <Description>Akita, JP</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS225>
+  <GS226>
+    <Latitude>36.38673</Latitude>
+    <Longitude>140.61372</Longitude>
+    <Description>Hitachinaka, JP</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS226>
+  <GS227>
+    <Latitude>43.173215</Latitude>
+    <Longitude>141.258373</Longitude>
+    <Description>Otaru, JP</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS227>
+  <GS228>
+    <Latitude>34.2171</Latitude>
+    <Longitude>131.55566</Longitude>
+    <Description>Yamaguchi, JP</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS228>
+  <GS229>
+    <Latitude>-18.12915</Latitude>
+    <Longitude>178.46767</Longitude>
+    <Description>Suva, FJ</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>5</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS229>
+  <GS230>
+    <Latitude>-46.530531</Latitude>
+    <Longitude>168.383076</Longitude>
+    <Description>Awarua, NZ</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS230>
+  <GS231>
+    <Latitude>-45.061066</Latitude>
+    <Longitude>169.192756</Longitude>
+    <Description>Cromwell, NZ</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS231>
+  <GS232>
+    <Latitude>-44.007406</Latitude>
+    <Longitude>171.571735</Longitude>
+    <Description>Hinds, NZ</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS232>
+  <GS233>
+    <Latitude>-36.9897</Latitude>
+    <Longitude>175.05544</Longitude>
+    <Description>Cleavdon, NZ</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS233>
+  <GS234>
+    <Latitude>-36.23673</Latitude>
+    <Longitude>174.51211</Longitude>
+    <Description>Te Hana, NZ</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS234>
+  <GS235>
+    <Latitude>-35.7935</Latitude>
+    <Longitude>174.30075</Longitude>
+    <Description>Puwera, NZ</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.3</Downlink_Ghz>
+  </GS235>
+  <GS236>
+    <Latitude>-31.99829</Latitude>
+    <Longitude>141.4411</Longitude>
+    <Description>Broken Hill, NSW, AU</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.25</Downlink_Ghz>
+  </GS236>
+  <GS237>
+    <Latitude>-19.51872</Latitude>
+    <Longitude>146.87371</Longitude>
+    <Description>Toonpan, QLD, AU</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.5</Uplink_Ghz>
+    <Downlink_Ghz>1.25</Downlink_Ghz>
+  </GS237>
+  <GS238>
+    <Latitude>-23.66665</Latitude>
+    <Longitude>147.5025</Longitude>
+    <Description>Willows. QLD, AU</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.5</Uplink_Ghz>
+    <Downlink_Ghz>1.25</Downlink_Ghz>
+  </GS238>
+  <GS239>
+    <Latitude>-31.2507</Latitude>
+    <Longitude>136.80107</Longitude>
+    <Description>Pimba, SA, AU</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.25</Downlink_Ghz>
+  </GS239>
+  <GS240>
+    <Latitude>-34.46214</Latitude>
+    <Longitude>148.70558</Longitude>
+    <Description>Boorowa, NSW, AU</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.25</Downlink_Ghz>
+  </GS240>
+  <GS241>
+    <Latitude>-33.30829</Latitude>
+    <Longitude>117.34339</Longitude>
+    <Description>Wagin, WA, AU</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.1</Uplink_Ghz>
+    <Downlink_Ghz>1.25</Downlink_Ghz>
+  </GS241>
+  <GS242>
+    <Latitude>-29.0579</Latitude>
+    <Longitude>150.04031</Longitude>
+    <Description>Calrossie, NSW, AU</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.5</Uplink_Ghz>
+    <Downlink_Ghz>1.25</Downlink_Ghz>
+  </GS242>
+  <GS243>
+    <Latitude>-31.49485</Latitude>
+    <Longitude>118.27765</Longitude>
+    <Description>Merredin, WA, AU</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.5</Uplink_Ghz>
+    <Downlink_Ghz>1.25</Downlink_Ghz>
+  </GS243>
+  <GS244>
+    <Latitude>-30.84826</Latitude>
+    <Longitude>115.61927</Longitude>
+    <Description>Cataby, WA, AU</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.5</Uplink_Ghz>
+    <Downlink_Ghz>1.25</Downlink_Ghz>
+  </GS244>
+  <GS245>
+    <Latitude>-35.57172</Latitude>
+    <Longitude>139.8174</Longitude>
+    <Description>Ki Ki, SA, AU</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.5</Uplink_Ghz>
+    <Downlink_Ghz>1.25</Downlink_Ghz>
+  </GS245>
+  <GS246>
+    <Latitude>-36.02526</Latitude>
+    <Longitude>144.50011</Longitude>
+    <Description>Torrumbarry, VIC, AU</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.5</Uplink_Ghz>
+    <Downlink_Ghz>1.25</Downlink_Ghz>
+  </GS246>
+  <GS247>
+    <Latitude>-36.38863</Latitude>
+    <Longitude>149.8914</Longitude>
+    <Description>Cobargo, NSW, AU</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.5</Uplink_Ghz>
+    <Downlink_Ghz>1.25</Downlink_Ghz>
+  </GS247>
+  <GS248>
+    <Latitude>-23.64682</Latitude>
+    <Longitude>147.29126</Longitude>
+    <Description>Bogantungan, QLD, AU</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.5</Uplink_Ghz>
+    <Downlink_Ghz>1.25</Downlink_Ghz>
+  </GS248>
+  <GS249>
+    <Latitude>-30.43981</Latitude>
+    <Longitude>149.68385</Longitude>
+    <Description>Springbrook Creek, NSW, AU</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.5</Uplink_Ghz>
+    <Downlink_Ghz>1.25</Downlink_Ghz>
+  </GS249>
+  <GS250>
+    <Latitude>-31.02985</Latitude>
+    <Longitude>120.81962</Longitude>
+    <Description>Bulla Bulling, WA, AU</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.5</Uplink_Ghz>
+    <Downlink_Ghz>1.25</Downlink_Ghz>
+  </GS250>
+  <GS251>
+    <Latitude>-34.58374</Latitude>
+    <Longitude>150.15013</Longitude>
+    <Description>Canyonleigh, NSW, AU</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.5</Uplink_Ghz>
+    <Downlink_Ghz>1.25</Downlink_Ghz>
+  </GS251>
+  <GS252>
+    <Latitude>-32.59316</Latitude>
+    <Longitude>152.10422</Longitude>
+    <Description>Tea Gardens, NSW, AU</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.5</Uplink_Ghz>
+    <Downlink_Ghz>1.25</Downlink_Ghz>
+  </GS252>
+  <GS253>
+    <Latitude>-26.9079883</Latitude>
+    <Longitude>150.8916042</Longitude>
+    <Description>Warra, QLD, AU</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.5</Uplink_Ghz>
+    <Downlink_Ghz>1.25</Downlink_Ghz>
+  </GS253>
+  <GS254>
+    <Latitude>-19.999722</Latitude>
+    <Longitude>146.42166</Longitude>
+    <Description>Sellheim, QLD, AU</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.5</Uplink_Ghz>
+    <Downlink_Ghz>1.25</Downlink_Ghz>
+  </GS254>
+  <GS255>
+    <Latitude>15.17087</Latitude>
+    <Longitude>120.505747</Longitude>
+    <Description>Angeles, PH</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.5</Uplink_Ghz>
+    <Downlink_Ghz>1.25</Downlink_Ghz>
+  </GS255>
+  <GS256>
+    <Latitude>-3.977445</Latitude>
+    <Longitude>122.511309</Longitude>
+    <Description>Kendari, ID (backhaul only)</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.5</Uplink_Ghz>
+    <Downlink_Ghz>1.25</Downlink_Ghz>
+  </GS256>
+  <GS257>
+    <Latitude>-2.21866</Latitude>
+    <Longitude>113.925406</Longitude>
+    <Description>Palangka Raya, ID (backhaul only)</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.5</Uplink_Ghz>
+    <Downlink_Ghz>1.25</Downlink_Ghz>
+  </GS257>
+  <GS258>
+    <Latitude>-46.52887</Latitude>
+    <Longitude>168.381121</Longitude>
+    <Description>Awaura, NZ - TT&amp;C (AW1)</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>2</Antenna_Count>
+    <Uplink_Ghz>2.5</Uplink_Ghz>
+    <Downlink_Ghz>1.25</Downlink_Ghz>
+  </GS258>
+  <GS259>
+    <Latitude>-37.953169</Latitude>
+    <Longitude>144.328172</Longitude>
+    <Description>Anakie, VIC, AU</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.5</Uplink_Ghz>
+    <Downlink_Ghz>1.25</Downlink_Ghz>
+  </GS259>
+  <GS260>
+    <Latitude>-38.51812</Latitude>
+    <Longitude>145.95145</Longitude>
+    <Description>Koonwarra, VIC, AU</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.5</Uplink_Ghz>
+    <Downlink_Ghz>1.25</Downlink_Ghz>
+  </GS260>
+  <GS261>
+    <Latitude>-33.785441</Latitude>
+    <Longitude>151.131806</Longitude>
+    <Description>Macquarie Park, NSW, AU</Description>
+    <Frequency>Ka</Frequency>
+    <Antenna_Count>8</Antenna_Count>
+    <Uplink_Ghz>2.5</Uplink_Ghz>
+    <Downlink_Ghz>1.25</Downlink_Ghz>
+  </GS261>
+</GSs>

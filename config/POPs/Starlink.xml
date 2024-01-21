@@ -1,0 +1,117 @@
+<POPs>
+  <POP1>
+    <Latitude>47.6048790423666</Latitude>
+    <Longitude>-122.333542912036</Longitude>
+    <Name>SEA - STTLWAX1</Name>
+  </POP1>
+  <POP2>
+    <Latitude>41.8818060511642</Latitude>
+    <Longitude>-87.6241606221099</Longitude>
+    <Name>ORD/CHI - CHCOILX1</Name>
+  </POP2>
+  <POP3>
+    <Latitude>39.7404600071268</Latitude>
+    <Longitude>-104.989827109128</Longitude>
+    <Name>DEN - DNVRCOX1</Name>
+  </POP3>
+  <POP4>
+    <Latitude>34.0648585651784</Latitude>
+    <Longitude>-118.246250945102</Longitude>
+    <Name>LAX - LSANCAX1</Name>
+  </POP4>
+  <POP5>
+    <Latitude>40.7053809687342</Latitude>
+    <Longitude>-73.9805569966953</Longitude>
+    <Name>LGA/NYC - NWYYNYX1</Name>
+  </POP5>
+  <POP6>
+    <Latitude>33.8537637086147</Latitude>
+    <Longitude>-84.3863990704516</Longitude>
+    <Name>ATL - ATLAGAX1</Name>
+  </POP6>
+  <POP7>
+    <Latitude>32.9314754595072</Latitude>
+    <Longitude>-96.7973844644494</Longitude>
+    <Name>DFW/DAL - DLLSTXX1</Name>
+  </POP7>
+  <POP8>
+    <Latitude>20.5780242985263</Latitude>
+    <Longitude>-100.253545274656</Longitude>
+    <Name>QRO/MEX - QRTOMEX1</Name>
+  </POP8>
+  <POP9>
+    <Latitude>-33.8626309526837</Latitude>
+    <Longitude>151.205196681751</Longitude>
+    <Name>SYD - SYDYAUS1</Name>
+  </POP9>
+  <POP10>
+    <Latitude>-23.5474263016486</Latitude>
+    <Longitude>-46.6434354904817</Longitude>
+    <Name>GRU - SPLOBRA1</Name>
+  </POP10>
+  <POP11>
+    <Latitude>-33.4288103351528</Latitude>
+    <Longitude>-70.6724666543217</Longitude>
+    <Name>SCL - SNTOCHL1</Name>
+  </POP11>
+  <POP12>
+    <Latitude>50.1180135096041</Latitude>
+    <Longitude>8.68324256215514</Longitude>
+    <Name>FRA - FRNTDEU1</Name>
+  </POP12>
+  <POP13>
+    <Latitude>35.7832975191432</Latitude>
+    <Longitude>139.77424808807</Longitude>
+    <Name>TYO/NRT - TKYOJPN1</Name>
+  </POP13>
+  <POP14>
+    <Latitude>6.46845378501768</Latitude>
+    <Longitude>3.57996575617339</Longitude>
+    <Name>LOS - LGOSNGA1</Name>
+  </POP14>
+  <POP15>
+    <Latitude>40.4232025529521</Latitude>
+    <Longitude>-3.70358472507101</Longitude>
+    <Name>MAD - MDRDESP1</Name>
+  </POP15>
+  <POP16>
+    <Latitude>51.5269952019059</Latitude>
+    <Longitude>-0.0203747388462674</Longitude>
+    <Name>LON/LHR - LNDNGBR1</Name>
+  </POP16>
+  <POP17>
+    <Latitude>4.66104048598056</Latitude>
+    <Longitude>-74.1396929264864</Longitude>
+    <Name>BOG - BGTACOL1</Name>
+  </POP17>
+  <POP18>
+    <Latitude>-36.8307052006784</Latitude>
+    <Longitude>174.746900452669</Longitude>
+    <Name>AKL - AKLNZL1</Name>
+  </POP18>
+  <POP19>
+    <Latitude>-12.0561556281692</Latitude>
+    <Longitude>-76.9579303770631</Longitude>
+    <Name>LIM - LIMAPER1</Name>
+  </POP19>
+  <POP20>
+    <Latitude>-31.9526735550577</Latitude>
+    <Longitude>115.865844303011</Longitude>
+    <Name>PER - PRTHAU1</Name>
+  </POP20>
+  <POP21>
+    <Latitude>14.5536964111545</Latitude>
+    <Longitude>121.024139985734</Longitude>
+    <Name>MNL - MNLAPH1</Name>
+  </POP21>
+  <POP22>
+    <Latitude>-6.2093718794717</Latitude>
+    <Longitude>106.858420399263</Longitude>
+    <Name>CGK - JTNAIDN1</Name>
+  </POP22>
+  <POP23>
+    <Latitude>1.33479356735098</Latitude>
+    <Longitude>103.957706909928</Longitude>
+    <Name>SIN - SNGESGP1</Name>
+  </POP23>
+</POPs>

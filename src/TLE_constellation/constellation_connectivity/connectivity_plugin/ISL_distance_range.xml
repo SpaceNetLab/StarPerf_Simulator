@@ -1,0 +1,5 @@
+<ISL_distance_range>
+    <!-- unit : km -->
+    <shortest_distance>500</shortest_distance>
+    <longest_distance>2000</longest_distance>
+</ISL_distance_range>
