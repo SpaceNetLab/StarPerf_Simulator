@@ -25,7 +25,7 @@ def kits_test_cases():
     # obtain recursively read all groups and datasets in the .h5 file and obtain its tree directory structure
     import h5py
     import kits.get_h5file_tree_structure as GET_H5FILE_TREE_STRUCTURE
-    with h5py.File('config/TLE_constellation/Starlink/tle.h5', 'r') as file:
+    with h5py.File('data/TLE_constellation/Starlink.h5', 'r') as file:
         GET_H5FILE_TREE_STRUCTURE.print_hdf5_structure(file)
 
     print("\t\t\033[31mTest(03/08) : view the h3id of all cells with the specified resolution in \"data/h3_cells_id_res0-4.h5\"\033[0m")

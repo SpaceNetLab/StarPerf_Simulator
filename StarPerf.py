@@ -42,8 +42,9 @@ def main():
     print("\033[31mEND.\033[0m")
 
 if __name__ == '__main__':
-    main()
+    #main()
+    import samples.standalone_module.standalone_module_test_cases as standalone_module_test_cases
 
-
+    standalone_module_test_cases.standalone_module_test_cases()
 
 
