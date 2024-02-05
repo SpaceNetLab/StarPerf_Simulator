@@ -49,7 +49,7 @@ class damage_model_plugin_manager:
     # Function : execute the constellation damage model and start destroying the constellation
     #            according to the specified pattern
     # Parameters:
-    # constellation : the constellation that needs to be destroyed by the solar storm and is a constellation class object.
+    # constellation : the constellation that needs to be destroyed and is a constellation class object.
     # sh : the shell that needs to be destroyed by the solar storm and is a shell class object
     # num_of_damaged_satellites : the number of randomly destroyed satellites. If the value is less than 1, it is the
     #                             number of satellites destroyed as a percentage of the total number; if the value is

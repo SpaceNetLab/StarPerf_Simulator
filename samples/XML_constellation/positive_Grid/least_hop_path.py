@@ -43,3 +43,7 @@ def least_hop_path():
     least_hop_path = routingPolicyPluginManager.execute_routing_policy(constellation.constellation_name , source ,
                                                                        target , constellation.shells[0])
     print("\t\t\tThe least hop path from " , source.user_name  , " to " , target.user_name , " is " , least_hop_path)
+
+
+if __name__ == "__main__":
+    least_hop_path()

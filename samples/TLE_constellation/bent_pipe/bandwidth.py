@@ -32,3 +32,7 @@ def bandwidth():
     bandwidth = BANDWIDTH.bandwidth(source, target, dT, constellation.shells[4], ground_station_file)
     print("\t\t\tThe bandwidth from ", source.user_name, " to ", target.user_name,
           " for the average of all timeslots is ", bandwidth)
+
+
+if __name__ == "__main__":
+    bandwidth()

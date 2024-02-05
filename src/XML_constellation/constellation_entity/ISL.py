@@ -21,7 +21,7 @@ class ISL:
         # the delay between the two satellites connected by ISL, in seconds, this parameter is of list type because it
         # needs to store the delay time of different timeslots.
         self.delay = []
-        # data transfer rate (bps)
+        # data transfer rate (Gbps)
         self.data_rate = data_rate
         # laser band
         self.frequency_band = frequency_band

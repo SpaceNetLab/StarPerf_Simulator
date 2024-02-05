@@ -29,3 +29,7 @@ def coverage():
           satellite_in_latitude)
     print("\t\t\tThe average number of visible satellites per timeslot is distributed by longitude : ",
           satellite_in_longitude)
+
+
+if __name__ == "__main__":
+    coverage()

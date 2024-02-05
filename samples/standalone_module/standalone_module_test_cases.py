@@ -24,3 +24,6 @@ def standalone_module_test_cases():
           "° and the satellite orbit height is " + str(h) + " km, the user can see a satellite for " + \
           str(round(visibility_time,2)) + " s.")
 
+
+if __name__ == '__main__':
+    standalone_module_test_cases()

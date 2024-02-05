@@ -94,3 +94,6 @@ def TLE_constellation_test_cases():
     BENT_PIPE_SUNSTORM_DAMAGED_SATELLITES_TEST.sunstorm_damaged_satellites()
 
 
+
+if __name__ == "__main__":
+    TLE_constellation_test_cases()

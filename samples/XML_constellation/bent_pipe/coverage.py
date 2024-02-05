@@ -28,3 +28,6 @@ def coverage():
     coverage_rate = COVERAGE.coverage(dT, bent_pipe_constellation.shells[0], ground_station_file)
 
     print("\t\t\tThe coverage rates of the constellation for every timeslot are : ", coverage_rate)
+
+if __name__ == "__main__":
+    coverage()

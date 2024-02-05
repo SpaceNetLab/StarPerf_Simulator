@@ -30,8 +30,8 @@ def constellation_generation_test():
         print('\t\t\t==============================================')
 
 
-
-
+if __name__ == '__main__':
+    constellation_generation_test()
 
 
 

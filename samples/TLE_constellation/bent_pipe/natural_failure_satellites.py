@@ -65,3 +65,7 @@ def natural_failure_satellites():
     bandwidth2 = BANDWIDTH.bandwidth(source, target, dT, constellation_natural_failure.shells[4], ground_station_file)
     print("\t\t\tThe average bandwidth of all timeslots of after executing the constellation destruction model from ", source.user_name, " to ", target.user_name, " is ", bandwidth2)
 
+
+
+if __name__ == "__main__":
+    natural_failure_satellites()

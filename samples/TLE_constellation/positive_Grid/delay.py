@@ -28,3 +28,7 @@ def delay():
     connectionModePluginManager.execute_connection_policy(constellation, dT)
     delay = DELAY.delay(constellation.constellation_name, source, target, dT, constellation.shells[4])
     print("\t\t\tThe delay time from ", source.user_name, " to ", target.user_name, " for every timeslot is ", delay, " s")
+
+
+if __name__ == "__main__":
+    delay()

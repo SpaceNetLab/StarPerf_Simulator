@@ -41,3 +41,6 @@ def shortest_path():
     minimum_path = routingPolicyPluginManager.execute_routing_policy(constellation.constellation_name, source, target,
                                               constellation.shells[0])
     print("\t\t\tThe shortest path routing from ", source.user_name, " to ", target.user_name, " is " , minimum_path)
+
+if __name__ == "__main__":
+    shortest_path()

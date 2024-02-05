@@ -30,3 +30,7 @@ def bandwidth():
     connectionModePluginManager.execute_connection_policy(constellation=constellation , dT=dT)
     bandwidth = BANDWIDTH.bandwidth(constellation_name, source, target, constellation.shells[0], 1.1, 5, dT)
     print("\t\t\tThe bandwidth from " , source.user_name  , " to " , target.user_name , " for the average of all timeslots is " , bandwidth)
+
+
+if __name__ == "__main__":
+    bandwidth()

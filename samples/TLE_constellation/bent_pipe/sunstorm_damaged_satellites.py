@@ -66,3 +66,5 @@ def sunstorm_damaged_satellites():
     print("\t\t\tThe average bandwidth of all timeslots of after executing the constellation destruction model from ", source.user_name, " to ", target.user_name, " is ", bandwidth2)
 
 
+if __name__ == "__main__":
+    sunstorm_damaged_satellites()

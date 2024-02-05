@@ -35,8 +35,8 @@ def distance_between_satellite_and_user(groundstation , satellite , t):
 
 # Parameters :
 # constellation_name : the name of the constellation, and the parameter type is a string, such as "Starlink"
-# source : the source ground station
-# target : the target ground station
+# source : the source user
+# target : the target user
 # t : a certain time slot (timeslot)
 # sh : a shell class object, representing a shell in the constellation
 def second_shortest_path(constellation_name , source , target , sh , t):

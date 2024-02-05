@@ -26,3 +26,7 @@ def constellation_generation_test():
         print('\t\t\tshell orbital inclination(°) : ', sh.inclination)
         print('\t\t\tshell orbital period (s) : ', sh.orbit_cycle)
         print('\t\t\t==============================================')
+
+
+if __name__ == '__main__':
+    constellation_generation_test()

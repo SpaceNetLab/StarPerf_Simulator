@@ -60,3 +60,6 @@ def random_placement():
     print("\t\t\t============================================")
 
 
+
+if __name__ == "__main__":
+    random_placement()

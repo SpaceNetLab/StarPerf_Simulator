@@ -94,3 +94,7 @@ def XML_constellation_test_cases():
     # minimum hop count routing in +Grid mode
     import samples.XML_constellation.positive_Grid.least_hop_path as POSITIVE_GRID_LEAST_HOP_PATH_ROUTING_TEST
     POSITIVE_GRID_LEAST_HOP_PATH_ROUTING_TEST.least_hop_path()
+
+
+if __name__ == "__main__":
+    XML_constellation_test_cases()

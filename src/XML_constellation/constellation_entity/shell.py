@@ -15,7 +15,7 @@ class shell:
                  number_of_satellite_per_orbit , phase_shift , shell_name):
         self.altitude = altitude # height of shell (km)
         self.number_of_satellites = number_of_satellites # the number of satellites included in this shell
-        self.number_of_orbits = number_of_orbits  # the number of tracks contained in this shell
+        self.number_of_orbits = number_of_orbits  # the number of orbits contained in this shell
         self.inclination = inclination # the inclination angle of the orbit in this shell
         self.orbit_cycle = orbit_cycle # the orbital period of this layer’s shell
         # the number of satellites per orbit in this layer’s shell

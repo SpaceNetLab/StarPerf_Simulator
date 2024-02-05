@@ -24,3 +24,6 @@ def betweeness():
     connectionModePluginManager.execute_connection_policy(constellation=constellation , dT=dT)
     betweeness = BETWEENESS.betweeness(constellation_name, constellation.shells[0])
     print("\t\t\tThe betweeness values of each satellite in the constellation are : " , betweeness)
+
+if __name__ == "__main__":
+    betweeness()

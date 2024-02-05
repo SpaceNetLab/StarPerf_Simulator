@@ -44,3 +44,7 @@ def second_shortest_path():
     second_minimum_path = routingPolicyPluginManager.execute_routing_policy(constellation.constellation_name, source,
                                                                   target, constellation.shells[0])
     print("\t\t\tThe second shortest path routing from ", source.user_name, " to ", target.user_name, " is " , second_minimum_path)
+
+
+if __name__ == "__main__":
+    second_shortest_path()

@@ -190,8 +190,8 @@ def satellite_visible_all_GSs(satellite , GSs , t , minimum_elevation):
 # sh : a shell class object, representing a shell in the constellation
 # ground_station_file: the data file of the satellite constellation ground base station GS (given in
 #                      the form of path + file name)
-# maximum_depression is the maximum depression angle of the satellite, and minimum_elevation is the minimum
-# elevation angle of the ground observation point. The units of these two parameters are degrees (°).
+# minimum_elevation is the minimum
+# elevation angle of the ground observation point. The unit of this parameter is degrees (°).
 # GS_capacity : the GS capacity of each ground station, such as 10 Gbps, etc.
 def bandwidth(source , target , dT , sh , ground_station_file , minimum_elevation = 25 , GS_capacity = 5.0):
     # read ground base station data

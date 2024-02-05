@@ -26,3 +26,7 @@ def coverage():
     ground_station_file = "config/ground_stations/" + constellation_name + ".xml"
     coverage_rate = COVERAGE.coverage(dT, constellation.shells[4], ground_station_file)
     print("\t\t\tThe coverage rates of the constellation for every timeslot are : ", coverage_rate)
+
+
+if __name__ == "__main__":
+    coverage()

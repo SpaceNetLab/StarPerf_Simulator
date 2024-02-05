@@ -36,3 +36,7 @@ def delay():
     minimum_delay_time = DELAY.delay(source, target, dT, bent_pipe_constellation.shells[0], ground_station_file, POP_file)
     print("\t\t\tThe delay time from ", source.user_name, " to ", target.user_name, " for every timeslot is ", minimum_delay_time,
           " s")
+
+
+if __name__ == "__main__":
+    delay()

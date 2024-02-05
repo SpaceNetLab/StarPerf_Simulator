@@ -33,3 +33,5 @@ def bandwidth():
           " for the average of all timeslots is ", bandwidth)
 
 
+if __name__ == "__main__":
+    bandwidth()

@@ -59,3 +59,6 @@ def kits_test_cases():
     # ground stations and POPs on a world map
     import kits.draw_subsatellite_point_track_and_GSs as draw
     draw.draw_subsatellite_point_track_and_GSs()
+
+if __name__ == "__main__":
+    kits_test_cases()

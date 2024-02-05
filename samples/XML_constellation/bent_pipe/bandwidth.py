@@ -34,3 +34,7 @@ def bandwidth():
     bandwidth = BANDWIDTH.bandwidth(source, target, dT, bent_pipe_constellation.shells[0], ground_station_file)
     print("\t\t\tThe bandwidth from ", source.user_name, " to ", target.user_name,
           " for the average of all timeslots is ", bandwidth)
+
+
+if __name__ == "__main__":
+    bandwidth()

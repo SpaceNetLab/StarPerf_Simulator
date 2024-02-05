@@ -36,3 +36,6 @@ def delay():
           minimum_delay_time, " s")
 
 
+
+if __name__ == "__main__":
+    delay()

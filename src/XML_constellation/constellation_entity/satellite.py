@@ -21,7 +21,7 @@ class satellite:
         # altitude (km), because the altitude is constantly moving, there are many altitudes. Use the list type
         # to store all the altitudes of the satellite.
         self.altitude = []
-        # Oobital object in the orbit of the current satellite
+        # the current orbit of the satellite
         self.orbit = orbit
         # list type attribute, which stores the current satellite and which satellites have established ISL, stores
         # the ISL object

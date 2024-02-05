@@ -222,7 +222,7 @@ def satellite_connect_groundstation_policy1(user , satellite , GSs , t , minimum
 #     distance to the target
 # β : the communication speed between source and target. The speed of light in vacuum is c, but the speed of
 #     communication between source and target may not be c. Therefore, the speed of light c multiplied by the speed
-#     coefficient β represents the final communication speed from source to target. speed
+#     coefficient β represents the final communication speed from source to target.
 # maximum_depression : the maximum depression angle of the satellite, and minimum_elevation is the minimum elevation
 #                      angle of the ground observation point. The units of these two parameters are degrees (°).
 def delay(source , target , dT , sh , ground_station_file , POP_file , α = 1.1 , β = 1.0 , minimum_elevation = 25):
