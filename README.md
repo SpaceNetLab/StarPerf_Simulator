@@ -38,7 +38,7 @@ Compared with StarPerf 1.0, StarPerf 2.0 is completely based on Python and does 
 
 # StarPerf overview and processing flow
 
-see [interface\_convention](./interface_convention.pdf).
+see [interface\_convention](./docs/interface_convention.pdf).
 
 # Contributors are more than welcome
 
