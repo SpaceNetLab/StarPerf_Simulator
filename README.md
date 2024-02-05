@@ -38,67 +38,7 @@ Compared with StarPerf 1.0, StarPerf 2.0 is completely based on Python and does 
 
 # StarPerf overview and processing flow
 
-Same as StarPerf 1.0, the implementation of StarPerf 2.0 integrates two parts: (i) generating a satellite network topology by the specific constellation configuration (e.g., how many satellites and how many orbits ...); (ii) evaluating the network performance of the generated satellite network. Based on the existing evaluation in StarPerf 1.0, we have given more evaluation functions in StarPerf 2.0, which can more comprehensively evaluate the satellite network.
-
-The first step is done through the code in "src/constellation_configuration/constellation_configuration.py", which generates a satellite network by reading the constellation information configuration file "config/constellation_configuration/<CONSTELLATION_NAME.xml>". Different from StarPerf 1.0, in StarPerf 2.0, all constellation configuration-related information is located in "config/", and all the above operations are completed independently by Python.
-
-For your convenience, we have prepared a configuration preset for the state-of-the-art constellation StarLink in "config/constellation_configuration/StarLink.xml".
-
-After step 1 is completed, temporary files describing the satellite network will be generated in the "data/" folder. The format of these temporary files is "<CONSTELLATION_NAME>.h5", which stores the delay matrix and satellite position information between satellites. Regarding how specific constellation data information is stored in the h5 file, please view "docs/interface_convention.md".
-
-The second step, is executed by the python codes in the "src/" folder. This step not only allows to evaluate the network performance of the generated network (e.g. latency, throughput, coverage...), but also simulates advanced features such as constellation routing paths, constellation damage, beam placement, etc. More details can be found in "[docs/interface\_convention.md](./interface_convention.md)".
-
-# Configuring your constellations
-
-Leveraging StarPerf 2.0 to construct a satellite network over a specific constellation design follows the following steps. Here we show an example of using StarPerf 2.0 to simulate and benchmark Starlink.
-
-First, read the StarLink configuration information file "config/constellation_configuration/StarLink.xml". The file information structure is as follows:
-
-```xml
-<constellation>
-    <number_of_shells>4</number_of_shells>
-    <shell1>
-        <altitude>550</altitude>
-        <orbit_cycle>5731</orbit_cycle>
-        <inclination>53.0</inclination>
-        <phase_shift>1</phase_shift>
-        <number_of_orbit>72</number_of_orbit>
-        <number_of_satellite_per_orbit>22</number_of_satellite_per_orbit>
-    </shell1>
-    <shell2>
-        <altitude>570</altitude>
-        <orbit_cycle>5755</orbit_cycle>
-        <inclination>70</inclination>
-        <phase_shift>1</phase_shift>
-        <number_of_orbit>36</number_of_orbit>
-        <number_of_satellite_per_orbit>20</number_of_satellite_per_orbit>
-    </shell2>
-    <shell3>
-        <altitude>560</altitude>
-        <orbit_cycle>5743</orbit_cycle>
-        <inclination>97.6</inclination>
-        <phase_shift>1</phase_shift>
-        <number_of_orbit>10</number_of_orbit>
-        <number_of_satellite_per_orbit>52</number_of_satellite_per_orbit>
-    </shell3>
-    <shell4>
-        <altitude>540</altitude>
-        <orbit_cycle>5718</orbit_cycle>
-        <inclination>53.2</inclination>
-        <phase_shift>1</phase_shift>
-        <number_of_orbit>72</number_of_orbit>
-        <number_of_satellite_per_orbit>22</number_of_satellite_per_orbit>
-    </shell4>
-</constellation>
-```
-
-Second, run the scripts in the "src/constellation_configuration" folder to build a simulated satellite network. In StarPerf 1.0, this step may take several minutes depending the capability of your machine. But in StarPerf 2.0, this step is completely based on Python and does not rely on any third-party tools such as MATLAB and STK, so this step will be completed quickly.
-
-Once this step is finished, constellation information (like the position (latitude and longitude) of satellites in different time slots, constellation delay time matrix) will be located in the "data/" directory in a file with the suffix ".h5" named after your constellation. In this example, these data can be found in "data/StarLink.h5".
-
-Finally, run StarPerf to conduct evaluation on the simulated satellite network. This step can be done by calling "StarPerf.py". "StarPerf.py" is the startup script of StarPerf 2.0, which is used to execute the test cases of each module. Among them, the test cases of each module are located in the "samples/" folder.
-
-For information on the implementation principles of Starperf 2.0 and various interface specifications, please refer to "[docs/interface\_convention.md](docs/interface_convention.md)".
+see [interface\_convention](./interface_convention.md).
 
 # Contributors are more than welcome
 
