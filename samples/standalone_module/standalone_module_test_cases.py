@@ -14,7 +14,7 @@ Function : This script is used to test each tool script under "src/standalone_mo
 
 
 def standalone_module_test_cases():
-    print("\t\t\033[31mTest(01/01) : calculate the length of time a user can see a satellite\033[0m")
+    print("\t\t\033[31mTest(01/02) : calculate the length of time a user can see a satellite\033[0m")
     # calculate the length of time a user can see a satellite
     import src.standalone_module.satellite_visibility_time as SATELLITE_VISIBILITY_TIME
     θ = 25 # the lowest elevation angle at which the user can see the satellite (unit: degrees)
@@ -23,6 +23,17 @@ def standalone_module_test_cases():
     print("\t\t\tWhen the lowest elevation angle at which a user can see a satellite is " + str(θ) + \
           "° and the satellite orbit height is " + str(h) + " km, the user can see a satellite for " + \
           str(round(visibility_time,2)) + " s.")
+
+    print("\t\t\033[31mTest(02/02) : calculate satellite orbital period\033[0m")
+    # calculate satellite orbital period
+    import src.standalone_module.satellite_orbital_period as SATELLITE_ORBITAL_PERIOD
+    h = 550 # the height of a satellite's orbit above the earth's surface, in kilometers
+    orbital_period = SATELLITE_ORBITAL_PERIOD.satellite_orbital_period(h)
+    print("\t\t\tWhen the satellite orbit height is " + str(h) + " km, the satellite orbital period is " + \
+          str(round(orbital_period,2)) + " s.")
+
+
+
 
 
 if __name__ == '__main__':

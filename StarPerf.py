@@ -42,6 +42,11 @@ def main():
     print("\033[31mEND.\033[0m")
 
 if __name__ == '__main__':
-    main()
+    #main()
+    print("\t\033[31mStarting Standalone Module Testing...\033[0m")
+    # test each standalone module under "src/standalone_module/" in starperf 2.0
+    import samples.standalone_module.standalone_module_test_cases as standalone_module_test_cases
 
+    standalone_module_test_cases.standalone_module_test_cases()
+    print("\t\033[31mEND.\033[0m")
 
