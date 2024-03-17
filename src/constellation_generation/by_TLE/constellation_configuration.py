@@ -34,6 +34,10 @@ def constellation_configuration(dT , constellation_name):
     # calculate and save the longitude, latitude and altitude information of different satellites according to shell
     # and timeslot
 
+    # ensure the data/TLE_constellation/ directory exists
+    data_directory = "data/TLE_constellation/"
+    # This will create the directory if it does not exist
+    os.makedirs(data_directory, exist_ok=True)
     # determine whether the .h5 file of the delay and satellite position data of the current constellation exists. If
     # it exists, delete the file and create an empty .h5 file. If it does not exist, directly create an empty .h5 file.
     file_path = "data/TLE_constellation/" + constellation_name + ".h5"
