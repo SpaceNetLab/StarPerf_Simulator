@@ -32,3 +32,6 @@ def satellite_visibility_time(θ , h):
 
     return t
 
+
+if __name__ == '__main__':
+    print(satellite_visibility_time(25, 1200))

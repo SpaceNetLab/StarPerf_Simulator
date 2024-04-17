@@ -19,3 +19,8 @@ def print_hdf5_structure(group, indent=0):
         elif isinstance(item, h5py.Dataset):
             print("\t\t\t" , "  " * indent + f"Dataset: {key}")
 
+
+
+if __name__ == '__main__':
+    with h5py.File('../data/XML_constellation/Boeing.h5', 'r') as file:
+        print_hdf5_structure(file)

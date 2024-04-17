@@ -22,3 +22,7 @@ def get_h5file_satellite_delay_data():
         delay_matrix = np.array(current_shell_group['timeslot1']).tolist()
 
     print(delay_matrix)
+
+
+if __name__ == '__main__':
+    get_h5file_satellite_delay_data()
