@@ -51,6 +51,10 @@ def constellation_configuration(dT , constellation_name):
     # convert string to int type
     number_of_shells = int(constellation_configuration_information['constellation']['number_of_shells'])
     shells = []
+    # ensure the data/XML_constellation/ directory exists
+    data_directory = "data/XML_constellation/"
+    # This will create the directory if it does not exist
+    os.makedirs(data_directory, exist_ok=True)
     # determine whether the .h5 file of the delay and satellite position data of the current constellation exists. If
     # it exists, delete the file and create an empty .h5 file. If it does not exist, directly create an empty .h5 file.
     file_path = "data/XML_constellation/" + constellation_name + ".h5"
