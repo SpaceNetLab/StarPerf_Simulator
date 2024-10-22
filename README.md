@@ -4,7 +4,7 @@
 
 Therefore, we have developed and implemented StarPerf, a mega-constellation performance simulation platform that enables constellation manufacturers and content providers to estimate and understand the achievable performance under a variety of constellation options. The proposed platform integrates two key techniques: (1) performance simulation for mega-constellation, which captures the impact of the inherent high mobility in satellite networks and profiles the area-to-area attainable network performance; (2) constellation scaling, which synthesizes various topological options by scaling the space resource (e.g. number of satellite, link availability and capacity), and enables exploration on multiple operating conditions that can not be easily reproduced.
 
-This page introduces the basic usage of our StarPerf tool. If you have any questions on StarPerf, please do not hesitate to contact us. (Email: [zeqilai@tsinghua.edu.cn](mailto:zeqilai@tsinghua.edu.cn), [lijh19@mails.tsinghua.edu.cn](mailto:lijh19@mails.tsinghua.edu.cn), [yunanhou2023@gmail.com](mailto:yunanhou2023@gmail.com))
+This page introduces the basic usage of our StarPerf tool. If you have any questions on StarPerf, please do not hesitate to contact us. (Email: [houyn24@mails.tsinghua.edu.cn](mailto:houyn24@mails.tsinghua.edu.cn), [zeqilai@tsinghua.edu.cn](mailto:zeqilai@tsinghua.edu.cn), [lijh19@mails.tsinghua.edu.cn](mailto:lijh19@mails.tsinghua.edu.cn))
 
 Happy benchmarking your constellation!
 

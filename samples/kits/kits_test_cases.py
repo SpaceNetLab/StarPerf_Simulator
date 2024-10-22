@@ -14,12 +14,12 @@ def kits_test_cases():
     import kits.get_h3_all_cells as GET_ALL_RESOLUTION_CELLS_H3ID
     GET_ALL_RESOLUTION_CELLS_H3ID.get_h3_all_cells()
 
-    """
+
     print("\t\t\033[31mTest(02/09) : view the h3id of h3 cells\033[0m")
     # view the h3id of h3 cells
     import kits.view_h3id_of_cells as VIEW_H3ID_OF_CELLS
     VIEW_H3ID_OF_CELLS.view_h3id_of_cells()
-    """
+
 
     print("\t\t\033[31mTest(02/08) : obtain recursively read all groups and datasets in the .h5 file and obtain its tree directory structure\033[0m")
     # obtain recursively read all groups and datasets in the .h5 file and obtain its tree directory structure

@@ -26,3 +26,6 @@ def satellite_orbital_period(alitude):
     # calculate the orbital period of the satellite (unit: seconds)
     T = round(2 * math.pi * math.sqrt(math.pow((R+alitude)*1000, 3) / (G * M)))
     return T
+
+
+print(satellite_orbital_period(1200))

@@ -28,4 +28,4 @@ def get_h5file_satellite_position_data(h5_file_name):
 
 
 if __name__ == '__main__':
-    get_h5file_satellite_position_data('../data/XML_constellation/Boeing.h5')
+    get_h5file_satellite_position_data('../../StarAlliance/GRASP_PR_new/ID_1/Boeing.h5')

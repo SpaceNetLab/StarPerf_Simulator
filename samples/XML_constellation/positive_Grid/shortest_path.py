@@ -18,9 +18,9 @@ def shortest_path():
     dT = 5730
     constellation_name = "Starlink"
     # the source of the communication pair
-    source = USER.user(0.00, 51.30, "London")
+    source = USER.user(-99.14, 19.41, "Mexico City")
     # the target of the communication pair
-    target = USER.user(-74.00, 40.43, "NewYork")
+    target = USER.user(2.17, 41.39, "Barcelona")
     # generate the constellations
     constellation = constellation_configuration.constellation_configuration(dT,
                                                                             constellation_name=constellation_name)
