@@ -27,8 +27,8 @@ def bandwidth():
     Nairobi = USER.user(-1.3, 36.8, "Nairobi")
     Mumbai = USER.user(19.1, 72.9, "Mumbai")
     Wellington = USER.user(-41.3, 174.8, "Wellington")
-    Singapore = USER.user(1.3, 103.8, "Singapore")
-    LosAngeles = USER.user(34.1, -118.2, "LosAngeles")
+#     Singapore = USER.user(1.3, 103.8, "Singapore")
+#     LosAngeles = USER.user(34.1, -118.2, "LosAngeles")
 
     # generate the constellations
     constellation = constellation_configuration.constellation_configuration(dT=dT,
@@ -63,6 +63,9 @@ def bandwidth():
     # bandwidth = BANDWIDTH.bandwidth(constellation_name, Singapore, LosAngeles, constellation.shells[0], 1.2, 5, dT)
     # bandwidth = np.array([bandwidth])
     # np.savetxt(path + '/Singapore_LosAngeles_throughput.txt', bandwidth, fmt='%.3f')
+
+    print("The bandwidth has been saved in " + path)
+
 
 
 if __name__ == '__main__':

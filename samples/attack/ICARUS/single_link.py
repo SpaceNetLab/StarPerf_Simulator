@@ -89,7 +89,7 @@ def gather_throughput(cons_name, src_lat, src_lon, dst_lat, dst_lon, link_num, r
 
 
 def single_link_attack():
-    duration = 200
+    duration = 100
     dT = 1
     constellation = constellation_configuration(duration, dT, "Starlink")
 

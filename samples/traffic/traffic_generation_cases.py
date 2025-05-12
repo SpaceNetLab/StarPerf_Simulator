@@ -22,7 +22,7 @@ def traffic_generation():
     for t in range(1, duration + 1):
         Traffic.execute_traffic_policy(constellation, t)
 
-    print("traffic generation is completed for" + str(duration) + "s")
+    print("Traffic generation is completed for" + str(duration) + "s")
     print()
 
 

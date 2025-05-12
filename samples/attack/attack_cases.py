@@ -25,3 +25,6 @@ def attack_cases():
     ENERGY_DRAIN.energy_drain()
     print("Energy drain attack is completed.")
     print()
+
+if __name__ == '__main__':
+    attack_cases()

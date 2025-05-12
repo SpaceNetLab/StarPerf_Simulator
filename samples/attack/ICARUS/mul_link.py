@@ -28,7 +28,7 @@ unit_traffic = 20   # 20Mbps per malicious terminal
 
 
 def multi_link_attack():
-    duration = 1000
+    duration = 100
     dT = 1
 
     constellation = constellation_configuration(duration, dT, "Starlink")

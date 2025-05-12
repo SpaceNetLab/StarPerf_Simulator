@@ -63,6 +63,7 @@ def delay():
     # delay = np.array(delay)
     # np.savetxt(path + '/Singapore_LosAngeles.txt', delay, fmt='%.3f')
 
+    print("The delay has been saved in " + path)
 
 
 if __name__ == '__main__':

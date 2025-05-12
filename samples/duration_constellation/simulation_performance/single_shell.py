@@ -32,25 +32,25 @@ def single_shell_performance():
         starlink_cons = constellation_configuration(single_dur, dT, "Starlink")
         end_time = time.time()
         starlink_times.append(end_time - start_time)
-        print(end_time - start_time)
+        print("Simulating Starlink shell 1 for " + str(single_dur) + " takes" + str(end_time - start_time) + " s")
 
         start_time = time.time()
         kuiper_cons = constellation_configuration(single_dur, dT, "Kuiper")
         end_time = time.time()
         kuiper_times.append(end_time - start_time)
-        print(end_time - start_time)
+        print("Simulating Kuiper shell 1 for " + str(single_dur) + " takes" + str(end_time - start_time) + " s")
 
         start_time = time.time()
         telesat_cons = constellation_configuration(single_dur, dT, "Telesat")
         end_time = time.time()
         telesat_times.append(end_time - start_time)
-        print(end_time - start_time)
+        print("Simulating Telesat shell 1 for " + str(single_dur) + " takes" + str(end_time - start_time) + " s")
 
         start_time = time.time()
         oneweb_cons = constellation_configuration(single_dur, dT, "OneWeb")
         end_time = time.time()
         oneweb_times.append(end_time - start_time)
-        print(end_time - start_time)
+        print("Simulating OneWeb shell 1 for " + str(single_dur) + " takes" + str(end_time - start_time) + " s")
 
     path = "data/constellation_test/"
     os.system('mkdir -p ' + path)
@@ -64,6 +64,7 @@ def single_shell_performance():
     oneweb_times = np.array(oneweb_times)
     np.savetxt(path + 'oneweb.txt', oneweb_times)
 
+    print("Single shell simulation time has been saved in " + path)
 
 
 if __name__ == '__main__':
