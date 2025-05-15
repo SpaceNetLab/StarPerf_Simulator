@@ -89,7 +89,9 @@ def gather_throughput(cons_name, src_lat, src_lon, dst_lat, dst_lon, link_num, r
 
 
 def single_link_attack():
-    duration = 100
+    duration = 10
+    unit_flow = 40
+    capacity = 20480
     dT = 1
     constellation = constellation_configuration(duration, dT, "Starlink")
 
@@ -98,24 +100,25 @@ def single_link_attack():
 
     times = [0, 100, 200, 300, 400, 500, 512, 550, 600]
     for time in times:
-        for t in range(1, 201):
-            attackPluginManage.execute_single_link_attack(constellation, t, 35.7, 139.7, 22.3, 114.2, time, 40)    # Tokyo to Hong Kong
-            attackPluginManage.execute_single_link_attack(constellation, t, 39.9, 116.4, 41.9, 12.5, time, 40)     # Beijing to Rome
-            attackPluginManage.execute_single_link_attack(constellation, t, 40.7, -74.0, -22.9, -43.2, time, 40)   # New Tork to Rio de Janeiro
-            attackPluginManage.execute_single_link_attack(constellation, t, 48.9, 2.4, 40.4, -3.7, time, 40)       # paris to madrid
-            attackPluginManage.execute_single_link_attack(constellation, t, -33.9, 151.2, 37.6, 126.9, time, 40)       # Sydney to Seoul
+        for t in range(1, duration + 1):
+            attackPluginManage.execute_single_link_attack(constellation, t, 35.7, 139.7, 22.3, 114.2, time, unit_flow)    # Tokyo to Hong Kong
+            attackPluginManage.execute_single_link_attack(constellation, t, 39.9, 116.4, 41.9, 12.5, time, unit_flow)     # Beijing to Rome
+            attackPluginManage.execute_single_link_attack(constellation, t, 40.7, -74.0, -22.9, -43.2, time, unit_flow)   # New Tork to Rio de Janeiro
+            attackPluginManage.execute_single_link_attack(constellation, t, 48.9, 2.4, 40.4, -3.7, time, unit_flow)       # paris to madrid
+            attackPluginManage.execute_single_link_attack(constellation, t, -33.9, 151.2, 37.6, 126.9, time, unit_flow)       # Sydney to Seoul
+            print("Finished simulating ICARUS single link attack for timeslot " + str(t) + " with malicious traffic of " + str(time * unit_flow) + ".")
 
     for num in times:
-        gather_delay("Starlink", 35.7, 139.7, 22.3, 114.2, num, 40, 200)
-        gather_delay("Starlink", 39.9, 116.4, 41.9, 12.5, num, 40, 200)
-        gather_delay("Starlink", 40.7, -74.0, -22.9, -43.2, num, 40, 200)
-        gather_delay("Starlink", 48.9, 2.4, 40.4, -3.7, num, 40, 200)
-        gather_delay("Starlink", -33.9, 151.2, 37.6, 126.9, num, 40, 200)
-        gather_throughput("Starlink", 35.7, 139.7, 22.3, 114.2, num, 40, 200, 20480)
-        gather_throughput("Starlink", 39.9, 116.4, 41.9, 12.5, num, 40, 200, 20480)
-        gather_throughput("Starlink", 40.7, -74.0, -22.9, -43.2, num, 40, 200, 20480)
-        gather_throughput("Starlink", 48.9, 2.4, 40.4, -3.7, num, 40, 200, 20480)
-        gather_throughput("Starlink", -33.9, 151.2, 37.6, 126.9, num, 40, 200, 20480)
+        gather_delay("Starlink", 35.7, 139.7, 22.3, 114.2, num, unit_flow, duration)
+        gather_delay("Starlink", 39.9, 116.4, 41.9, 12.5, num, unit_flow, duration)
+        gather_delay("Starlink", 40.7, -74.0, -22.9, -43.2, num, unit_flow, duration)
+        gather_delay("Starlink", 48.9, 2.4, 40.4, -3.7, num, unit_flow, duration)
+        gather_delay("Starlink", -33.9, 151.2, 37.6, 126.9, num, unit_flow, duration)
+        gather_throughput("Starlink", 35.7, 139.7, 22.3, 114.2, num, unit_flow, duration, capacity)
+        gather_throughput("Starlink", 39.9, 116.4, 41.9, 12.5, num, unit_flow, duration, capacity)
+        gather_throughput("Starlink", 40.7, -74.0, -22.9, -43.2, num, unit_flow, duration, capacity)
+        gather_throughput("Starlink", 48.9, 2.4, 40.4, -3.7, num, unit_flow, duration, capacity)
+        gather_throughput("Starlink", -33.9, 151.2, 37.6, 126.9, num, unit_flow, duration, capacity)
 
 
 

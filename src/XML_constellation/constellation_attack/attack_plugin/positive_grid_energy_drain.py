@@ -362,19 +362,19 @@ def positive_grid_energy_drain(constellation, time_slot, dT=30, bot_num=500, uni
     ori_all_laser_energy = []
     attack_all_laser_energy = []
 
-    downgsl_filename = 'data/' + cons_name + '_energy_drain/link_traffic_data/' + str(time_slot) + '/' + 'downlink_traffic.txt'
+    downgsl_filename = 'data/' + cons_name + '_link_traffic_data/' + str(time_slot) + '/' + 'downlink_traffic.txt'
     downlink_traffic = np.loadtxt(downgsl_filename)
     downlink_traffic = list(map(int, downlink_traffic))
-    upgsl_filename = 'data/' + cons_name + '_energy_drain/link_traffic_data/' + str(time_slot) + '/' + 'uplink_traffic.txt'
+    upgsl_filename = 'data/' + cons_name + '_link_traffic_data/' + str(time_slot) + '/' + 'uplink_traffic.txt'
     uplink_traffic = np.loadtxt(upgsl_filename)
     uplink_traffic = list(map(int, uplink_traffic))
-    isl_filename = 'data/' + cons_name + '_energy_drain/link_traffic_data/' + str(time_slot) + '/' + 'isl_traffic.txt'
+    isl_filename = 'data/' + cons_name + '_link_traffic_data/' + str(time_slot) + '/' + 'isl_traffic.txt'
     isl_traffic = np.loadtxt(isl_filename)
     isl_traffic = list(map(int, isl_traffic))
-    isl_send_filename = 'data/' + cons_name + '_energy_drain/link_traffic_data/' + str(time_slot) + '/' + 'isl_sender_traffic.txt'
+    isl_send_filename = 'data/' + cons_name + '_link_traffic_data/' + str(time_slot) + '/' + 'isl_sender_traffic.txt'
     isl_send = np.loadtxt(isl_send_filename)
     isl_send = list(map(int, isl_send))
-    isl_rec_filename = 'data/' + cons_name + '_energy_drain/link_traffic_data/' + str(time_slot) + '/' + 'isl_receiver_traffic.txt'
+    isl_rec_filename = 'data/' + cons_name + '_link_traffic_data/' + str(time_slot) + '/' + 'isl_receiver_traffic.txt'
     isl_rec = np.loadtxt(isl_rec_filename)
     isl_rec = list(map(int, isl_rec))
 
@@ -486,4 +486,4 @@ def positive_grid_energy_drain(constellation, time_slot, dT=30, bot_num=500, uni
     attack_all_laser_energy = np.array(attack_all_laser_energy)
     np.savetxt(output_path + '/attack_all_laser_energy.txt', attack_all_laser_energy, fmt='%.3f')
 
-    print("Complete an energy drain attack at timeslot", str(time_slot))
+    # print("Complete an energy drain attack at timeslot", str(time_slot))

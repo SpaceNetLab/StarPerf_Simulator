@@ -829,4 +829,4 @@ def icarus_single_link_attack(constellation, time_slot, src_lat=48.8667, src_lon
                load_delay,
                fmt='%.3f')
 
-    print("Finished calculating single link attack traffic generation at timeslot", str(time_slot))
+    # print("Finished calculating single link attack traffic generation at timeslot", str(time_slot))

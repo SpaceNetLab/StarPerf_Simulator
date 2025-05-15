@@ -22,7 +22,7 @@ def single_shell_performance():
     # simulation test time range : 100~5000, sampling interval=350, 15 time slots
 
     duration = list(range(100, 5001, 350))
-    dT = 5
+    dT = 1000
     starlink_times = []
     kuiper_times = []
     telesat_times = []
@@ -32,25 +32,25 @@ def single_shell_performance():
         starlink_cons = constellation_configuration(single_dur, dT, "Starlink")
         end_time = time.time()
         starlink_times.append(end_time - start_time)
-        print("Simulating Starlink shell 1 for " + str(single_dur) + " takes" + str(end_time - start_time) + " s")
+        print("Simulating Starlink shell 1 for " + str(single_dur) + " s takes " + str(end_time - start_time) + " s of real time.")
 
         start_time = time.time()
         kuiper_cons = constellation_configuration(single_dur, dT, "Kuiper")
         end_time = time.time()
         kuiper_times.append(end_time - start_time)
-        print("Simulating Kuiper shell 1 for " + str(single_dur) + " takes" + str(end_time - start_time) + " s")
+        print("Simulating Kuiper shell 1 for " + str(single_dur) + " s takes " + str(end_time - start_time) + " s of real time.")
 
         start_time = time.time()
         telesat_cons = constellation_configuration(single_dur, dT, "Telesat")
         end_time = time.time()
         telesat_times.append(end_time - start_time)
-        print("Simulating Telesat shell 1 for " + str(single_dur) + " takes" + str(end_time - start_time) + " s")
+        print("Simulating Telesat shell 1 for " + str(single_dur) + " s takes " + str(end_time - start_time) + " s of real time.")
 
         start_time = time.time()
         oneweb_cons = constellation_configuration(single_dur, dT, "OneWeb")
         end_time = time.time()
         oneweb_times.append(end_time - start_time)
-        print("Simulating OneWeb shell 1 for " + str(single_dur) + " takes" + str(end_time - start_time) + " s")
+        print("Simulating OneWeb shell 1 for " + str(single_dur) + " s takes " + str(end_time - start_time) + " s of real time.")
 
     path = "data/constellation_test/"
     os.system('mkdir -p ' + path)

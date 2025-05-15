@@ -13,7 +13,7 @@ import src.XML_constellation.constellation_traffic.traffic_plugin_manager as tra
 from src.constellation_generation.by_duration.constellation_configuration import constellation_configuration
 
 def traffic_generation():
-    duration = 100
+    duration = 10
     dT = 1
     cons_name = 'Starlink'
     constellation = constellation_configuration(duration, dT, cons_name, shell_index=1)
@@ -22,7 +22,7 @@ def traffic_generation():
     for t in range(1, duration + 1):
         Traffic.execute_traffic_policy(constellation, t)
 
-    print("Traffic generation is completed for" + str(duration) + "s")
+    print("Traffic generation is completed for " + str(duration) + " s.")
     print()
 
 

@@ -337,5 +337,5 @@ def positive_grid_icarus(constellation, time_slot,
         cumu_affected_traffic_volume,
         fmt='%d')
 
-    print("Finished calculating malicious terminals deployment and generating malicious traffic for +Grid at timeslot", str(time_slot))
+    # print("Finished calculating malicious terminals deployment and generating malicious traffic for +Grid at timeslot", str(time_slot))
 

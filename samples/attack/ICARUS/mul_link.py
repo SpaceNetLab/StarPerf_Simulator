@@ -28,7 +28,7 @@ unit_traffic = 20   # 20Mbps per malicious terminal
 
 
 def multi_link_attack():
-    duration = 100
+    duration = 10
     dT = 1
 
     constellation = constellation_configuration(duration, dT, "Starlink")
@@ -39,6 +39,7 @@ def multi_link_attack():
         for traffic in target_affected_traffic:
             for t in range(1, duration+1):
                 attackPluginManage.execute_icarus_attack(constellation, t, ratio, traffic)
+                print("Finished calculating malicious terminals deployment and generating " + str(traffic) + " Mbps malicious traffic at timeslot" + str(t) + " with ratio " + str(ratio))
 
 
     os.system('mkdir -p data/' + cons_name + '_icarus/results')
@@ -60,7 +61,7 @@ def multi_link_attack():
         for value in legal_traffic:
             file.write(str(value) + '\n')
 
-    folder_path = 'data/' + cons_name + "_icarus/attack_traffic_data_land_only_bot/0.5-" +  str(traffic_thre) + "-" + str(sat_per_cycle) + "-" + str(GSL_capacity) + "-" + str(unit_traffic)
+    folder_path = 'data/' + cons_name + "_icarus/attack_traffic_data_land_only_bot/0.5-300000-" +  str(traffic_thre) + "-" + str(sat_per_cycle) + "-" + str(GSL_capacity) + "-" + str(unit_traffic)
     icarus_traffic = []
     traffic_ratios = []
     gsl_ratios = []

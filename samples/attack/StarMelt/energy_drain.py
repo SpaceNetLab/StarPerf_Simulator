@@ -14,7 +14,7 @@ import numpy as np
 
 def energy_drain():
     duration = 5731
-    dT = 30
+    dT = 500
     time_slot = (int)(duration / dT)
     cons_name = 'Starlink'
     bot_nums = [50, 100, 200, 300, 400, 500]
@@ -30,6 +30,7 @@ def energy_drain():
     for bot_num in bot_nums:
         for t in range(1, time_slot + 1):
             Attack.execute_energy_drain_attack(constellation, t, 30, bot_num, 40)
+            print("Complete energy drain attack at timeslot" + str(t) + "with bot num " + str(bot_num))
 
         attack_laser_energy = [0] * 1584
         attack_radio_energy = [0] * 1584

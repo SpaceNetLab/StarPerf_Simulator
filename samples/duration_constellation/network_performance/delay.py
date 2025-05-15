@@ -18,7 +18,7 @@ import os
 
 
 def delay():
-    dT = 30
+    dT = 1000
     constellation_name = "Starlink"
     London = USER.user(51.5, -0.1, "London")
     Washington = USER.user(38.9, -77.0, "NewYork")
