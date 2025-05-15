@@ -39,7 +39,7 @@ def multi_link_attack():
         for traffic in target_affected_traffic:
             for t in range(1, duration+1):
                 attackPluginManage.execute_icarus_attack(constellation, t, ratio, traffic)
-                print("Finished calculating malicious terminals deployment and generating " + str(traffic) + " Mbps malicious traffic at timeslot" + str(t) + " with ratio " + str(ratio))
+                print("Finished calculating malicious terminals deployment and generating " + str(traffic) + " Mbps malicious traffic at timeslot " + str(t) + " with ratio " + str(ratio))
 
 
     os.system('mkdir -p data/' + cons_name + '_icarus/results')
