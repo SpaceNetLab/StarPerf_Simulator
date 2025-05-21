@@ -26,12 +26,12 @@ class energy_plugin_manager:
                     function = getattr(plugin, plugin_name)
                     self.plugins[plugin_name] = function
 
-        self.current_traffic_model = "communication_link"
+        self.current_energy_model = "communication_link"
 
 
     def set_energy_model(self, plugin_name):
         if plugin_name in self.plugins:
-            self.current_traffic_model = plugin_name
+            self.current_energy_model = plugin_name
         else:
             raise ValueError(f"Plugin {plugin_name} not found!")
     
@@ -42,7 +42,7 @@ class energy_plugin_manager:
                         gsl_receiver_active=100, isl_receiver_active=25, gsl_receiver_w=0.008,
                         isl_receiver_w=0.002, tail_energy_time=2):
         
-        function = self.plugins[self.current_traffic_model]
+        function = self.plugins[self.current_energy_model]
 
         return function(constellation, time_slot, gsl_transmitter_idle, isl_transmitter_idle,
                         gsl_transmitter_active, isl_transmitter_active, gsl_transmitter_w,
