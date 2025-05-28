@@ -379,7 +379,7 @@ def positive_grid_traffic(constellation, time_slot,
     Flow_size = flow_size
 
     # load satellite positions
-    h5file_path = 'data/XML_constellation/' + cons_name + "_shell1.h5"
+    h5file_path = os.path.join("data", "XML_constellation", "Starlink_shell1.h5")
     with h5py.File(h5file_path, 'r') as file:
         position_group = file['position']
         shell_group = position_group['shell1']
@@ -398,7 +398,7 @@ def positive_grid_traffic(constellation, time_slot,
     user_pos_car = np.array(user_pos_car)
 
     # load traffic distribution
-    traffic_file = 'data/starlink_count.txt'
+    traffic_file = os.path.join("data", "starlink_count.txt")
     with open(traffic_file, 'r') as file:
         lines = file.readlines()
         for row in range(90 - inclination, 90 + inclination):
@@ -423,7 +423,7 @@ def positive_grid_traffic(constellation, time_slot,
             sat_cover_user[min_dis_sat].append(user_id)  
 
     # load GS positions
-    f = open("data/GS.json", "r", encoding='utf8')
+    f = open(os.path.join("data", "GS.json"), "r", encoding='utf8')
     GS_info = json.load(f)
     count = 0
     for key in GS_info:
@@ -465,49 +465,41 @@ def positive_grid_traffic(constellation, time_slot,
 
     # outputs: ISL, GSL down/uplink, block connecstions, satellite connections and so on
     # output_path = "data/" + cons_name + "_link_traffic_data/" + str(time_slot)
-    output_path = "data/" + cons_name + "_link_traffic_data/" + str(time_slot)
-    os.system("mkdir -p " + output_path)
+    output_path = os.path.join("data", cons_name + "_link_traffic_data", str(time_slot))
+    os.makedirs(output_path, exist_ok=True)
+
     isl_traffic = np.array(isl_traffic, dtype=int)
-    np.savetxt(output_path + '/isl_traffic.txt',
-               isl_traffic,
-               fmt='%d')
+    np.savetxt(os.path.join(output_path, 'isl_traffic.txt'), isl_traffic, fmt='%d')
+
     isl_sender_traffic = np.array(isl_sender_traffic, dtype=int)
-    np.savetxt(output_path + '/isl_sender_traffic.txt',
-               isl_sender_traffic,
-               fmt='%d')
+    np.savetxt(os.path.join(output_path, 'isl_sender_traffic.txt'), isl_sender_traffic, fmt='%d')
+
     isl_receiver_traffic = np.array(isl_receiver_traffic, dtype=int)
-    np.savetxt(output_path + '/isl_receiver_traffic.txt',
-               isl_receiver_traffic,
-               fmt='%d')
+    np.savetxt(os.path.join(output_path, 'isl_receiver_traffic.txt'), isl_receiver_traffic, fmt='%d')
+
     downlink_traffic = np.array(downlink_traffic, dtype=int)
-    np.savetxt(output_path + '/downlink_traffic.txt',
-               downlink_traffic,
-               fmt='%d')
+    np.savetxt(os.path.join(output_path, 'downlink_traffic.txt'), downlink_traffic, fmt='%d')
+
     uplink_traffic = np.array(uplink_traffic, dtype=int)
-    np.savetxt(output_path + '/uplink_traffic.txt',
-               uplink_traffic,
-               fmt='%d')
+    np.savetxt(os.path.join(output_path, 'uplink_traffic.txt'), uplink_traffic, fmt='%d')
+
     sat_connect_gs = np.array(sat_connect_gs, dtype=int)
-    np.savetxt(output_path + '/sat_connect_gs.txt',
-               sat_connect_gs,
-               fmt='%d')
+    np.savetxt(os.path.join(output_path, 'sat_connect_gs.txt'), sat_connect_gs, fmt='%d')
+
     user_connect_sat = np.array(user_connect_sat, dtype=int)
-    np.savetxt(output_path + '/user_connect_sat.txt',
-               user_connect_sat,
-               fmt='%d')
+    np.savetxt(os.path.join(output_path, 'user_connect_sat.txt'), user_connect_sat, fmt='%d')
+
     id = 0
-    gs_occurrence_num = [0 for i in range(len(GS_pos_car))]
+    gs_occurrence_num = [0 for _ in range(len(GS_pos_car))]
     for item in gsl_occurrence:
         gsl_occurrence_num[id] = len(item) if len(item) > 0 else -1
         if sat_connect_gs[id] != -1:
             gs_occurrence_num[sat_connect_gs[id]] += gsl_occurrence_num[id]
-        id +=1
+        id += 1
+
     gsl_occurrence_num = np.array(gsl_occurrence_num, dtype=int)
-    np.savetxt(output_path + '/gsl_occurrence_num.txt',
-               gsl_occurrence_num,
-               fmt='%d')
+    np.savetxt(os.path.join(output_path, 'gsl_occurrence_num.txt'), gsl_occurrence_num, fmt='%d')
+
     gs_occurrence_num = np.array(gs_occurrence_num, dtype=int)
-    np.savetxt(output_path + '/gs_occurrence_num.txt',
-               gs_occurrence_num,
-               fmt='%d')
+    np.savetxt(os.path.join(output_path, 'gs_occurrence_num.txt'), gs_occurrence_num, fmt='%d')
 

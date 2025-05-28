@@ -32,39 +32,39 @@ def single_shell_performance():
         starlink_cons = constellation_configuration(single_dur, dT, "Starlink")
         end_time = time.time()
         starlink_times.append(end_time - start_time)
-        print("Simulating Starlink shell 1 for " + str(single_dur) + " s takes " + str(end_time - start_time) + " s of real time.")
+        print(f"Simulating Starlink shell 1 for {single_dur} s takes {end_time - start_time:.3f} s of real time.")
 
         start_time = time.time()
         kuiper_cons = constellation_configuration(single_dur, dT, "Kuiper")
         end_time = time.time()
         kuiper_times.append(end_time - start_time)
-        print("Simulating Kuiper shell 1 for " + str(single_dur) + " s takes " + str(end_time - start_time) + " s of real time.")
+        print(f"Simulating Kuiper shell 1 for {single_dur} s takes {end_time - start_time:.3f} s of real time.")
 
         start_time = time.time()
         telesat_cons = constellation_configuration(single_dur, dT, "Telesat")
         end_time = time.time()
         telesat_times.append(end_time - start_time)
-        print("Simulating Telesat shell 1 for " + str(single_dur) + " s takes " + str(end_time - start_time) + " s of real time.")
+        print(f"Simulating Telesat shell 1 for {single_dur} s takes {end_time - start_time:.3f} s of real time.")
 
         start_time = time.time()
         oneweb_cons = constellation_configuration(single_dur, dT, "OneWeb")
         end_time = time.time()
         oneweb_times.append(end_time - start_time)
-        print("Simulating OneWeb shell 1 for " + str(single_dur) + " s takes " + str(end_time - start_time) + " s of real time.")
+        print(f"Simulating OneWeb shell 1 for {single_dur} s takes {end_time - start_time:.3f} s of real time.")
 
-    path = "data/constellation_test/"
-    os.system('mkdir -p ' + path)
+    path = os.path.join("data", "constellation_test")
+    os.makedirs(path, exist_ok=True)
 
     starlink_times = np.array(starlink_times)
-    np.savetxt(path + 'starlink_times.txt', starlink_times)
+    np.savetxt(os.path.join(path, 'starlink_times.txt'), starlink_times)
     kuiper_times = np.array(kuiper_times)
-    np.savetxt(path + 'kuiper_times.txt', kuiper_times)
+    np.savetxt(os.path.join(path, 'kuiper_times.txt'), kuiper_times)
     telesat_times = np.array(telesat_times)
-    np.savetxt(path + 'telesat_times.txt', telesat_times)
+    np.savetxt(os.path.join(path, 'telesat_times.txt'), telesat_times)
     oneweb_times = np.array(oneweb_times)
-    np.savetxt(path + 'oneweb.txt', oneweb_times)
+    np.savetxt(os.path.join(path, 'oneweb.txt'), oneweb_times)
 
-    print("Single shell simulation time has been saved in " + path)
+    print(f"Single shell simulation time has been saved in {path}")
 
 
 if __name__ == '__main__':

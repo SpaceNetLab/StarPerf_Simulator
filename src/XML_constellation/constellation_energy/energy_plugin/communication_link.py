@@ -91,9 +91,9 @@ def communication_link(constellation, time_slot, gsl_transmitter_idle=40, isl_tr
     sat_num = num_of_orbit * sat_of_orbit
     links_energy_sum = [0] * sat_num
 
-    state_dir = 'data/' + cons_name + '_link_energy/'
-    state_file = state_dir + 'tail_state.json'
-    os.system(f"mkdir -p {state_dir}")
+    state_dir = os.path.join("data", f"{cons_name}_link_energy")
+    state_file = os.path.join(state_dir, "tail_state.json")
+    os.makedirs(state_dir, exist_ok=True)
 
     tail_state = {
         'downlink_tail_remaining': [0] * sat_num,
@@ -114,16 +114,18 @@ def communication_link(constellation, time_slot, gsl_transmitter_idle=40, isl_tr
     isl_sender_tail_remaining = tail_state['isl_sender_tail_remaining']
     isl_receiver_tail_remaining = tail_state['isl_receiver_tail_remaining']
 
-    traffic_filename = 'data/' + cons_name + '_link_traffic_data/' + str(time_slot) + '/' + 'downlink_traffic.txt'
+    base_path = os.path.join("data", f"{cons_name}_link_traffic_data", str(time_slot))
+
+    traffic_filename = os.path.join(base_path, 'downlink_traffic.txt')
     downlink_traffic = np.loadtxt(traffic_filename)
     downlink_traffic = list(map(int, downlink_traffic))
-    traffic_filename = 'data/' + cons_name + '_link_traffic_data/' + str(time_slot) + '/' + 'uplink_traffic.txt'
+    traffic_filename = os.path.join(base_path, 'uplink_traffic.txt')
     uplink_traffic = np.loadtxt(traffic_filename)
     uplink_traffic = list(map(int, uplink_traffic))
-    traffic_filename = 'data/' + cons_name + '_link_traffic_data/' + str(time_slot) + '/isl_sender_traffic.txt'
+    traffic_filename = os.path.join(base_path, 'isl_sender_traffic.txt')
     isl_sender_traffic = np.loadtxt(traffic_filename)
     isl_sender_traffic = list(map(int, isl_sender_traffic))
-    traffic_filename = 'data/' + cons_name + '_link_traffic_data/' + str(time_slot) + '/isl_receiver_traffic.txt'
+    traffic_filename = os.path.join(base_path, 'isl_receiver_traffic.txt')
     isl_receiver_traffic = np.loadtxt(traffic_filename)
     isl_receiver_traffic = list(map(int, isl_receiver_traffic))
 
@@ -178,10 +180,9 @@ def communication_link(constellation, time_slot, gsl_transmitter_idle=40, isl_tr
     except Exception as e:
         print(f"Error saving state file: {e}")
 
-    os.system("mkdir -p data/" + cons_name + "_link_energy/" + str(time_slot))
+    output_path = os.path.join("data", f"{cons_name}_link_energy", str(time_slot))
+    os.makedirs(output_path, exist_ok=True)
     links_energy_sum = np.array(links_energy_sum, fmt=float)
-    np.savetxt('data/' + cons_name + '_link_energy/' + str(time_slot) +
-               '/link_energy.txt',
-               links_energy_sum,
-               fmt='%.3f')
+    output_path = os.path.join("data", f"{cons_name}_link_energy", str(time_slot), "link_energy.txt")
+    np.savetxt(output_path, links_energy_sum, fmt='%.3f')
 

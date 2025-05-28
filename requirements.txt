@@ -1,0 +1,14 @@
+h3==4.0.0b2
+h5py==3.10.0
+numpy==1.24.4
+openpyxl==3.1.2
+importlib-metadata==6.8.0
+skyfield==1.46
+sgp4==2.22
+pandas==2.1.0
+poliastro==0.17.0
+astropy==5.3.3
+networkx==3.1
+requests==2.31.0
+jenkspy==0.4.0
+pyecharts==2.0.4

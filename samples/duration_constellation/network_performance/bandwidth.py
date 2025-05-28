@@ -40,23 +40,26 @@ def bandwidth():
     # execute the connectivity mode and build ISLs between satellites
     connectionModePluginManager.execute_connection_policy(constellation=constellation, dT=dT)
 
-    path = "data/constellation_test/" + constellation_name
-    os.system('mkdir -p ' + path)
+    path = os.path.join("data", "constellation_test", constellation_name)
+    os.makedirs(path, exist_ok=True)
     bandwidth = BANDWIDTH.bandwidth(constellation_name, London, Washington, constellation.shells[0], 1.2, 5, dT)
     bandwidth = np.array([bandwidth])
-    np.savetxt(path + '/London_Washington_throughput.txt', bandwidth, fmt='%.3f')
+    output_file = os.path.join(path, 'London_Washington_throughput.txt')
+    np.savetxt(output_file, bandwidth, fmt='%.3f')
     print("The bandwidth from ", London.user_name, " to ", Washington.user_name, " is ", bandwidth,
           " Mbps")
 
     bandwidth = BANDWIDTH.bandwidth(constellation_name, Istanbul, Nairobi, constellation.shells[0], 1.2, 5, dT)
     bandwidth = np.array([bandwidth])
-    np.savetxt(path + '/Istanbul_Nairobi_throughput.txt', bandwidth, fmt='%.3f')
+    output_file = os.path.join(path, 'Istanbul_Nairobi_throughput.txt')
+    np.savetxt(output_file, bandwidth, fmt='%.3f')
     print("The bandwidth from ", Istanbul.user_name, " to ", Nairobi.user_name, " is ", bandwidth,
           " Mbps")
 
     bandwidth = BANDWIDTH.bandwidth(constellation_name, Mumbai, Wellington, constellation.shells[0], 1.2, 5, dT)
     bandwidth = np.array([bandwidth])
-    np.savetxt(path + '/Mumbai_Wellington_throughput.txt', bandwidth, fmt='%.3f')
+    output_file = os.path.join(path, 'Mumbai_Wellington_throughput.txt')
+    np.savetxt(output_file, bandwidth, fmt='%.3f')
     print("The bandwidth from ", Mumbai.user_name, " to ", Wellington.user_name, " is ", bandwidth,
           " Mbps")
 
@@ -64,7 +67,7 @@ def bandwidth():
     # bandwidth = np.array([bandwidth])
     # np.savetxt(path + '/Singapore_LosAngeles_throughput.txt', bandwidth, fmt='%.3f')
 
-    print("The bandwidth has been saved in " + path)
+    print(f"The bandwidth has been saved in {path}")
 
 
 

@@ -4,7 +4,7 @@
 
 Therefore, we have developed and implemented StarPerf, a mega-constellation performance simulation platform that enables constellation manufacturers and content providers to estimate and understand the achievable performance under a variety of constellation options. The proposed platform integrates three key techniques: (1) performance simulation for mega-constellation, which captures the impact of the inherent high mobility in satellite networks and profiles the area-to-area attainable network performance; (2) constellation scaling, which synthesizes various topological options by scaling the space resource (e.g. number of satellite, link availability and capacity), and enables exploration on multiple operating conditions that can not be easily reproduced; (3) security simulation for LEO satellite networks, which is based on attack modeling and numerical simulation. We have added traffic plugins and communication energy consumption plugins to StarPerf, and used it to reproduce the link flooding attack proposed in [Time-varying Bottleneck Links in LEO Satellite Networks: Identification, Exploits, and Countermeasures](https://www.ndss-symposium.org/ndss-paper/time-varying-bottleneck-links-in-leo-satellite-networks-identification-exploits-and-countermeasures/)(NDSS 25) and the energy drain attack proposed in [Energy Drain Attack in Satellite Internet Constellations](https://ieeexplore.ieee.org/document/10188709)(IWQoS 23).
 
-This page introduces the basic usage of our StarPerf tool. If you have any questions on StarPerf, please do not hesitate to contact us. (Email: [houyn24@mails.tsinghua.edu.cn](mailto:houyn24@mails.tsinghua.edu.cn), [zeqilai@tsinghua.edu.cn](mailto:zeqilai@tsinghua.edu.cn), [lijh19@mails.tsinghua.edu.cn](mailto:lijh19@mails.tsinghua.edu.cn))
+This page introduces the basic usage of our StarPerf tool. If you have any questions on StarPerf, please do not hesitate to contact us. (Email: [houyn24@mails.tsinghua.edu.cn](mailto:houyn24@mails.tsinghua.edu.cn), [ZhifengHan.mail@gmail.com](mailto:Zhifenghan.mail@gmail.com), [zeqilai@tsinghua.edu.cn](mailto:zeqilai@tsinghua.edu.cn), [lijh19@mails.tsinghua.edu.cn](mailto:lijh19@mails.tsinghua.edu.cn))
 
 Happy benchmarking your constellation!
 
@@ -19,7 +19,16 @@ In the original version of StarPerf, it is mainly built upon Python. In addition
 
 Now, we have made a major upgrade to StarPerf, extending its usability and enriching its functionality, and we call it "StarPerf 2.0". Accordingly, the initial version is called "StarPerf 1.0".
 
-Compared with StarPerf 1.0, StarPerf 2.0 is completely based on Python and does not require any third-party orbit analysis/computation tools. Therefore, just make sure you have a Python3.10 or above environment installed on your computer and the following Python libraries installed to ensure the system is running properly:
+Compared with StarPerf 1.0, StarPerf 2.0 is fully implemented in Python and no longer depends on any third-party orbit analysis or computation tools. You only need to ensure that **Python 3.10** or above is installed on your system.
+
+You can install all required dependencies at once using the following commands:
+
+```bash
+cd StarPerf_Simulator
+pip install -r requirements.txt
+```
+
+This will automatically install all necessary libraries to ensure the system runs properly. Specifically, we used the following packages to support the simulation: 
 
 - h3==4.0.0b2
 - h5py==3.10.0
@@ -38,7 +47,13 @@ Compared with StarPerf 1.0, StarPerf 2.0 is completely based on Python and does 
 
 # StarPerf overview and processing flow
 
-see [interface\_convention](./docs/interface_convention.pdf).
+You can directly run our simulation example using the following command:
+
+```bash
+python3 StarPerf.py
+```
+
+Of course, you can also write your own simulation scripts. For specific guidelines and important notes, please refer to [interface\_convention](./docs/interface_convention.pdf).
 
 # Contributors are more than welcome
 

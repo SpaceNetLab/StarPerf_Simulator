@@ -41,12 +41,13 @@ def multi_link_attack():
                 attackPluginManage.execute_icarus_attack(constellation, t, ratio, traffic)
                 print("Finished calculating malicious terminals deployment and generating " + str(traffic) + " Mbps malicious traffic at timeslot " + str(t) + " with ratio " + str(ratio))
 
-
-    os.system('mkdir -p data/' + cons_name + '_icarus/results')
+    output_path = os.path.join("data", f"{cons_name}_icarus", "results")
+    os.makedirs(output_path, exist_ok=True)
 
     legal_traffic = []
-    for subdir in os.listdir('data/' + cons_name + "_link_traffic_data"):
-        subdir_path = os.path.join('data/' + cons_name + "_link_traffic_data", subdir)
+    traffic_data_root = os.path.join("data", f"{cons_name}_link_traffic_data")
+    for subdir in os.listdir(traffic_data_root):
+        subdir_path = os.path.join(traffic_data_root, subdir)
         if os.path.isdir(subdir_path):
             # background traffic
             downlink_traffic_file_path = os.path.join(subdir_path, 'downlink_traffic.txt')
@@ -56,12 +57,15 @@ def multi_link_attack():
                     total = sum(values)
                     legal_traffic.append(total / 1024)
 
-    output_file = 'data/' + cons_name + '_icarus/results/background_traffic_without_attack.txt'
+    output_file = os.path.join("data", f"{cons_name}_icarus", "results", "background_traffic_without_attack.txt")
     with open(output_file, 'w') as file:
         for value in legal_traffic:
             file.write(str(value) + '\n')
 
-    folder_path = 'data/' + cons_name + "_icarus/attack_traffic_data_land_only_bot/0.5-300000-" +  str(traffic_thre) + "-" + str(sat_per_cycle) + "-" + str(GSL_capacity) + "-" + str(unit_traffic)
+    folder_path = os.path.join(
+        "data", f"{cons_name}_icarus", "attack_traffic_data_land_only_bot",
+        f"0.5-300000-{traffic_thre}-{sat_per_cycle}-{GSL_capacity}-{unit_traffic}"
+    )
     icarus_traffic = []
     traffic_ratios = []
     gsl_ratios = []
@@ -89,16 +93,16 @@ def multi_link_attack():
                         gsl_ratios.append(0)
         time_slot += 1
 
-    output_file = 'data/' + cons_name + '_icarus/results/ratio_of_reduced_background_traffic_by_icarus.txt'
+    output_file = os.path.join("data", f"{cons_name}_icarus", "results", "ratio_of_reduced_background_traffic_by_icarus.txt")
     with open(output_file, 'w') as file:
         for value in traffic_ratios:
             file.write(str(value) + '\n')
-    output_file = 'data/' + cons_name + '_icarus/results/ratio_of_attacked_GSLs_by_icarus.txt'
+    output_file = os.path.join("data", f"{cons_name}_icarus", "results", "ratio_of_attacked_GSLs_by_icarus.txt")
     with open(output_file, 'w') as file:
         for value in gsl_ratios:
             file.write(str(value) + '\n')
     actual_throughput_icarus = [a - b for a, b in zip(legal_traffic, icarus_traffic)]
-    output_file = 'data/' + cons_name + '_icarus/results/actual_throughput_icarus.txt'
+    output_file = os.path.join("data", f"{cons_name}_icarus", "results", "actual_throughput_icarus.txt")
     with open(output_file, 'w') as file:
         for value in actual_throughput_icarus:
             file.write(str(value) + '\n')
@@ -106,9 +110,10 @@ def multi_link_attack():
     for traffic in target_affected_traffic:
         botnet_size_for_icarus = []
         for ratio in ratios:
-            icarus_folder_path = 'data/' + cons_name + "_icarus/attack_traffic_data_land_only_bot/" + str(
-                ratio) + "-" + str(traffic) + "-" + str(traffic_thre) + "-" + str(
-                sat_per_cycle) + "-" + str(GSL_capacity) + "-" + str(unit_traffic)
+            icarus_folder_path = os.path.join(
+                "data", f"{cons_name}_icarus", "attack_traffic_data_land_only_bot",
+                f"{ratio}-{traffic}-{traffic_thre}-{sat_per_cycle}-{GSL_capacity}-{unit_traffic}"
+            )
             # icarus bot_num
             icarus_bot_size = []
             for subdir in os.listdir(icarus_folder_path):
@@ -122,17 +127,17 @@ def multi_link_attack():
                                 icarus_bot_size.append(values[0])
             botnet_size_for_icarus.append(int(sum(icarus_bot_size) / len(icarus_bot_size)))
 
-        output_file = 'data/' + cons_name + '_icarus/results/' + str(
-            traffic) + '_botnet_size_for_icarus.txt'
+        output_file = os.path.join("data", f"{cons_name}_icarus", "results", f"{traffic}_botnet_size_for_icarus.txt")
         with open(output_file, 'w') as file:
             for i in range(len(ratios)):
                 file.write(str(round(1 - ratios[i], 1)) + ": " + str(botnet_size_for_icarus[i]) + '\n')
 
         number_blocks_icarus = []
         for index, ratio in enumerate(ratios):
-            icarus_folder_path = 'data/' + cons_name + "_icarus/attack_traffic_data_land_only_bot/" + str(
-                ratio) + "-" + str(traffic) + "-" + str(traffic_thre) + "-" + str(
-                sat_per_cycle) + "-" + str(GSL_capacity) + "-" + str(unit_traffic)
+            icarus_folder_path = os.path.join(
+                "data", f"{cons_name}_icarus", "attack_traffic_data_land_only_bot",
+                f"{ratio}-{traffic}-{traffic_thre}-{sat_per_cycle}-{GSL_capacity}-{unit_traffic}"
+            )
             # icarus block_num
             icarus_block_num = []
             for subdir in os.listdir(icarus_folder_path):
@@ -145,8 +150,7 @@ def multi_link_attack():
                             icarus_block_num.append(values[0])
             number_blocks_icarus.append(int(sum(icarus_block_num) / len(icarus_block_num)))
 
-        output_file = 'data/' + cons_name + '_icarus/results/' + str(
-            target_affected_traffic[2]) + '_number_blocks_icarus.txt'
+        output_file = os.path.join("data", f"{cons_name}_icarus", "results", f"{target_affected_traffic[2]}_number_blocks_icarus.txt")
         with open(output_file, 'w') as file:
             for i in range(len(ratios)):
                 file.write(str(round(1 - ratios[i], 1)) + ": " + str(number_blocks_icarus[i]) + '\n')

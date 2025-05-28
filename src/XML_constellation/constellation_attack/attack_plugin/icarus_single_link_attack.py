@@ -613,36 +613,39 @@ def icarus_single_link_attack(constellation, time_slot, src_lat=48.8667, src_lon
     sat_per_cycle = shell.number_of_satellite_per_orbit
     inclination = math.ceil(shell.inclination)
 
-
-    user_connect_sat_filename = 'data/' + cons_name + '_link_traffic_data/' + str(time_slot) + '/user_connect_sat.txt'
+    user_connect_sat_filename = os.path.join("data", cons_name + '_link_traffic_data', str(time_slot),
+                                             'user_connect_sat.txt')
     user_connect_sat = np.loadtxt(user_connect_sat_filename)
     user_connect_sat = list(map(int, user_connect_sat))
 
-    sat_connect_gs_filename = 'data/' + cons_name + '_link_traffic_data/' + str(time_slot) + '/sat_connect_gs.txt'
+    sat_connect_gs_filename = os.path.join("data", cons_name + '_link_traffic_data', str(time_slot),
+                                           'sat_connect_gs.txt')
     sat_connect_gs = np.loadtxt(sat_connect_gs_filename)
     sat_connect_gs = list(map(int, sat_connect_gs))
 
-    isl_traffic_filename = 'data/' + cons_name + '_link_traffic_data/' + str(time_slot) + '/isl_traffic.txt'
+    isl_traffic_filename = os.path.join("data", cons_name + '_link_traffic_data', str(time_slot), 'isl_traffic.txt')
     isl_traffic = np.loadtxt(isl_traffic_filename)
     isl_traffic = list(map(int, isl_traffic))
 
-    isl_sender_traffic_filename = 'data/' + cons_name + '_link_traffic_data/' + str(time_slot) + '/isl_sender_traffic.txt'
+    isl_sender_traffic_filename = os.path.join("data", cons_name + '_link_traffic_data', str(time_slot),
+                                               'isl_sender_traffic.txt')
     isl_sender_traffic = np.loadtxt(isl_sender_traffic_filename)
     isl_sender_traffic = list(map(int, isl_sender_traffic))
 
-    isl_receiver_traffic_filename = 'data/' + cons_name + '_link_traffic_data/' + str(time_slot) + '/isl_receiver_traffic.txt'
+    isl_receiver_traffic_filename = os.path.join("data", cons_name + '_link_traffic_data', str(time_slot),
+                                                 'isl_receiver_traffic.txt')
     isl_receiver_traffic = np.loadtxt(isl_receiver_traffic_filename)
     isl_receiver_traffic = list(map(int, isl_receiver_traffic))
 
-    downlink_traffic_filename = 'data/' + cons_name + '_link_traffic_data/' + str(time_slot) + '/downlink_traffic.txt'
+    downlink_traffic_filename = os.path.join("data", cons_name + '_link_traffic_data', str(time_slot),
+                                             'downlink_traffic.txt')
     downlink_traffic = np.loadtxt(downlink_traffic_filename)
     downlink_traffic = list(map(int, downlink_traffic))
 
-    uplink_traffic_filename = 'data/' + cons_name + '_link_traffic_data/' + str(time_slot) + '/uplink_traffic.txt'
+    uplink_traffic_filename = os.path.join("data", cons_name + '_link_traffic_data', str(time_slot),
+                                           'uplink_traffic.txt')
     uplink_traffic = np.loadtxt(uplink_traffic_filename)
     uplink_traffic = list(map(int, uplink_traffic))
-
-
 
 
     sat1_id = find_satellite_id(src_lat, src_lon, inclination, user_connect_sat)
@@ -737,7 +740,7 @@ def icarus_single_link_attack(constellation, time_slot, src_lat=48.8667, src_lon
 
 
     sat_pos_car = []
-    h5file_path = 'data/XML_constellation/Starlink_shell1.h5'
+    h5file_path = os.path.join("data", "XML_constellation", "Starlink_shell1.h5")
     with h5py.File(h5file_path, 'r') as file:
         position_group = file['position']
         shell_group = position_group['shell1']
@@ -774,59 +777,45 @@ def icarus_single_link_attack(constellation, time_slot, src_lat=48.8667, src_lon
             load_delay += calculate_queuing_delay(select_traffic, capacity, 0.8, rate)
             st_sat = sat
     load_delay = load_delay * 2
-    
 
-    file_path = "data/" + cons_name + "_icarus/single_link_attack/" + str(link_num*rate) + "_" + str(src_lat) \
-    + "_" + str(src_lon) + "_" + str(dst_lat) + "_" + str(dst_lon) + "/" + str(time_slot)
-    os.system("mkdir -p " + file_path)
+    folder_name = f"{link_num * rate}_{src_lat}_{src_lon}_{dst_lat}_{dst_lon}"
+    file_path = os.path.join("data", f"{cons_name}_icarus", "single_link_attack", folder_name, str(time_slot))
+    os.makedirs(file_path, exist_ok=True)
 
     isl_traffic = np.array(isl_traffic, dtype=int)
-    np.savetxt(file_path + '/isl_traffic.txt',
-               isl_traffic,
-               fmt='%d')
+    np.savetxt(os.path.join(file_path, 'isl_traffic.txt'), isl_traffic, fmt='%d')
+
     isl_sender_traffic = np.array(isl_sender_traffic, dtype=int)
-    np.savetxt(file_path + '/isl_sender_traffic.txt',
-               isl_sender_traffic,
-               fmt='%d')
+    np.savetxt(os.path.join(file_path, 'isl_sender_traffic.txt'), isl_sender_traffic, fmt='%d')
+
     isl_receiver_traffic = np.array(isl_receiver_traffic, dtype=int)
-    np.savetxt(file_path + '/isl_receiver_traffic.txt',
-               isl_receiver_traffic,
-               fmt='%d')
+    np.savetxt(os.path.join(file_path, 'isl_receiver_traffic.txt'), isl_receiver_traffic, fmt='%d')
+
     downlink_traffic = np.array(downlink_traffic, dtype=int)
-    np.savetxt(file_path + '/downlink_traffic.txt',
-               downlink_traffic,
-               fmt='%d')
+    np.savetxt(os.path.join(file_path, 'downlink_traffic.txt'), downlink_traffic, fmt='%d')
+
     uplink_traffic = np.array(uplink_traffic, dtype=int)
-    np.savetxt(file_path + '/uplink_traffic.txt',
-               uplink_traffic,
-               fmt='%d')
+    np.savetxt(os.path.join(file_path, 'uplink_traffic.txt'), uplink_traffic, fmt='%d')
+
     ori_path = np.array(ori_path, dtype=int)
-    np.savetxt(file_path + '/origin_path.txt',
-               ori_path,
-               fmt='%d')
+    np.savetxt(os.path.join(file_path, 'origin_path.txt'), ori_path, fmt='%d')
+
     load_path = np.array(load_path, dtype=int)
-    np.savetxt(file_path + '/load_path.txt',
-               load_path,
-               fmt='%d')
+    np.savetxt(os.path.join(file_path, 'load_path.txt'), load_path, fmt='%d')
+
     ori_path_traffic = np.array(ori_path_traffic, dtype=int)
-    np.savetxt(file_path + '/origin_path_traffic.txt',
-               ori_path_traffic,
-               fmt="%d")
+    np.savetxt(os.path.join(file_path, 'origin_path_traffic.txt'), ori_path_traffic, fmt="%d")
+
     attack_path_traffic = np.array(attack_path_traffic, dtype=int)
-    np.savetxt(file_path + '/attack_path_traffic.txt',
-               attack_path_traffic,
-               fmt='%d')
+    np.savetxt(os.path.join(file_path, 'attack_path_traffic.txt'), attack_path_traffic, fmt='%d')
+
     load_path_traffic = np.array(load_path_traffic, dtype=int)
-    np.savetxt(file_path + '/load_path_traffic.txt',
-               load_path_traffic,
-               fmt='%d')
+    np.savetxt(os.path.join(file_path, 'load_path_traffic.txt'), load_path_traffic, fmt='%d')
+
     ori_delay = np.array([ori_delay])
-    np.savetxt(file_path + '/ori_delay.txt',
-               ori_delay,
-               fmt='%.3f')
+    np.savetxt(os.path.join(file_path, 'ori_delay.txt'), ori_delay, fmt='%.3f')
+
     load_delay = np.array([load_delay])
-    np.savetxt(file_path + '/load_delay.txt',
-               load_delay,
-               fmt='%.3f')
+    np.savetxt(os.path.join(file_path, 'load_delay.txt'), load_delay, fmt='%.3f')
 
     # print("Finished calculating single link attack traffic generation at timeslot", str(time_slot))

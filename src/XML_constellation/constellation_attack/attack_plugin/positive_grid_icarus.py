@@ -249,22 +249,21 @@ def positive_grid_icarus(constellation, time_slot,
     cumu_downlink_malicious_traffic = [0 for i in range(orbit_num * sat_per_cycle)]
     path =[-1 for i in range(orbit_num * sat_per_cycle)]
 
-    traffic_filename = 'data/' + cons_name + '_link_traffic_data/' + str(time_slot) + '/' + 'downlink_traffic.txt'
+    base_path = os.path.join("data", f"{cons_name}_link_traffic_data", str(time_slot))
+    traffic_filename = os.path.join(base_path, 'downlink_traffic.txt')
     traffic = np.loadtxt(traffic_filename)
     traffic = list(map(int, traffic))
-    traffic_filename = 'data/' + cons_name + '_link_traffic_data/' + str(time_slot) + '/' + 'uplink_traffic.txt'
+    traffic_filename = os.path.join(base_path, 'uplink_traffic.txt')
     uplink_traffic = np.loadtxt(traffic_filename)
     uplink_traffic = list(map(int, uplink_traffic))
-    sat_connect_gs = np.loadtxt('data/' + cons_name + '_link_traffic_data/' + str(time_slot) + '/' +
-                                'sat_connect_gs.txt')
-    user_connect_sat = np.loadtxt('data/' + cons_name + '_link_traffic_data/' + str(time_slot) +
-                                  '/' + 'user_connect_sat.txt')
+    sat_connect_gs = np.loadtxt(os.path.join(base_path, 'sat_connect_gs.txt'))
+    user_connect_sat = np.loadtxt(os.path.join(base_path, 'user_connect_sat.txt'))
     user_connect_sat = list(map(int, user_connect_sat))
     
     traffic_sum = np.sum(traffic)
 
     # load traffic distribution
-    traffic_file = 'data/starlink_count.txt'
+    traffic_file = os.path.join("data", "starlink_count.txt")
     with open(traffic_file, 'r') as file:
         lines = file.readlines()
         for row in range(90 - inclination, 90 + inclination):
@@ -274,9 +273,15 @@ def positive_grid_icarus(constellation, time_slot,
 
     floyd()
 
-    os.system('mkdir -p data/' + cons_name + '_icarus/attack_traffic_data_land_only_bot/' + str(ratio) + "-" + str(target_affected_traffic) + "-" +
-            str(traffic_thre) + "-" + str(sat_per_cycle) + "-" +
-            str(GSL_capacity) + "-" + str(unit_traffic) + '/' + str(time_slot))
+    dir_path = os.path.join(
+        "data",
+        cons_name + "_icarus",
+        "attack_traffic_data_land_only_bot",
+        f"{ratio}-{target_affected_traffic}-{traffic_thre}-{sat_per_cycle}-{GSL_capacity}-{unit_traffic}",
+        str(time_slot)
+    )
+
+    os.makedirs(dir_path, exist_ok=True)
 
     # deploy bots according to traffic weights of each block
     while True:
@@ -291,51 +296,40 @@ def positive_grid_icarus(constellation, time_slot,
         if cumu_affected_traffic_volume >= target_affected_traffic:
             break
         elif int(bot_num) == given_bot_number:
+            folder_path = os.path.join(
+                "data", f"{cons_name}_icarus", "attack_traffic_data_land_only_bot",
+                f"{ratio}-{target_affected_traffic}-{traffic_thre}-{sat_per_cycle}-{GSL_capacity}-{unit_traffic}",
+                str(time_slot)
+            )
             attack_gsl_given_bot = np.array(attack_gsl, dtype=int)
-            np.savetxt('data/' + cons_name + '_icarus/attack_traffic_data_land_only_bot/' + str(ratio) + "-" + str(target_affected_traffic) + "-" +
-                    str(traffic_thre) + "-" + str(sat_per_cycle) + "-" +
-                    str(GSL_capacity) + "-" + str(unit_traffic) + '/' + str(time_slot) +
-                    '/attack_gsl_given_bot_num.txt',
+            np.savetxt(
+                os.path.join(folder_path, 'attack_gsl_given_bot_num.txt'),
                 attack_gsl_given_bot,
-                fmt='%d')
-            cumu_affected_traffic_volume_given_bot = np.array([cumu_affected_traffic_volume],
-                                                    dtype=int)
-            np.savetxt('data/' + cons_name + '_icarus/attack_traffic_data_land_only_bot/' + str(ratio) + "-" + str(target_affected_traffic) + "-" +
-                    str(traffic_thre) + "-" + str(sat_per_cycle) + "-" +
-                    str(GSL_capacity) + "-" + str(unit_traffic) + '/' + str(time_slot) +
-                    '/cumu_affected_traffic_volume_given_bot_num.txt',
+                fmt='%d'
+            )
+            cumu_affected_traffic_volume_given_bot = np.array([cumu_affected_traffic_volume], dtype=int)
+            np.savetxt(
+                os.path.join(folder_path, 'cumu_affected_traffic_volume_given_bot_num.txt'),
                 cumu_affected_traffic_volume_given_bot,
-                fmt='%d')
-    
+                fmt='%d'
+            )
+
+    output_dir = os.path.join(
+        "data", f"{cons_name}_icarus", "attack_traffic_data_land_only_bot",
+        f"{ratio}-{target_affected_traffic}-{traffic_thre}-{sat_per_cycle}-{GSL_capacity}-{unit_traffic}",
+        str(time_slot)
+    )
     attack_gsl = np.array(attack_gsl, dtype=int)
-    np.savetxt('data/' + cons_name + '_icarus/attack_traffic_data_land_only_bot/' + str(ratio) + "-" + str(target_affected_traffic) + "-" +
-               str(traffic_thre) + "-" + str(sat_per_cycle) + "-" +
-               str(GSL_capacity) + "-" + str(unit_traffic) + '/' + str(time_slot) +
-               '/attack_gsl.txt',
-        attack_gsl,
-        fmt='%d')
+    np.savetxt(os.path.join(output_dir, 'attack_gsl.txt'), attack_gsl, fmt='%d')
+
     bot_num = np.array([bot_num], dtype=int)
-    np.savetxt('data/' + cons_name + '_icarus/attack_traffic_data_land_only_bot/' + str(ratio) + "-" + str(target_affected_traffic) + "-" +
-               str(traffic_thre) + "-" + str(sat_per_cycle) + "-" +
-               str(GSL_capacity) + "-" + str(unit_traffic) + '/' + str(time_slot) +
-               '/bot_num.txt',
-        bot_num,
-        fmt='%d')
+    np.savetxt(os.path.join(output_dir, 'bot_num.txt'), bot_num, fmt='%d')
+
     block_num = np.array([block_num], dtype=int)
-    np.savetxt('data/' + cons_name + '_icarus/attack_traffic_data_land_only_bot/' + str(ratio) + "-" + str(target_affected_traffic) + "-" +
-               str(traffic_thre) + "-" + str(sat_per_cycle) + "-" +
-               str(GSL_capacity) + "-" + str(unit_traffic) + '/' + str(time_slot) +
-               '/block_num.txt',
-        block_num,
-        fmt='%d')
-    cumu_affected_traffic_volume = np.array([cumu_affected_traffic_volume],
-                                            dtype=int)
-    np.savetxt('data/' + cons_name + '_icarus/attack_traffic_data_land_only_bot/' + str(ratio) + "-" + str(target_affected_traffic) + "-" +
-               str(traffic_thre) + "-" + str(sat_per_cycle) + "-" +
-               str(GSL_capacity) + "-" + str(unit_traffic) + '/' + str(time_slot) +
-               '/cumu_affected_traffic_volume.txt',
-        cumu_affected_traffic_volume,
-        fmt='%d')
+    np.savetxt(os.path.join(output_dir, 'block_num.txt'), block_num, fmt='%d')
+
+    cumu_affected_traffic_volume = np.array([cumu_affected_traffic_volume], dtype=int)
+    np.savetxt(os.path.join(output_dir, 'cumu_affected_traffic_volume.txt'), cumu_affected_traffic_volume, fmt='%d')
 
     # print("Finished calculating malicious terminals deployment and generating malicious traffic for +Grid at timeslot", str(time_slot))
 

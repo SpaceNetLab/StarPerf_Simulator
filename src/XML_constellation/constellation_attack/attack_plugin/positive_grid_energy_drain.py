@@ -362,24 +362,30 @@ def positive_grid_energy_drain(constellation, time_slot, dT=30, bot_num=500, uni
     ori_all_laser_energy = []
     attack_all_laser_energy = []
 
-    downgsl_filename = 'data/' + cons_name + '_link_traffic_data/' + str(time_slot) + '/' + 'downlink_traffic.txt'
+    base_path = os.path.join("data", cons_name + '_link_traffic_data', str(time_slot))
+
+    downgsl_filename = os.path.join(base_path, 'downlink_traffic.txt')
     downlink_traffic = np.loadtxt(downgsl_filename)
     downlink_traffic = list(map(int, downlink_traffic))
-    upgsl_filename = 'data/' + cons_name + '_link_traffic_data/' + str(time_slot) + '/' + 'uplink_traffic.txt'
+
+    upgsl_filename = os.path.join(base_path, 'uplink_traffic.txt')
     uplink_traffic = np.loadtxt(upgsl_filename)
     uplink_traffic = list(map(int, uplink_traffic))
-    isl_filename = 'data/' + cons_name + '_link_traffic_data/' + str(time_slot) + '/' + 'isl_traffic.txt'
+
+    isl_filename = os.path.join(base_path, 'isl_traffic.txt')
     isl_traffic = np.loadtxt(isl_filename)
     isl_traffic = list(map(int, isl_traffic))
-    isl_send_filename = 'data/' + cons_name + '_link_traffic_data/' + str(time_slot) + '/' + 'isl_sender_traffic.txt'
+
+    isl_send_filename = os.path.join(base_path, 'isl_sender_traffic.txt')
     isl_send = np.loadtxt(isl_send_filename)
     isl_send = list(map(int, isl_send))
-    isl_rec_filename = 'data/' + cons_name + '_link_traffic_data/' + str(time_slot) + '/' + 'isl_receiver_traffic.txt'
+
+    isl_rec_filename = os.path.join(base_path, 'isl_receiver_traffic.txt')
     isl_rec = np.loadtxt(isl_rec_filename)
     isl_rec = list(map(int, isl_rec))
 
 
-    h5file_path = 'data/XML_constellation/' + cons_name + "_shell1.h5"
+    h5file_path = os.path.join("data", "XML_constellation", "Starlink_shell1.h5")
     with h5py.File(h5file_path, 'r') as file:
         position_group = file['position']
         shell_group = position_group['shell1']
@@ -449,41 +455,49 @@ def positive_grid_energy_drain(constellation, time_slot, dT=30, bot_num=500, uni
         attack_laser_energy.append(attack_energy[1] * dT)
         attack_all_radio_energy.append(attack_energy[0] * dT + base_power * dT)
         attack_all_laser_energy.append(attack_energy[1] * dT + base_power * dT)
-    
 
-
-    output_path = "data/" + cons_name + "_energy_drain/attack_traffic_" + str(bot_num) + '/' + str(time_slot)
-    os.system('mkdir -p ' + output_path)
+    output_path = os.path.join(
+        "data",
+        cons_name + "_energy_drain",
+        "attack_traffic_" + str(bot_num),
+        str(time_slot)
+    )
+    os.makedirs(output_path, exist_ok=True)
 
     downlink_traffic = np.array(downlink_traffic, dtype=int)
-    np.savetxt(output_path + "/downlink_traffic.txt", downlink_traffic, fmt='%d')
+    np.savetxt(os.path.join(output_path, "downlink_traffic.txt"), downlink_traffic, fmt='%d')
     uplink_traffic = np.array(uplink_traffic, dtype=int)
-    np.savetxt(output_path + "/uplink_traffic.txt", uplink_traffic, fmt='%d')
+    np.savetxt(os.path.join(output_path, "uplink_traffic.txt"), uplink_traffic, fmt='%d')
     isl_traffic = np.array(isl_traffic, dtype=int)
-    np.savetxt(output_path + "/isl_traffic.txt", isl_traffic, fmt='%d')
+    np.savetxt(os.path.join(output_path, "isl_traffic.txt"), isl_traffic, fmt='%d')
     isl_send = np.array(isl_send, dtype=int)
-    np.savetxt(output_path + "/isl_send.txt", isl_send, fmt='%d')
+    np.savetxt(os.path.join(output_path, "isl_send.txt"), isl_send, fmt='%d')
     isl_rec = np.array(isl_rec, dtype=int)
-    np.savetxt(output_path + "/isl_rec.txt", isl_rec, fmt='%d')
+    np.savetxt(os.path.join(output_path, "isl_rec.txt"), isl_rec, fmt='%d')
 
-    output_path = "data/" + cons_name + "_energy_drain/energy_" + str(bot_num) + '/' + str(time_slot)
-    os.system('mkdir -p ' + output_path)
+    output_path = os.path.join(
+        "data",
+        f"{cons_name}_energy_drain",
+        f"energy_{bot_num}",
+        str(time_slot)
+    )
+    os.makedirs(output_path, exist_ok=True)
 
     ori_radio_energy = np.array(ori_radio_energy)
-    np.savetxt(output_path + '/ori_radio_energy.txt', ori_radio_energy, fmt='%.3f')
+    np.savetxt(os.path.join(output_path, 'ori_radio_energy.txt'), ori_radio_energy, fmt='%.3f')
     ori_laser_energy = np.array(ori_laser_energy)
-    np.savetxt(output_path + '/ori_laser_energy.txt', ori_laser_energy, fmt='%.3f')
+    np.savetxt(os.path.join(output_path, 'ori_laser_energy.txt'), ori_laser_energy, fmt='%.3f')
     attack_radio_energy = np.array(attack_radio_energy)
-    np.savetxt(output_path + '/attack_radio_energy.txt', attack_radio_energy, fmt='%.3f')
+    np.savetxt(os.path.join(output_path, 'attack_radio_energy.txt'), attack_radio_energy, fmt='%.3f')
     attack_laser_energy = np.array(attack_laser_energy)
-    np.savetxt(output_path + '/attack_laser_energy.txt', attack_laser_energy, fmt='%.3f')
+    np.savetxt(os.path.join(output_path, 'attack_laser_energy.txt'), attack_laser_energy, fmt='%.3f')
     ori_all_radio_energy = np.array(ori_all_radio_energy)
-    np.savetxt(output_path + '/ori_all_radio_energy.txt', ori_all_radio_energy, fmt='%.3f')
+    np.savetxt(os.path.join(output_path, 'ori_all_radio_energy.txt'), ori_all_radio_energy, fmt='%.3f')
     attack_all_radio_energy = np.array(attack_all_radio_energy)
-    np.savetxt(output_path + '/attack_all_radio_energy.txt', attack_all_radio_energy, fmt='%.3f')
+    np.savetxt(os.path.join(output_path, 'attack_all_radio_energy.txt'), attack_all_radio_energy, fmt='%.3f')
     ori_all_laser_energy = np.array(ori_all_laser_energy)
-    np.savetxt(output_path + '/ori_all_laser_energy.txt', ori_all_laser_energy, fmt='%.3f')
+    np.savetxt(os.path.join(output_path, 'ori_all_laser_energy.txt'), ori_all_laser_energy, fmt='%.3f')
     attack_all_laser_energy = np.array(attack_all_laser_energy)
-    np.savetxt(output_path + '/attack_all_laser_energy.txt', attack_all_laser_energy, fmt='%.3f')
+    np.savetxt(os.path.join(output_path, 'attack_all_laser_energy.txt'), attack_all_laser_energy, fmt='%.3f')
 
     # print("Complete an energy drain attack at timeslot", str(time_slot))

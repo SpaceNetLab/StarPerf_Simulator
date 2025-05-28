@@ -39,23 +39,26 @@ def delay():
     # execute the connectivity mode and build ISLs between satellites
     connectionModePluginManager.execute_connection_policy(constellation=constellation, dT=dT)
 
-    path = "data/constellation_test/" + constellation_name
-    os.system('mkdir -p ' + path)
+    path = os.path.join("data", "constellation_test", constellation_name)
+    os.makedirs(path, exist_ok=True)
     delay = DELAY.delay(constellation.constellation_name, London, Washington, dT, constellation.shells[0])
     delay = np.array(delay)
-    np.savetxt(path + '/London_Washington.txt', delay, fmt='%.3f')
+    output_file = os.path.join(path, 'London_Washington.txt')
+    np.savetxt(output_file, delay, fmt='%.3f')
     print("The average delay time from ", London.user_name, " to ", Washington.user_name, " is ", np.mean(delay),
           " s")
 
     delay = DELAY.delay(constellation.constellation_name, Istanbul, Nairobi, dT, constellation.shells[0])
     delay = np.array(delay)
-    np.savetxt(path + '/Istanbul_Nairobi.txt', delay, fmt='%.3f')
+    output_file = os.path.join(path, '/Istanbul_Nairobi.txt')
+    np.savetxt(output_file, delay, fmt='%.3f')
     print("The average delay time from ", Istanbul.user_name, " to ", Nairobi.user_name, " is ", np.mean(delay),
           " s")
 
     delay = DELAY.delay(constellation.constellation_name, Mumbai, Wellington, dT, constellation.shells[0])
     delay = np.array(delay)
-    np.savetxt(path + '/Mumbai_Wellington.txt', delay, fmt='%.3f')
+    output_file = os.path.join(path, '/Mumbai_Wellington.txt')
+    np.savetxt(output_file, delay, fmt='%.3f')
     print("The average delay time from ", Mumbai.user_name, " to ", Wellington.user_name, " is ", np.mean(delay),
           " s")
 
@@ -63,7 +66,7 @@ def delay():
     # delay = np.array(delay)
     # np.savetxt(path + '/Singapore_LosAngeles.txt', delay, fmt='%.3f')
 
-    print("The delay has been saved in " + path)
+    print(f"The delay has been saved in {path}")
 
 
 if __name__ == '__main__':
