@@ -50,14 +50,14 @@ def delay():
 
     delay = DELAY.delay(constellation.constellation_name, Istanbul, Nairobi, dT, constellation.shells[0])
     delay = np.array(delay)
-    output_file = os.path.join(path, '/Istanbul_Nairobi.txt')
+    output_file = os.path.join(path, 'Istanbul_Nairobi.txt')
     np.savetxt(output_file, delay, fmt='%.3f')
     print("The average delay time from ", Istanbul.user_name, " to ", Nairobi.user_name, " is ", np.mean(delay),
           " s")
 
     delay = DELAY.delay(constellation.constellation_name, Mumbai, Wellington, dT, constellation.shells[0])
     delay = np.array(delay)
-    output_file = os.path.join(path, '/Mumbai_Wellington.txt')
+    output_file = os.path.join(path, 'Mumbai_Wellington.txt')
     np.savetxt(output_file, delay, fmt='%.3f')
     print("The average delay time from ", Mumbai.user_name, " to ", Wellington.user_name, " is ", np.mean(delay),
           " s")
