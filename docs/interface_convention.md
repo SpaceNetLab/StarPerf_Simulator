@@ -23,7 +23,7 @@ It is developed based on Python 3.10, so we recommend that your **Python version
 **Table 1 : third-party Python libraries and versions**
 
 |      Library       | Version |
-| :----------------: | :-----: |
+| :----------------: |:-------:|
 |         h3         | 4.0.0b2 |
 |        h5py        | 3.10.0  |
 |       numpy        | 1.24.4  |
@@ -38,6 +38,7 @@ It is developed based on Python 3.10, so we recommend that your **Python version
 |      requests      | 2.31.0  |
 |      jenkspy       |  0.4.0  |
 |     pyecharts      |  2.0.4  |
+|     global_land_mask      |  1.0.0  |
 
 The third-party Python libraries in the above table and their corresponding version numbers are all listed in "docs/third-party_libraries_list.txt" in the form of "LibraryName==LibraryVersion" (such as "numpy==1.24.4"), and you can execute the 
 
