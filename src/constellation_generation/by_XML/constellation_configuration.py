@@ -54,6 +54,7 @@ def constellation_configuration(dT , constellation_name):
     # determine whether the .h5 file of the delay and satellite position data of the current constellation exists. If
     # it exists, delete the file and create an empty .h5 file. If it does not exist, directly create an empty .h5 file.
     file_path = "data/XML_constellation/" + constellation_name + ".h5"
+    os.makedirs(os.path.dirname(file_path), exist_ok=True)
     if os.path.exists(file_path):
         # if the .h5 file exists, delete the file
         os.remove(file_path)

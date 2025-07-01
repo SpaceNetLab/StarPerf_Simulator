@@ -44,6 +44,7 @@ This will automatically install all necessary libraries to ensure the system run
 - requests==2.31.0
 - jenkspy==0.4.0
 - pyecharts==2.0.4
+- global_land_mask==1.0.0
 
 # StarPerf overview and processing flow
 
