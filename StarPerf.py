@@ -37,6 +37,22 @@ def main():
     print("END.")
 
     """
+    The visualization results generated here will be located under 
+    /StarPerf_Simulator/visualization/CesiumApp. Before you uncomment 
+    this section and run the visualization, please make sure to set your 
+    own Cesium Token by assigning it to the Cesium.Ion.defaultAccessToken 
+    parameter in /StarPerf_Simulator/visualization/html_head_tail/head.html
+    
+    For the specific steps of rendering the resulting web page, please 
+    refer to the Constellation Visualization Instructions in README.md.
+    """
+    # print("Starting constellation visualization...")
+    # # test visualization part in "visualization/" in starperf 2.0
+    # import visualization.constellation_visualization as CONS_VIS_TEST_CASES
+    # CONS_VIS_TEST_CASES.visualization_example()
+    # print("END.")
+
+    """
     This will test the functionality of duration constellation. It is similar to the previously 
     implemented XML Constellation, but supports customizing the simulation time and simulation 
     sampling interval (XML Constellation currently only supports simulation of the entire orbital period)

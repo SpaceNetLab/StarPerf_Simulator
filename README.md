@@ -2,7 +2,7 @@
 
 "Newspace" mega-constellations, such as StarLink and OneWeb are gaining tremendous popularity, with the promising potential to provide high-capacity and low-latency communication globally. However, very little is known about the architecture and performance of such emerging systems, the workload they have to face, as well as the impact of topological options on the attainable network performance.
 
-Therefore, we have developed and implemented StarPerf, a mega-constellation performance simulation platform that enables constellation manufacturers and content providers to estimate and understand the achievable performance under a variety of constellation options. The proposed platform integrates three key techniques: (1) performance simulation for mega-constellation, which captures the impact of the inherent high mobility in satellite networks and profiles the area-to-area attainable network performance; (2) constellation scaling, which synthesizes various topological options by scaling the space resource (e.g. number of satellite, link availability and capacity), and enables exploration on multiple operating conditions that can not be easily reproduced; (3) security simulation for LEO satellite networks, which is based on attack modeling and numerical simulation. We have added traffic plugins and communication energy consumption plugins to StarPerf, and used it to reproduce the link flooding attack proposed in [Time-varying Bottleneck Links in LEO Satellite Networks: Identification, Exploits, and Countermeasures](https://www.ndss-symposium.org/ndss-paper/time-varying-bottleneck-links-in-leo-satellite-networks-identification-exploits-and-countermeasures/)(NDSS 25) and the energy drain attack proposed in [Energy Drain Attack in Satellite Internet Constellations](https://ieeexplore.ieee.org/document/10188709)(IWQoS 23).
+Therefore, we have developed and implemented StarPerf, a mega-constellation performance simulation platform that enables constellation manufacturers and content providers to estimate and understand the achievable performance under a variety of constellation options. The proposed platform integrates four key techniques: (1) **performance simulation for mega-constellation**, which captures the impact of the inherent high mobility in satellite networks and profiles the area-to-area attainable network performance; (2) **constellation scaling**, which synthesizes various topological options by scaling the space resource (e.g. number of satellite, link availability and capacity), and enables exploration on multiple operating conditions that can not be easily reproduced; (3) **constellation visualization**, which leverages Cesium to render mainstream LEO constellations in a highly interactive and realistic 3D environment; (4) **security simulation for LEO satellite networks**, which is based on attack modeling and numerical simulation. We have added traffic plugins and communication energy consumption plugins to StarPerf, and used it to reproduce the link flooding attack proposed in [Time-varying Bottleneck Links in LEO Satellite Networks: Identification, Exploits, and Countermeasures](https://www.ndss-symposium.org/ndss-paper/time-varying-bottleneck-links-in-leo-satellite-networks-identification-exploits-and-countermeasures/)(NDSS 25) and the energy drain attack proposed in [Energy Drain Attack in Satellite Internet Constellations](https://ieeexplore.ieee.org/document/10188709)(IWQoS 23).
 
 This page introduces the basic usage of our StarPerf tool. If you have any questions on StarPerf, please do not hesitate to contact us. (Email: [houyn24@mails.tsinghua.edu.cn](mailto:houyn24@mails.tsinghua.edu.cn), [ZhifengHan.mail@gmail.com](mailto:Zhifenghan.mail@gmail.com), [zeqilai@tsinghua.edu.cn](mailto:zeqilai@tsinghua.edu.cn), [lijh19@mails.tsinghua.edu.cn](mailto:lijh19@mails.tsinghua.edu.cn))
 
@@ -45,6 +45,7 @@ This will automatically install all necessary libraries to ensure the system run
 - jenkspy==0.4.0
 - pyecharts==2.0.4
 - global_land_mask==1.0.0
+- ephem==4.2
 
 # StarPerf overview and processing flow
 
@@ -55,6 +56,25 @@ python3 StarPerf.py
 ```
 
 Of course, you can also write your own simulation scripts. For specific guidelines and important notes, please refer to [interface\_convention](./docs/interface_convention.pdf).
+
+# Constellation Visualization Instructions
+
+We have extended the visualization of mainstream LEO constellations based on Cesium. Below are the detailed usage instructions:
+
+1. Make sure to obtain your personal Cesium Token from the official Cesium website and set it by assigning it to the `Cesium.Ion.defaultAccessToken` parameter in `/StarPerf_Simulator/visualization/html_head_tail/head.html`.
+
+2. Download and install `Node.js` and add it to your system’s environment variables. After that, install `http-server`. Note that it is recommended to use `Node.js` version newer than v13, otherwise you may encounter issues installing `http-server` due to an outdated Node.js version.
+
+3. Uncomment the constellation visualization section in `StarPerf.py` and run this part of the code.
+
+4. Start a local server by running the following command in the terminal. 
+
+```bash
+cd ./visualization/CesiumAPP
+http-server -p 8081
+```
+
+5. Open the constellation visualization webpage by entering `http://127.0.0.1:8081/<filename>` in your browser. Here, `<filename>` refers to the name of the webpage file generated by our visualization code under `/StarPerf_Simulator/visualization/CesiumApp`.
 
 # Contributors are more than welcome
 

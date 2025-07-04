@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Cesium App</title>
+	<script type="text/javascript" src="Cesium/Cesium.js"></script>
+	<link rel="stylesheet" type="text/css" href="Cesium/Widgets/widgets.css">
+</head>
+<body>
+  <div id="cesiumContainer" style="width: 100%; height:100%"></div>
+  <script>
+    Cesium.Ion.defaultAccessToken = "Here plead enter your own token";
+    var viewer = new Cesium.Viewer('cesiumContainer', {
+    skyBox : false,
+    skyAtmosphere: false,
+    baseLayerPicker: true,
+    geocoder: false,
+    homeButton: false,
+    infoBox: false,
+    sceneModePicker: true,
+    navigationHelpButton: false,
+    shouldAnimate : true,
+    contextOptions : {
+        webgl: {
+            alpha: true
+        }
+    }
+});
+
+var scene = viewer.scene;
+scene.backgroundColor = Cesium.Color.WHITE;
+scene.highDynamicRange = false;
+var canvas = viewer.canvas;
+canvas.setAttribute('tabindex', '0'); // needed to put focus on the canvas
+canvas.onclick = function() {
+    canvas.focus();
+};
+var ellipsoid = scene.globe.ellipsoid;
+var globe = viewer.scene.globe;
+globe.imageryLayers.removeAll();
+globe.baseColor = Cesium.Color.fromCssColorString('#f7fbff');
+
+var tonerLayer = globe.imageryLayers.addImageryProvider(
+    Cesium.createOpenStreetMapImageryProvider({
+        url : 'https://stamen-tiles.a.ssl.fastly.net/toner-background/',
+        credit : 'Map tiles by Stamen Design, under CC BY 3.0. Data by OpenStreetMap, under CC BY SA.'
+    })
+);
+tonerLayer.alpha = 0.3;
+tonerLayer.brightness = 3;
+tonerLayer.contrast = 0.7;
+
