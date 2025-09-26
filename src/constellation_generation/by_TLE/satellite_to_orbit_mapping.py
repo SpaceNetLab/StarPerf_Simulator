@@ -19,6 +19,30 @@ Function : The orbits within a shell are derived based on a clustering algorithm
 import jenkspy
 import src.TLE_constellation.constellation_entity.orbit as ORBIT
 import matplotlib.pyplot as plt
+import numpy as np
+
+# Function to automatically detect the number of steps/orbits in RAAN data
+def detect_orbit_number(raans):
+    """
+    Automatically detect the number of orbits based on RAAN distribution steps
+    """
+    if len(raans) < 10:
+        return 1
+    
+    # Calculate differences to find jumps/steps
+    diffs = np.diff(raans)
+    
+    # Find significant jumps (larger than median + 2*std)
+    diff_threshold = np.median(diffs) + 2 * np.std(diffs)
+    significant_jumps = np.where(diffs > diff_threshold)[0]
+    
+    # Number of orbits = number of significant jumps + 1
+    orbits_number = len(significant_jumps) + 1
+    
+    # Ensure reasonable bounds (1-20 orbits)
+    orbits_number = max(1, min(orbits_number, 20))
+    
+    return orbits_number
 
 # Parameter :
 # shells : a collection of shell objects that have established corresponding relationships
@@ -37,8 +61,9 @@ def satellite_to_orbit_mapping(shells):
         plt.ylabel('RAANS')
         plt.show()
 
-        orbits_number = int(input('\t\t\tPlease enter the number of orbits (integer) based on the raan distribution result of '
-                              'the line chart : '))
+        # Automatically detect the number of orbits
+        orbits_number = detect_orbit_number(raans)
+        print(f'\t\t\tAutomatically detected number of orbits: {orbits_number}')
         breaks = jenkspy.jenks_breaks(values = raans, n_classes = orbits_number)
         orbit_raans = [(breaks[i], breaks[i + 1]) for i in range(len(breaks) - 1)]
         for ra_index, ra in enumerate(orbit_raans):
