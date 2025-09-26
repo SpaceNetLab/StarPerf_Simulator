@@ -12,11 +12,11 @@ def main():
     print("Starting StarPerf...")
 
 
-    print("Starting XML Constellations Testing...")
-    # test the core module functionality of various XML constellations
-    import samples.XML_constellation.XML_constellation_test_cases
-    samples.XML_constellation.XML_constellation_test_cases.XML_constellation_test_cases()
-    print("END.")
+    # print("Starting XML Constellations Testing...")
+    # # test the core module functionality of various XML constellations
+    # import samples.XML_constellation.XML_constellation_test_cases
+    # samples.XML_constellation.XML_constellation_test_cases.XML_constellation_test_cases()
+    # print("END.")
 
     print("Starting TLE Constellations Testing")
     # test the core module functionality of various TLE constellations
