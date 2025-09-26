@@ -14,3 +14,4 @@ jenkspy==0.4.0
 pyecharts==2.0.4
 global_land_mask==1.0.0
 ephem==4.2
+ruptures==1.1.10

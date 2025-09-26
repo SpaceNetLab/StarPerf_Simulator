@@ -82,7 +82,7 @@ def detect_orbit_number(raans: list) -> int:
         # Find peaks
         peaks, _ = find_peaks(
             smoothed,
-            height=np.max(smoothed) * 0.05,  # 5% of max height
+            height=np.max(smoothed) * 0.05,
             distance=max(1, len(smoothed) // 50),
         )
 
@@ -100,7 +100,7 @@ def detect_orbit_number(raans: list) -> int:
         # Find gaps that are outliers using z-score
         if len(gaps) > 0:
             z_scores = np.abs((gaps - np.mean(gaps)) / np.std(gaps))
-            significant_gaps = np.sum(z_scores > 2.0)  # 2 standard deviations
+            significant_gaps = np.sum(z_scores > 2.0)
             return max(1, significant_gaps + 1)
 
         return 1
@@ -131,14 +131,13 @@ def detect_orbit_number(raans: list) -> int:
                 breaks = jenkspy.jenks_breaks(raans, n_classes=k)
                 gvf = jenkspy.goodness_of_variance_fit(raans, breaks)
 
-                # Look for elbow point
                 if k == 1:
                     best_gvf = gvf
                     best_k = k
-                elif gvf - best_gvf > 0.03:  # Significant improvement
+                elif gvf - best_gvf > 0.03:
                     best_gvf = gvf
                     best_k = k
-                elif gvf > 0.85 and (gvf - best_gvf) < 0.01:  # Diminishing returns
+                elif gvf > 0.85 and (gvf - best_gvf) < 0.01:
                     break
             except Exception:
                 continue
@@ -215,8 +214,11 @@ def satellite_to_orbit_mapping(shells: list, auto_gen: bool = True) -> None:
 
         orbits_number = 0
 
+        # NOTE: Automatic Mode is recommended for most scenarios especially when dealing with large datasets.
+        #       Automatic Mode gains more effectiveness but may sacrifice some accuracy.
+        #       Manual Mode offers precision but is more time-consuming.
         if not auto_gen:
-            # Observation Mode: visualize RAAN distribution and manually input orbit number
+            # Manual Mode: visualize RAAN distribution and manually input orbit number
             plt.plot(raans)
             plt.ylabel("RAANS")
             plt.show()
