@@ -86,7 +86,7 @@ http-server -p 8081
 
 # Contributors Are More Than Welcome
 
-Wanna to join the construction of "NewSpace" constellations and networks? Awesome! This project follows the [Github contribution work flow.](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/github-flow) Submissions can fork and use a Github pull request to get merged into this code base.
+Wanna join the construction of "NewSpace" constellations and networks? Awesome! This project follows the [Github contribution work flow.](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/github-flow) Submissions can fork and use a Github pull request to get merged into this code base.
 
 Ways to help are listed as follows.
 
@@ -100,7 +100,7 @@ As emerging mega-constellations are still evolving rapidly and constellations su
 
 ### Write Test Cases
 
-Currently this project has not be ''thoroughly''' tested. You are more than welcome to build any test cases for this project.
+Currently this project has not been "thoroughly" tested. You are more than welcome to build any test cases for this project.
 
 # License
 
