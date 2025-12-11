@@ -1,0 +1,120 @@
+/* Custom CSS for StarPerf Documentation */
+
+/* Improve code block styling */
+pre {
+    border-radius: 6px;
+    border: 1px solid var(--sidebar-bg);
+}
+
+/* Better table styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1em 0;
+}
+
+table thead {
+    background-color: var(--table-header-bg);
+}
+
+table th,
+table td {
+    padding: 0.75em;
+    border: 1px solid var(--table-border-color);
+}
+
+table tr:nth-child(even) {
+    background-color: var(--table-alternate-bg);
+}
+
+/* Admonition blocks */
+.warning,
+.note,
+.tip {
+    padding: 1em;
+    margin: 1em 0;
+    border-left: 4px solid;
+    border-radius: 4px;
+}
+
+.warning {
+    background-color: #fff3cd;
+    border-color: #ffc107;
+}
+
+.note {
+    background-color: #d1ecf1;
+    border-color: #17a2b8;
+}
+
+.tip {
+    background-color: #d4edda;
+    border-color: #28a745;
+}
+
+/* Better link styling */
+a {
+    text-decoration: none;
+    color: var(--links);
+    transition: color 0.2s;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: var(--links-hover);
+}
+
+/* Improve navigation */
+.nav-chapters {
+    font-size: 1.1em;
+}
+
+/* Better heading anchors */
+.header a.header {
+    text-decoration: none;
+    color: inherit;
+}
+
+.header:hover a.header {
+    color: var(--links);
+}
+
+/* Code inline styling */
+code {
+    background-color: var(--inline-code-bg);
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+    font-size: 0.9em;
+}
+
+/* Improve search box */
+#searchbar {
+    width: 100%;
+    margin: 0.5em 0;
+}
+
+/* Better mobile responsiveness */
+@media (max-width: 768px) {
+    table {
+        font-size: 0.9em;
+    }
+
+    .content {
+        padding: 1em;
+    }
+}
+
+/* Print styles */
+@media print {
+    .nav-chapters {
+        display: none;
+    }
+
+    .sidebar {
+        display: none;
+    }
+
+    .content {
+        margin-left: 0;
+    }
+}

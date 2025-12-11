@@ -1,0 +1,45 @@
+[book]
+title = "StarPerf Documentation"
+authors = ["StarPerf Team"]
+description = "A comprehensive platform for simulating and analyzing mega-constellation satellite network performance"
+language = "en"
+multilingual = false
+src = "book/src"
+
+[build]
+build-dir = "book/docs"
+
+[output.html]
+default-theme = "dark"
+preferred-dark-theme = "navy"
+git-repository-url = "https://github.com/SpaceNetLab/StarPerf_Simulator"
+git-repository-icon = "fa-github"
+edit-url-template = "https://github.com/SpaceNetLab/StarPerf_Simulator/edit/main/book/src/{path}"
+site-url = "/StarPerf_Simulator/"
+cname = ""
+
+[output.html.fold]
+enable = true
+level = 0
+
+[output.html.search]
+enable = true
+limit-results = 30
+teaser-word-count = 30
+use-boolean-and = true
+boost-title = 2
+boost-hierarchy = 1
+boost-paragraph = 1
+expand = true
+heading-split-level = 3
+
+[output.html.playground]
+editable = false
+copyable = true
+copy-js = true
+line-numbers = true
+
+[preprocessor.katex]
+
+[output.html.print]
+enable = true
