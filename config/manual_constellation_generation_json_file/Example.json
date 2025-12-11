@@ -1,0 +1,63 @@
+{
+    "Shells": [
+        {
+            "timeslots": [
+                {
+                    "position": [
+                        {
+                            "latitude": 56.5,
+                            "longitude": -20.1,
+                            "altitude": 550
+                        },
+                        {
+                            "latitude": 57.5,
+                            "longitude": -23.1,
+                            "altitude": 545
+                        }
+                    ],
+                    "links":[
+                        {
+                            "sat1":0,
+                            "sat2":1
+                        }
+                    ]
+                },
+                {
+                    "position": [
+                        {
+                            "latitude": 56.5,
+                            "longitude": -20.1,
+                            "altitude": 550
+                        },
+                        {
+                            "latitude": 57.5,
+                            "longitude": -23.1,
+                            "altitude": 545
+                        }
+                    ],
+                    "links":[]
+                },
+                {
+                    "position": [
+                        {
+                            "latitude": 56.5,
+                            "longitude": -20.1,
+                            "altitude": 550
+                        },
+                        {
+                            "latitude": 57.5,
+                            "longitude": -23.1,
+                            "altitude": 545
+                        }
+                    ],
+                    "links":[
+                        {
+                            "sat1":0,
+                            "sat2":1
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
