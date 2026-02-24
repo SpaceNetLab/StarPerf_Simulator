@@ -112,6 +112,18 @@ def positive_Grid(constellation , dT):
                 isl_cur_up_distance = [] # the distance attribute of the isl_cur_up object
                 isl_cur_up_delay = [] # delay attribute of isl_cur_up object
 
+                for t in range(1, (int)(sh.orbit_cycle / dT) + 2, 1):
+                    # calculate the distance between the two satellites cur_satellite and up_satellite
+                    distance_cur_up = distance_two_satellites(cur_satellite , up_satellite , t)
+                    isl_cur_up_distance.append(distance_cur_up)
+                    # calculate the delay between the two satellites cur_satellite and up_satellite
+                    delay_cur_up = 1.0 * distance_cur_up / 300000.0
+                    isl_cur_up_delay.append(delay_cur_up)
+                isl_cur_up.distance = isl_cur_up_distance
+                isl_cur_up.delay = isl_cur_up_delay
+                cur_satellite.ISL.append(isl_cur_up)
+                up_satellite.ISL.append(isl_cur_up)
+                
                 # get the id of the right satellite of the current satellite
                 right_satellite_id = -1
                 if orbit_index != number_of_orbits_in_sh:
@@ -129,26 +141,17 @@ def positive_Grid(constellation , dT):
                 isl_cur_right_delay = []  # delay attribute of isl_cur_right object
                 # calculate the ISL delay and distance between satellites in each timeslot
                 for t in range(1, (int)(sh.orbit_cycle / dT) + 2, 1):
-                    # calculate the distance between the two satellites cur_satellite and up_satellite
-                    distance_cur_up = distance_two_satellites(cur_satellite , up_satellite , t)
-                    isl_cur_up_distance.append(distance_cur_up)
-                    # calculate the delay between the two satellites cur_satellite and up_satellite
-                    delay_cur_up = 1.0 * distance_cur_up / 300000.0
-                    isl_cur_up_delay.append(delay_cur_up)
                     # calculate the distance between the two satellites cur_satellite and right_satellite_id
                     distance_cur_right = distance_two_satellites(cur_satellite, right_satellite , t)
                     isl_cur_right_distance.append(distance_cur_right)
                     # calculate the delay between the two satellites cur_satellite and right_satellite_id
                     delay_cur_right = 1.0 * distance_cur_right / 300000.0
                     isl_cur_right_delay.append(delay_cur_right)
-                isl_cur_up.distance = isl_cur_up_distance
-                isl_cur_up.delay = isl_cur_up_delay
+
                 isl_cur_right.distance = isl_cur_right_distance
                 isl_cur_right.delay = isl_cur_right_delay
                 # add the two ISLs between the current satellite and the previous satellite and the right satellite to
                 # the satellite object
-                cur_satellite.ISL.append(isl_cur_up)
-                up_satellite.ISL.append(isl_cur_up)
                 cur_satellite.ISL.append(isl_cur_right)
                 right_satellite.ISL.append(isl_cur_right)
 
